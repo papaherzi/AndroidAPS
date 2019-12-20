@@ -215,15 +215,15 @@ public class GraphData {
         tempBasalsSeries.setDrawBackground(true);
         tempBasalsSeries.setBackgroundColor(MainApp.gc(R.color.tempbasal));
         tempBasalsSeries.setThickness(0);
-
+//Gestrichelte Basallinie
         ScaledDataPoint[] basalLine = new ScaledDataPoint[basalLineArray.size()];
         basalLine = basalLineArray.toArray(basalLine);
         basalsLineSeries = new LineGraphSeries<>(basalLine);
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(MainApp.instance().getApplicationContext().getResources().getDisplayMetrics().scaledDensity * 2);
+        paint.setStrokeWidth(MainApp.instance().getApplicationContext().getResources().getDisplayMetrics().scaledDensity * 1);
         paint.setPathEffect(new DashPathEffect(new float[]{2, 4}, 0));
-        paint.setColor(MainApp.gc(R.color.basal));
+        paint.setColor(MainApp.gc(R.color.white));
         basalsLineSeries.setCustomPaint(paint);
 
         ScaledDataPoint[] absoluteBasalLine = new ScaledDataPoint[absoluteBasalLineArray.size()];
@@ -231,8 +231,8 @@ public class GraphData {
         absoluteBasalsLineSeries = new LineGraphSeries<>(absoluteBasalLine);
         Paint absolutePaint = new Paint();
         absolutePaint.setStyle(Paint.Style.STROKE);
-        absolutePaint.setStrokeWidth(MainApp.instance().getApplicationContext().getResources().getDisplayMetrics().scaledDensity * 2);
-        absolutePaint.setColor(MainApp.gc(R.color.basal));
+        absolutePaint.setStrokeWidth(MainApp.instance().getApplicationContext().getResources().getDisplayMetrics().scaledDensity * 1);
+        absolutePaint.setColor(MainApp.gc(R.color.white));
         absoluteBasalsLineSeries.setCustomPaint(absolutePaint);
 
         basalScale.setMultiplier(maxY * scale / maxBasalValueFound);
@@ -276,13 +276,13 @@ public class GraphData {
             lastTarget = value;
         }
         targetsSeriesArray.add(new DataPoint(toTime, lastTarget));
-
+//Linien Stärke des TT im oberen Graphen
         DataPoint[] targets = new DataPoint[targetsSeriesArray.size()];
         targets = targetsSeriesArray.toArray(targets);
         targetsSeries = new LineGraphSeries<>(targets);
         targetsSeries.setDrawBackground(false);
         targetsSeries.setColor(MainApp.gc(R.color.tempTargetBackground));
-        targetsSeries.setThickness(2);
+        targetsSeries.setThickness(0);
 
         addSeries(targetsSeries);
     }
@@ -298,6 +298,7 @@ public class GraphData {
             if (t.isSMB && !t.isValid) continue;
             t.setY(getNearestBg((long) t.getX()));
             filteredTreatments.add(t);
+
         }
 
         // ProfileSwitch
@@ -430,8 +431,8 @@ public class GraphData {
         iobSeries = new FixedLineGraphSeries<>(iobData);
         iobSeries.setDrawBackground(true);
         iobSeries.setBackgroundColor(0x80FFFFFF & MainApp.gc(R.color.iob)); //50%
-        iobSeries.setColor(MainApp.gc(R.color.iob));
-        iobSeries.setThickness(3);
+        iobSeries.setColor(MainApp.gc(R.color.white));
+        iobSeries.setThickness(6);
 
         if (showPrediction) {
             AutosensResult lastAutosensResult;
@@ -512,9 +513,9 @@ public class GraphData {
         cobData = cobArray.toArray(cobData);
         cobSeries = new FixedLineGraphSeries<>(cobData);
         cobSeries.setDrawBackground(true);
-        cobSeries.setBackgroundColor(0x80FFFFFF & MainApp.gc(R.color.cob)); //50%
-        cobSeries.setColor(MainApp.gc(R.color.cob));
-        cobSeries.setThickness(3);
+        cobSeries.setBackgroundColor(0x99FFFFFF & MainApp.gc(R.color.cob)); //50%
+        cobSeries.setColor(MainApp.gc(R.color.white));
+        cobSeries.setThickness(6);
 
         if (useForScale) {
             maxY = maxCobValueFound;
