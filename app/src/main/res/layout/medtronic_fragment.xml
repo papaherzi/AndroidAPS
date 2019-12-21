@@ -517,7 +517,7 @@
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:background="@drawable/white_trans_bg"
-                    android:drawableLeft="@drawable/icon_actions_refill"
+                    android:drawableLeft="@drawable/ic_database_reset"
                     android:text="@string/combo_refresh"
                     android:textSize="14sp" />
 
@@ -533,7 +533,7 @@
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:background="@drawable/white_trans_bg"
-                    android:drawableLeft="@drawable/icon_danarhistory"
+                    android:drawableLeft="@drawable/ic_history"
                     android:text="@string/danar_history"
                     android:textSize="14sp" />
 
@@ -549,7 +549,7 @@
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:background="@drawable/white_trans_bg"
-                    android:drawableLeft="@drawable/icon_danarstats"
+                    android:drawableLeft="@drawable/ic_stats"
                     android:text="RL Stats"
                     android:textSize="14sp" />
 

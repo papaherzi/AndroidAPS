@@ -68,6 +68,8 @@
             android:id="@+id/danar_historyreload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/ic_zahnrad_32"
             android:layout_weight="1"
             android:text="@string/danar_historyreload" />
 

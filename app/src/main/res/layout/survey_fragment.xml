@@ -163,6 +163,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_pille_top"
+            android:drawableLeft="@drawable/ic_zahnrad_32"
             android:layout_marginBottom="5dp"
             android:text="@string/submit" />
 
@@ -171,6 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_pille_top"
+            android:drawableLeft="@drawable/ic_zahnrad_32"
             android:text="@string/profile" />
 
         <TextView

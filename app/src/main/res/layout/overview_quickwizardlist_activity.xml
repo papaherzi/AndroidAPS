@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/ic_zahnrad_32"
             android:id="@+id/overview_quickwizardactivity_add_button" />
 
         <androidx.recyclerview.widget.RecyclerView

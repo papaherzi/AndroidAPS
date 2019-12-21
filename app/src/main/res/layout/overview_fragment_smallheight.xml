@@ -337,7 +337,7 @@
 
             </LinearLayout>
 
-            <!--  STATUSLIGHTS -->
+<!--  STATUSLIGHTS
             <LinearLayout
                 android:id="@+id/overview_statuslights"
                 android:layout_width="match_parent"
@@ -418,62 +418,9 @@
                     android:text=""
                     android:textColor="@color/white"/>
 
-            </LinearLayout>
-
-            <!--            <LinearLayout
-                android:id="@+id/overview_statuslights"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/overview_canulaage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/overview_insulinage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/overview_reservoirlevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/overview_sensorage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/overview_batterylevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textSize="14sp" />
-
             </LinearLayout> -->
+
+
 
             <TextView
                 android:id="@+id/overview_extendedbolus"

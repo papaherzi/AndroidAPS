@@ -29,7 +29,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/icon_cp_age_canula" />
+                    android:src="@drawable/ic_prime_fill_20" />
 
                 <TextView
                     android:id="@+id/careportal_canulaage"
@@ -83,7 +83,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/icon_cp_age_battery" />
+                    android:src="@drawable/ic_battery_vertical_20" />
 
                 <TextView
                     android:id="@+id/careportal_pbage"
@@ -111,7 +111,7 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="1dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/icon_cp_age_sensor" />
+                    android:src="@drawable/ic_sensor" />
 
                 <TextView
                     android:id="@+id/careportal_sensorage"

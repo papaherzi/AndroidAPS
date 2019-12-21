@@ -250,17 +250,17 @@
             style="?android:attr/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="@drawable/bg_pille_top"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="3dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="3dp"
             android:layout_weight="1"
+            android:background="@drawable/bg_pille_top"
+            android:drawableStart="@drawable/ic_zahnrad_2"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="@string/activate_profile"
-            android:drawableStart="@drawable/icon_local_activate" />
+            android:text="@string/activate_profile" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -280,7 +280,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/icon_local_reset"
+                android:drawableStart="@drawable/ic_database_reset"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="@string/reset" />
@@ -297,7 +297,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/icon_local_save"
+                android:drawableStart="@drawable/ic_ok"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="@string/save" />

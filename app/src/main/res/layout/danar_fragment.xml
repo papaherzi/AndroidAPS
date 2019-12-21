@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     android:paddingTop="5dp"
     tools:context=".plugins.pump.danaR.DanaRFragment">
 
@@ -704,7 +705,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/icon_danarprofile"
+                    android:drawableTop="@drawable/ic_zahnrad_32"
+                    android:background="@drawable/white_trans_bg"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/danar_viewprofile" />
@@ -716,7 +718,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/icon_danarhistory"
+                    android:drawableTop="@drawable/ic_database_reset"
+                    android:background="@drawable/white_trans_bg"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/danar_history" />
@@ -727,7 +730,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/icon_danarstats"
+                    android:drawableTop="@drawable/ic_stats"
+                    android:background="@drawable/white_trans_bg"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/danar_stats" />
@@ -738,7 +742,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/icon_danar_useropt"
+                    android:drawableTop="@drawable/ic_zahnrad_32"
+                    android:background="@drawable/white_trans_bg"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/danar_useroptions" />
