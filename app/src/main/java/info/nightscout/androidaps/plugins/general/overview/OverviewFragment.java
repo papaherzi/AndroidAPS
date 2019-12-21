@@ -266,7 +266,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         sage = view.findViewById(R.id.careportal_sensorage);
         pbage = view.findViewById(R.id.careportal_pbage);
 
-        iageView = view.findViewById(R.id.overview_insulinage);
+//        iageView = view.findViewById(R.id.overview_insulinage);
         cageView = view.findViewById(R.id.overview_canulaage);
         reservoirView = view.findViewById(R.id.overview_reservoirlevel);
         sageView = view.findViewById(R.id.overview_sensorage);
