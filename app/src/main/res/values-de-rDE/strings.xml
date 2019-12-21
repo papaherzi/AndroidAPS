@@ -129,8 +129,8 @@
     <string name="configbuilder_general">Allgemein</string>
     <string name="configbuilder_general_description">Dies sind einige generelle Plugins, die Du vielleicht hilfreich findest.</string>
     <string name="configbuilder_constraints_description">Welche Beschränkungen werden angewendet?</string>
-    <string name="days">Tage</string>
     <string name="constraints">Beschränkungen</string>
+    <string name="days">T.</string>
     <string name="loop">Loop</string>
     <string name="configbuilder_loop">Loop</string>
     <string name="configbuilder_loop_description">Nutze dies, um die Loop-Integration von AndroidAPS zu aktivieren.</string>
@@ -407,7 +407,7 @@
     <string name="MM640g">MM640g</string>
     <string name="ongoingnotificaction">Anhaltende Benachrichtigung</string>
     <string name="old_data">VERALTETE DATEN</string>
-    <string name="minago">%1$d min her</string>
+    <string name="minago">%1$d</string>
     <string name="sms_minago">%1$d\' her</string>
     <string name="localprofile">Lokales Profil</string>
     <string name="openapsama">OpenAPS AMA</string>
@@ -589,11 +589,10 @@
     <string name="careportal_sensorage_label">Sensoralter</string>
     <string name="careportal_canulaage_label">Katheteralter</string>
     <string name="careportal_insulinage_label">Insulinalter</string>
-    <string name="hours">Stunden</string>
+    <string name="hours">St.</string>
     <string name="overview_newtempbasal_basaltype_label">Basaltyp</string>
     <string name="invalidprofile">Ungültiges oder defektes Profil!</string>
     <string name="profileswitch">Profilwechsel</string>
-    <string name="doprofileswitch">Profilwechsel durchführen</string>
     <string name="careportal_pbage_label">Batteriealter</string>
     <string name="careportal_pumpbatterychange">Pumpenbatterie Wechsel</string>
     <string name="ns_alarmoptions">Alarm-Optionen</string>
@@ -1117,7 +1116,7 @@ Unerwartetes Verhalten.</string>
     <string name="isequal">ist gleich</string>
     <string name="isequalorgreater">ist gleich oder größer als</string>
     <string name="isgreater">ist größer als</string>
-    <string name="isnotavailable">ist nicht verfügbar</string>
+    <string name="isnotavailable">n/a</string>
     <string name="unknown">unbekannt</string>
     <string name="glucoseisnotavailable">Glukosewert nicht verfügbar</string>
     <string name="glucosecomparedmgdl">Glukosewert %1$s %2$.0f %3$s</string>
@@ -1437,7 +1436,4 @@ Unerwartetes Verhalten.</string>
     <string name="activitymonitor">Aktivitätsmonitor</string>
     <string name="doyouwantresetstats">Willst Du die Aktivitätsstatistik zurücksetzen?</string>
     <string name="statistics">Statistiken</string>
-    <string name="randombg">Zufalls-BZ</string>
-    <string name="description_source_randombg">Zufalls-BZ Daten erstellen (nur Demo-Modus)</string>
-    <string name="randombg_short">BZ</string>
 </resources>

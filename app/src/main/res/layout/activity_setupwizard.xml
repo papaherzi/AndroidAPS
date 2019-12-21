@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     android:orientation="vertical"
     tools:context=".setupwizard.SetupWizardActivity">
 
@@ -13,7 +14,6 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/sw_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

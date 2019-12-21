@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <ScrollView
@@ -21,24 +22,29 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <!-- Loop Layout -->
             <LinearLayout
                 android:id="@+id/overview_looplayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="2dp">
+                android:paddingTop="2dp"
+                >
 
                 <TextView
                     android:id="@+id/overview_apsmode"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_pille_top"
+                    android:drawableLeft="@drawable/ic_aaps_logo_white"
                     android:gravity="center_vertical|center_horizontal"
-                    android:paddingBottom="3dp"
                     android:paddingTop="3dp"
+                    android:paddingEnd="2dp"
+                    android:paddingBottom="3dp"
                     android:text="Open Loop"
-
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
@@ -46,12 +52,14 @@
                     android:id="@+id/overview_activeprofile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_pille_top"
+                    android:drawableLeft="@drawable/ic_user_white"
                     android:gravity="center_vertical|center_horizontal"
-                    android:paddingBottom="3dp"
                     android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
                     android:text="Profile"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -59,12 +67,15 @@
                     android:id="@+id/overview_temptarget"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_pille_top"
+                    android:drawableLeft="@drawable/ic_zielkreuz_white"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="TempTarget"
-                    android:paddingBottom="3dp"
                     android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:text="TempTarget"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/mdtp_white" />
 
@@ -92,32 +103,190 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/overview_bg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
-                    android:gravity="center_vertical"
-                    android:text="00.0"
-                    android:textSize="70dp"
-                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/overview_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|left"
-                    android:layout_marginTop="-15dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="-5dp"
-                    android:paddingRight="-5dp"
-                    android:text="→"
-                    android:textSize="70dp"
-                    android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/overview_bg"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="top|center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/bg_bg"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="00.0"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/overview_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="→"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="210dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:id="@+id/overview_deltashort"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginTop="10dp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:background="@drawable/ic_ball_grey"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/overview_timeago"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:background="@drawable/ic_ball_grey"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/overview_iob"
+                                    android:layout_width="38dp"
+                                    android:layout_height="36dp"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:background="@drawable/ic_ball_grey"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@android:color/black" />
+
+                                <TextView
+                                    android:id="@+id/overview_cob"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp"
+                                    android:autoSizeMinTextSize="7sp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:autoSizeStepGranularity="1sp"
+                                    android:background="@drawable/ic_ball_grey"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@android:color/black" />
+
+
+                                <TextView
+                                    android:id="@+id/overview_basebasal"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:background="@drawable/ic_ball_grey"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@android:color/black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="5dp"
+                                    android:background="@drawable/ic_delta_28">
+
+                                </ImageView>
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="12dp"
+                                    android:background="@drawable/ic_clock_28">
+
+                                </ImageView>
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="start"
+                                    android:layout_marginStart="14dp"
+                                    android:background="@drawable/ic_iob_48">
+
+                                </ImageView>
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_marginStart="14dp"
+                                    android:background="@drawable/ic_carb_48">
+
+                                </ImageView>
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="14dp"
+                                    android:background="@drawable/ic_basalrate_48">
+
+                                </ImageView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -127,13 +296,6 @@
                     android:gravity="top"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/overview_timeago"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.5"
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <TextView
                         android:id="@+id/overview_delta"
@@ -159,7 +321,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -172,21 +335,98 @@
                     android:layout_width="20dp"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/overview_basebasal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
             </LinearLayout>
 
+            <!--  STATUSLIGHTS -->
             <LinearLayout
                 android:id="@+id/overview_statuslights"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/overview_canulaage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="1dp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="8sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/bg_pille_status"
+                    android:drawableLeft="@drawable/ic_statuslight_katheter"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/overview_insulinage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/bg_pille_status"
+                    android:drawableLeft="@drawable/ic_statuslight_insulin"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="8sp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/overview_reservoirlevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="1dp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="8sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/bg_pille_status"
+                    android:drawableLeft="@drawable/ic_statuslight_cartridge"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/overview_sensorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="1dp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="8sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/bg_pille_status"
+                    android:drawableLeft="@drawable/ic_statuslight_sensor"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/overview_batterylevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="1dp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="8sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/bg_pille_status"
+                    android:drawableLeft="@drawable/ic_statuslight_battery"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text=""
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <!--            <LinearLayout
+                android:id="@+id/overview_statuslights"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/overview_canulaage"
@@ -233,7 +473,7 @@
                     android:text=""
                     android:textSize="14sp" />
 
-            </LinearLayout>
+            </LinearLayout> -->
 
             <TextView
                 android:id="@+id/overview_extendedbolus"
@@ -244,67 +484,15 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/mdtp_white" />
 
-            <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
+            <com.google.android.flexbox.FlexboxLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:alignContent="center"
                 app:alignItems="center"
                 app:flexDirection="row"
                 app:flexWrap="wrap"
                 app:justifyContent="space_around">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/iob"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text=":" />
-
-                    <TextView
-                        android:id="@+id/overview_iob"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingLeft="5dp"
-                        android:text=""
-                        android:textSize="14sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
-                        android:text="@string/cob" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text=":" />
-
-                    <TextView
-                        android:id="@+id/overview_cob"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -334,6 +522,20 @@
                 </LinearLayout>
 
             </com.google.android.flexbox.FlexboxLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/careportal_stats"
+                    layout="@layout/careportal_stats_fragment_on_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -392,114 +594,130 @@
                     android:textColor="@color/colorAcceptTempButton" />
             </LinearLayout>
 
+!-- Untere Funktionsbutton Reihe -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingRight="5dp"
                 android:orientation="horizontal">
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_treatmentbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_insulin_carbs"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_zahnrad_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
-                    android:textColor="@color/colorTreatmentButton"
-                    android:textSize="10sp" />
+                    android:textColor="@color/colorTreatmentButton_2"
+                    android:textSize="0sp"
+                    android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_insulinbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_bolus"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_iob_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
                     android:textColor="@color/colorInsulinButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_carbsbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_cp_bolus_carbs"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_carb_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
                     android:textColor="@color/colorCarbsButton"
-                    android:textSize="10sp" />
+                    android:textSize="0sp"
+                    android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_wizardbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_calculator"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_calculator_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
                     android:textColor="@color/colorCalculatorButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_calibrationbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_calibration"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_calibration_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
                     android:textColor="@color/colorCalibrationButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_cgmbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_xdrip"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_blooddrop_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
                     android:textColor="@color/colorCalibrationButton"
-                    android:textSize="10sp"/>
+                    android:textSize="0sp"
+                    android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_quickwizardbutton"
-                    style="?android:attr/buttonStyle"
+                    android:background="@drawable/bg_trans_complete"
                     android:layout_width="0px"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="-4dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_quickwizard"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
+                    android:drawableTop="@drawable/ic_wizard_48"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     android:text="Quick wizard"
                     android:textColor="@color/colorQuickWizardButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
-
             </LinearLayout>
 
         </LinearLayout>

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.actions.ActionsFragment">
 
     <ScrollView
@@ -19,25 +20,31 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_actions_profileswitch"
-                android:text="@string/careportal_profileswitch" />
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_actions_profileswitch"
+                android:text="@string/careportal_profileswitch"
+                android:textSize="14sp" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
                 android:id="@+id/actions_temptarget"
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_actions_temptarget"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_actions_temptarget"
                 android:text="@string/careportal_temporarytarget" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -45,12 +52,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_actions_starttempbasal"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_actions_starttempbasal"
                 android:text="@string/overview_tempbasal_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -58,12 +68,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_cancelbasal"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_cancelbasal"
                 android:text="Cancel temp basal" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -71,12 +84,14 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
-                android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_actions_startextbolus"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_actions_startextbolus"
                 android:text="@string/overview_extendedbolus_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -84,12 +99,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_actions_cancelextbolus"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_actions_cancelextbolus"
                 android:text="@string/overview_extendedbolus_cancel_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -97,12 +115,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_cp_pump_canula"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_cp_pump_canula"
                 android:text="@string/primefill" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -110,12 +131,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_danarhistory"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_danarhistory"
                 android:text="@string/nav_historybrowser" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -123,12 +147,15 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
-                android:drawableTop="@drawable/icon_danarstats"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/icon_danarstats"
                 android:text="@string/danar_stats_tdd" />
 
         </LinearLayout>

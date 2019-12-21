@@ -40,6 +40,7 @@ import com.jjoe64.graphview.series.BaseSeries;
 import java.util.Iterator;
 
 import info.nightscout.androidaps.MainApp;
+import info.nightscout.androidaps.R;
 
 // Added by Rumen for scalable text
 

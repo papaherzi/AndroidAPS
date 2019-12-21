@@ -1,7 +1,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.treatments.TreatmentsFragment">
 
 
@@ -10,10 +12,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.flexbox.FlexboxLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/defaultbackground"
             app:alignContent="stretch"
             app:alignItems="stretch"
             app:flexDirection="row"

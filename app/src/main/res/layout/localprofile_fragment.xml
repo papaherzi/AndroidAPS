@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.profile.local.LocalProfileFragment">
 
     <LinearLayout
@@ -249,6 +250,7 @@
             style="?android:attr/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:background="@drawable/bg_pille_top"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="10dp"
@@ -271,6 +273,7 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_pille_top"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
@@ -287,6 +290,7 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_pille_top"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
