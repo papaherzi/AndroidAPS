@@ -27,7 +27,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_actions_profileswitch"
+                android:drawableLeft="@drawable/ic_zahnrad_32"
                 android:text="@string/careportal_profileswitch"
                 android:textSize="14sp" />
 
@@ -44,7 +44,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_actions_temptarget"
+                android:drawableLeft="@drawable/ic_tt"
                 android:text="@string/careportal_temporarytarget" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -60,7 +60,7 @@
                 android:paddingRight="0dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_actions_starttempbasal"
+                android:drawableLeft="@drawable/ic_tempbasal"
                 android:text="@string/overview_tempbasal_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -76,7 +76,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_cancelbasal"
+                android:drawableLeft="@drawable/ic_tt_cancel"
                 android:text="Cancel temp basal" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -91,7 +91,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_actions_startextbolus"
+                android:drawableLeft="@drawable/ic_extended_bolus"
                 android:text="@string/overview_extendedbolus_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -107,7 +107,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_actions_cancelextbolus"
+                android:drawableLeft="@drawable/ic_extended_bolus_cancel"
                 android:text="@string/overview_extendedbolus_cancel_button" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -123,7 +123,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_cp_pump_canula"
+                android:drawableLeft="@drawable/ic_prime_fill"
                 android:text="@string/primefill" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -139,7 +139,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_danarhistory"
+                android:drawableLeft="@drawable/ic_database_reset"
                 android:text="@string/nav_historybrowser" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
@@ -155,7 +155,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/icon_danarstats"
+                android:drawableLeft="@drawable/ic_stats"
                 android:text="@string/danar_stats_tdd" />
 
         </LinearLayout>

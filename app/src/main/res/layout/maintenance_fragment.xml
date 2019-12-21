@@ -23,7 +23,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:background="@drawable/white_trans_bg"
-            android:drawableLeft="@drawable/icon_actions_profileswitch"
+            android:drawableLeft="@drawable/ic_zahnrad_32"
             android:text="@string/nav_logsettings"
             android:textSize="14sp" />
 
@@ -40,7 +40,7 @@
            android:paddingLeft="0dp"
            android:paddingRight="0dp"
            android:background="@drawable/white_trans_bg"
-           android:drawableLeft="@drawable/mail_sent"
+           android:drawableLeft="@drawable/ic_mail"
            android:text="@string/send_all_logs"
            android:textSize="14sp" />
 
@@ -56,7 +56,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:background="@drawable/white_trans_bg"
-            android:drawableLeft="@drawable/log_delete"
+            android:drawableLeft="@drawable/ic_log_delete"
             android:text="@string/delete_logs"
             android:textSize="14sp" />
 
@@ -72,7 +72,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:background="@drawable/white_trans_bg"
-            android:drawableLeft="@drawable/export"
+            android:drawableLeft="@drawable/ic_export_to"
             android:text="@string/export_to"
             android:textSize="14sp" />
 
@@ -89,7 +89,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:background="@drawable/white_trans_bg"
-            android:drawableLeft="@drawable/import_settings"
+            android:drawableLeft="@drawable/ic_import"
             android:text="@string/import_from"
             android:textSize="14sp" />
 
@@ -106,7 +106,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:background="@drawable/white_trans_bg"
-            android:drawableLeft="@drawable/reset_database"
+            android:drawableLeft="@drawable/ic_database_reset"
             android:text="@string/nav_resetdb"
             android:textSize="14sp" />
 
