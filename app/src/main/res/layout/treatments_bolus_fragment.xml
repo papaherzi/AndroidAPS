@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.treatments.fragments.TreatmentsBolusFragment">
 
     <LinearLayout
@@ -51,6 +52,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -58,6 +61,7 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/white_trans_bg"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/nav_refreshtreatments" />
@@ -67,6 +71,7 @@
                 style="?android:attr/buttonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/white_trans_bg"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:text="@string/deletefuturetreatments" />

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.overview.dialogs.NewCarbsDialog">
 
     <ScrollView
@@ -28,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/icon_cp_bolus_carbs" />
+                    android:src="@drawable/ic_carb_48" />
 
                 <TextView
                     android:layout_width="wrap_content"
