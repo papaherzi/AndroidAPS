@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/r22_bg"
     android:paddingTop="2dp"
     tools:context=".plugins.general.maintenance.MaintenanceFragment">
 
@@ -15,78 +16,100 @@
             style="?android:attr/buttonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/icon_actions_profileswitch"
             android:text="@string/nav_logsettings"
-            android:textColor="@color/colorTreatmentButton" />
+            android:textSize="14sp" />
+
 
        <Button
-            android:id="@+id/log_send"
-            style="?android:attr/buttonStyle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
-            android:text="@string/send_all_logs"
-            android:textColor="@color/colorTreatmentButton" />
+           android:id="@+id/log_send"
+           style="?android:attr/buttonStyle"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="5dp"
+           android:layout_marginTop="2dp"
+           android:layout_marginEnd="5dp"
+           android:layout_marginBottom="2dp"
+           android:paddingLeft="0dp"
+           android:paddingRight="0dp"
+           android:background="@drawable/white_trans_bg"
+           android:drawableLeft="@drawable/mail_sent"
+           android:text="@string/send_all_logs"
+           android:textSize="14sp" />
 
         <Button
             android:id="@+id/log_delete"
             style="?android:attr/buttonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/log_delete"
             android:text="@string/delete_logs"
-            android:textColor="@color/colorTreatmentButton" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/nav_export"
             style="?android:attr/buttonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
-            android:text="@string/nav_export"
-            android:textColor="@color/colorTreatmentButton" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/export"
+            android:text="@string/export_to"
+            android:textSize="14sp" />
+
 
         <Button
             android:id="@+id/nav_import"
             style="?android:attr/buttonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
-            android:text="@string/nav_import"
-            android:textColor="@color/colorTreatmentButton" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/import_settings"
+            android:text="@string/import_from"
+            android:textSize="14sp" />
+
 
         <Button
             android:id="@+id/nav_resetdb"
             style="?android:attr/buttonStyle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
-            android:layout_weight="0.5"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:background="@drawable/white_trans_bg"
+            android:drawableLeft="@drawable/reset_database"
             android:text="@string/nav_resetdb"
-            android:textColor="@color/colorTreatmentButton" />
+            android:textSize="14sp" />
+
 
     </LinearLayout>
 

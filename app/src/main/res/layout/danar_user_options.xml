@@ -392,6 +392,7 @@
                     android:id="@+id/save_user_options"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/white_trans_bg"
                     android:layout_marginTop="10dp"
                     android:text="@string/danar_saveuseroptions" />
 
