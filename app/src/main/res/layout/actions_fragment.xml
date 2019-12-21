@@ -139,7 +139,7 @@
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/ic_database_reset"
+                android:drawableLeft="@drawable/ic_historybrowser"
                 android:text="@string/nav_historybrowser" />
 
             <info.nightscout.androidaps.utils.SingleClickButton

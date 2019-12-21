@@ -91,7 +91,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_battery_vertical_20" />
+                    android:src="@drawable/ic_battery" />
 
                 <TextView
                     android:id="@+id/careportal_pbage"
@@ -120,7 +120,7 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="1dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_sensor" />
+                    android:src="@drawable/ic_libre_2" />
 
                 <TextView
                     android:id="@+id/careportal_sensorage"

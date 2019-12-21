@@ -354,7 +354,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_status"
-                        android:drawableLeft="@drawable/ic_statuslight_katheter"
+                        android:drawableLeft="@drawable/ic_statuslight_katheter_35"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -385,7 +385,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_status"
-                        android:drawableLeft="@drawable/ic_statuslight_sensor"
+                        android:drawableLeft="@drawable/ic_libre_2_35"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
