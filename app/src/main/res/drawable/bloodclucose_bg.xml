@@ -10,8 +10,8 @@
         android:right="1dp"
         android:bottom="1dp" />
     <solid
-        android:color="@color/backgroundpillcolor" />
+        android:color="#EBEBEA" />
     <stroke
         android:width="2dp"
-        android:color="@color/backgroundpillcolor" />
+        android:color="@color/gray" />
 </shape>

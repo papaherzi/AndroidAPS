@@ -108,7 +108,7 @@ public class SafetyPlugin extends PluginBase implements ConstraintsInterface {
         return value;
     }
 
-    @Override
+   @Override
     public Constraint<Boolean> isAdvancedFilteringEnabled(Constraint<Boolean> value) {
         BgSourceInterface bgSource = ConfigBuilderPlugin.getPlugin().getActiveBgSource();
 

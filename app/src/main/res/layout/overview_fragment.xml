@@ -42,7 +42,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_pille_top"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_aaps_logo_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
@@ -59,7 +59,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_pille_top"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_user_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
@@ -74,7 +74,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_pille_top"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_zielkreuz_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
@@ -129,12 +129,11 @@
                             android:layout_gravity="top|center"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="15dp"
-                            android:background="@drawable/bg_bg"
+                            android:background="@drawable/bloodclucose_bg"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="00.0"
-                            android:textSize="35sp"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textSize="30sp"
+                            android:textStyle="normal" />
 
                         <TextView
                             android:id="@+id/overview_arrow"
@@ -145,7 +144,7 @@
                             android:layout_marginTop="5dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textSize="35sp"
+                            android:textSize="30sp"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -353,8 +352,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bg_pille_status"
-                        android:drawableLeft="@drawable/ic_statuslight_katheter_35"
+                        android:background="@drawable/bloodclucose_bg"
+                        android:drawableLeft="@drawable/ic_statuslights_katheter_35"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -363,7 +362,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bg_pille_status"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_statuslight_insulin"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />  -->
@@ -373,7 +372,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bg_pille_status"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_statuslight_cartridge"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""
@@ -384,7 +383,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bg_pille_status"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_libre_2_35"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
@@ -394,7 +393,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bg_pille_status"
+                        android:background="@drawable/bloodclucose_bg"
                         android:drawableLeft="@drawable/ic_statuslight_battery"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""

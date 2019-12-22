@@ -58,7 +58,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_prime_fill_20" />
+                    android:src="@drawable/ic_katheter_2" />
 
                 <TextView
                     android:id="@+id/careportal_canulaage"
@@ -120,7 +120,7 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="1dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_libre_2" />
+                    android:src="@drawable/ic_libre_2_35" />
 
                 <TextView
                     android:id="@+id/careportal_sensorage"

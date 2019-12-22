@@ -35,7 +35,7 @@
     <color name="defaultbackground">#424242</color> <!-- Default 424242 -->
     <color name="defaulttext">#FFFFFF</color> <!-- 'BBBBBB -->
 
-    <color name="tempTargetBackground">#00000000</color> <!-- Farbe des TT im oberen Graphen -->
+    <color name="tempTargetBackground">#FFFFFF</color> <!-- Farbe des TT im oberen Graphen -->
     <color name="tempTargetConfirmation">#FFFFFF</color>
     <color name="tempTargetDisabledBackground">#303F9F</color>
 

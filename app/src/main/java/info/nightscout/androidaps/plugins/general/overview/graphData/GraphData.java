@@ -282,7 +282,7 @@ public class GraphData {
         targetsSeries = new LineGraphSeries<>(targets);
         targetsSeries.setDrawBackground(false);
         targetsSeries.setColor(MainApp.gc(R.color.tempTargetBackground));
-        targetsSeries.setThickness(0);
+        targetsSeries.setThickness(1);
 
         addSeries(targetsSeries);
     }
