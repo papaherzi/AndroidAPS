@@ -94,7 +94,7 @@ class StatuslightHandler {
             } else {
                 view.setTextColor(MainApp.gc(R.color.color_white));
                 Drawable drawable = view.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xFF149baf, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0x20FFFFFF, PorterDuff.Mode.SRC_IN));
             }
             view.setVisibility(View.VISIBLE);
         } else {
