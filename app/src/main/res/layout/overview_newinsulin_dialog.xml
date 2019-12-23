@@ -27,7 +27,7 @@
                     android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_iob_48" />
+                    android:src="@drawable/ic_pumpe_48" />
 
                 <TextView
                     android:layout_width="wrap_content"
