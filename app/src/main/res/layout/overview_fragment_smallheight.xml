@@ -253,7 +253,7 @@
                                     android:layout_height="25dp"
                                     android:layout_gravity="start"
                                     android:layout_marginStart="14dp"
-                                    android:background="@drawable/ic_iob_48">
+                                    android:background="@drawable/ic_iob_28">
 
                                 </ImageView>
 
@@ -261,7 +261,7 @@
                                     android:layout_width="25dp"
                                     android:layout_height="25dp"
                                     android:layout_marginStart="14dp"
-                                    android:background="@drawable/ic_carb_48">
+                                    android:background="@drawable/ic_carb_28">
 
                                 </ImageView>
 

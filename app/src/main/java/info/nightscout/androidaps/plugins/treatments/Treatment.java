@@ -257,9 +257,9 @@ public class Treatment implements DataPointWithLabelInterface, DbObjectBase {
     @Override
     public int getColor() {
         if (isSMB)
-            return MainApp.gc(R.color.tempbasal);
+            return MainApp.gc(R.color.white);
         else if (isValid)
-            return MainApp.gc(R.color.tempbasal);
+            return MainApp.gc(R.color.amber);
         else
             return MainApp.instance().getResources().getColor(android.R.color.holo_red_light);
     }

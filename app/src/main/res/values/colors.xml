@@ -101,6 +101,11 @@
 
     <color name="ic_launcher_background">#424242</color> <!-- Default 424242 -->
     <color name="r22_bg">#222222</color>
+    <color name="cyan">#1ba1e2</color>
+    <color name="rose">#f7806a</color>
+    <color name="teal">#149baf</color>
+    <color name="amber">#f0a30a</color>
+
     <color name="transparent">#20FFFFFF</color>
     <color name="splashBackground">#2E2E2E</color>
     <color name="iconColor">#FFFFFF</color>
