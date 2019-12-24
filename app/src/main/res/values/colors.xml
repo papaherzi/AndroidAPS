@@ -14,8 +14,8 @@
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
     <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
-    <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
+    <color name="low">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
+    <color name="high">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="color_white">#FFFFFF</color> <!-- Farbe des BG Trend Pfeiles -->
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color> <!-- Hintergrundfarbe fuer verschiedene widgets -->
@@ -25,7 +25,7 @@
     <color name="cobAlert">#7484E2</color>
     <color name="inrangebackground">#10FFFFFF</color> <!-- Grafikbereich fuer die gewaehlten BG Werte hoch und tief im Graphen -->
     <color name="basal">#149baf</color>  <!-- Standard #00ffff Zeigt auch die Farbe im Graphen für die Basal Umrandung. Außerdem die Schrift Farbe von Basal wenn man auf das Dropdown Menu klickt -->
-    <color name="basebasal">#149baf</color>
+    <color name="basebasal">#32a6b8</color>
     <color name="tempbasal">#32a6b8</color> <!-- Farbe TEMP Basal im Graphen -->
     <color name="graphgrid">#30FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
     <color name="colorLightGray">#d8d8d8</color>
@@ -103,8 +103,10 @@
     <color name="r22_bg">#222222</color>
     <color name="cyan">#1ba1e2</color>
     <color name="rose">#f7806a</color>
-    <color name="teal">#149baf</color>
+    <color name="teal">#50149baf</color>
     <color name="amber">#f0a30a</color>
+    <color name="smb">#90FFFFFF</color>
+    <color name="treatments">#90FFFFFF</color>
 
     <color name="transparent">#20FFFFFF</color>
     <color name="splashBackground">#2E2E2E</color>

@@ -353,7 +353,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_statuslights_katheter_35"
+                        android:drawableLeft="@drawable/ic_katheter_35_3"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -393,7 +393,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_statuslight_battery"
+                        android:drawableLeft="@drawable/ic_battery_35_3"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
