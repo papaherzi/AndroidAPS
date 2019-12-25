@@ -14,8 +14,8 @@
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
     <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="low">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
-    <color name="high">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
+    <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
+    <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="color_white">#FFFFFF</color> <!-- Farbe des BG Trend Pfeiles -->
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color> <!-- Hintergrundfarbe fuer verschiedene widgets -->

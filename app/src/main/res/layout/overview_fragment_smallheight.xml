@@ -270,7 +270,7 @@
                                     android:layout_height="25dp"
                                     android:layout_gravity="end"
                                     android:layout_marginStart="14dp"
-                                    android:background="@drawable/ic_basalrate_48">
+                                    android:background="@drawable/ic_bas_28">
 
                                 </ImageView>
 

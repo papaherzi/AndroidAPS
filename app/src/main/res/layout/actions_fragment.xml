@@ -121,7 +121,7 @@
                 android:layout_marginBottom="2dp"
                 android:layout_weight="0.5"
                 android:background="@drawable/white_trans_bg"
-                android:drawableLeft="@drawable/ic_katheter_35_3"
+                android:drawableLeft="@drawable/ic_katheter_35"
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
                 android:text="@string/primefill" />

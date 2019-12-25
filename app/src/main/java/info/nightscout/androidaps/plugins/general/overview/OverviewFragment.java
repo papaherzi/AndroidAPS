@@ -1104,7 +1104,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (Config.APS && pump.getPumpDescription().isTempBasalCapable) {
             apsModeView.setVisibility(View.VISIBLE);
             Drawable drawable = apsModeView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0x20FFFFFF, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
             apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
             final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
             if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
@@ -1151,7 +1151,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
         } else {
             Drawable drawable = activeProfileView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0x20FFFFFF, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
             activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
         }
 
@@ -1165,7 +1165,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
         } else {
             Drawable drawable = tempTargetView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0x20FFFFFF, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
             tempTargetView.setText(Profile.toTargetRangeString(profile.getTargetLowMgdl(), profile.getTargetHighMgdl(), Constants.MGDL, units));
             tempTargetView.setVisibility(View.VISIBLE);
             tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
