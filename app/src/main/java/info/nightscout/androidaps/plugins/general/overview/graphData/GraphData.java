@@ -695,7 +695,7 @@ public class GraphData {
         graph.getViewport().setMinX(fromTime);
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getGridLabelRenderer().setLabelFormatter(new TimeAsXAxisLabelFormatter("HH"));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(7); // only 7 because of the space
+        graph.getGridLabelRenderer().setNumHorizontalLabels(6); // only 7 because of the space
     }
 
     private void addSeries(Series s) {
