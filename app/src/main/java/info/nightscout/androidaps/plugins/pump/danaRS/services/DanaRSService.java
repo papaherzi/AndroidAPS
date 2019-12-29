@@ -181,6 +181,20 @@ public class DanaRSService extends Service {
                 RxBus.INSTANCE.send(new EventInitializationChanged());
                 return;
             }
+            long now = System.currentTimeMillis();
+            if (danaRPump.lastSettingsRead + 60 * 60 * 1000L < now || !pump.isInitialized()) {
+                RxBus.INSTANCE.send(new EventPumpStatusChanged(MainApp.gs(R.string.gettingpumpsettings)));
+                bleComm.sendMessage(new DanaRS_Packet_General_Get_Shipping_Information()); // serial no
+                bleComm.sendMessage(new DanaRS_Packet_General_Get_Pump_Check()); // firmware
+                bleComm.sendMessage(new DanaRS_Packet_Basal_Get_Profile_Number());
+                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_Bolus_Option()); // isExtendedEnabled
+                bleComm.sendMessage(new DanaRS_Packet_Basal_Get_Basal_Rate()); // basal profile, basalStep, maxBasal
+                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_Calculation_Information()); // target
+                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_CIR_CF_Array());
+                bleComm.sendMessage(new DanaRS_Packet_Option_Get_User_Option()); // Getting user options
+                danaRPump.lastSettingsRead = now;
+            }
+
             if (L.isEnabled(L.PUMPCOMM))
                 log.debug("Pump time difference: " + timeDiff + " seconds");
             if (Math.abs(timeDiff) > 3) {
@@ -201,28 +215,18 @@ public class DanaRSService extends Service {
                     RxBus.INSTANCE.send(new EventInitializationChanged());
                     return;
                 } else {
+                    if (danaRPump.protocol >= 6) {
+                        bleComm.sendMessage(new DanaRS_Packet_Option_Set_Pump_Time(new Date()));
+                } else {
                     waitForWholeMinute(); // Dana can set only whole minute
                     // add 10sec to be sure we are over minute (will be cutted off anyway)
                     bleComm.sendMessage(new DanaRS_Packet_Option_Set_Pump_Time(new Date(DateUtil.now() + T.secs(10).msecs())));
+                    }
                     bleComm.sendMessage(new DanaRS_Packet_Option_Get_Pump_Time());
                     timeDiff = (danaRPump.pumpTime - System.currentTimeMillis()) / 1000L;
                     if (L.isEnabled(L.PUMPCOMM))
                         log.debug("Pump time difference: " + timeDiff + " seconds");
                 }
-            }
-
-            long now = System.currentTimeMillis();
-            if (danaRPump.lastSettingsRead + 60 * 60 * 1000L < now || !pump.isInitialized()) {
-                RxBus.INSTANCE.send(new EventPumpStatusChanged(MainApp.gs(R.string.gettingpumpsettings)));
-                bleComm.sendMessage(new DanaRS_Packet_General_Get_Shipping_Information()); // serial no
-                bleComm.sendMessage(new DanaRS_Packet_General_Get_Pump_Check()); // firmware
-                bleComm.sendMessage(new DanaRS_Packet_Basal_Get_Profile_Number());
-                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_Bolus_Option()); // isExtendedEnabled
-                bleComm.sendMessage(new DanaRS_Packet_Basal_Get_Basal_Rate()); // basal profile, basalStep, maxBasal
-                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_Calculation_Information()); // target
-                bleComm.sendMessage(new DanaRS_Packet_Bolus_Get_CIR_CF_Array());
-                bleComm.sendMessage(new DanaRS_Packet_Option_Get_User_Option()); // Getting user options
-                danaRPump.lastSettingsRead = now;
             }
 
             loadEvents();
@@ -268,7 +272,7 @@ public class DanaRSService extends Service {
                 log.debug("Loading event history from: " + DateUtil.dateAndTimeFullString(lastHistoryFetched));
         }
         bleComm.sendMessage(msg);
-        while (!msg.done && bleComm.isConnected()) {
+        while (!DanaRS_Packet_APS_History_Events.done && bleComm.isConnected()) {
             SystemClock.sleep(100);
         }
         if (DanaRS_Packet_APS_History_Events.lastEventTimeLoaded != 0)
@@ -310,7 +314,7 @@ public class DanaRSService extends Service {
 
         final long bolusStart = System.currentTimeMillis();
         if (insulin > 0) {
-            if (!stop.stopped) {
+            if (!DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.stopped) {
                 bleComm.sendMessage(start);
             } else {
                 t.insulin = 0d;
@@ -318,11 +322,11 @@ public class DanaRSService extends Service {
             }
             DanaRS_Packet_Notify_Delivery_Rate_Display progress = new DanaRS_Packet_Notify_Delivery_Rate_Display(insulin, t); // initialize static variables
 
-            while (!stop.stopped && !start.failed && !complete.done) {
+            while (!DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.stopped && !start.failed && !DanaRS_Packet_Notify_Delivery_Complete.done) {
                 SystemClock.sleep(100);
-                if ((System.currentTimeMillis() - progress.lastReceive) > 15 * 1000L) { // if i didn't receive status for more than 20 sec expecting broken comm
-                    stop.stopped = true;
-                    stop.forced = true;
+                if ((System.currentTimeMillis() - DanaRS_Packet_Notify_Delivery_Rate_Display.lastReceive) > 15 * 1000L) { // if i didn't receive status for more than 20 sec expecting broken comm
+                    DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.stopped = true;
+                    DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.forced = true;
                     if (L.isEnabled(L.PUMPCOMM))
                         log.debug("Communication stopped");
                 }
@@ -372,15 +376,15 @@ public class DanaRSService extends Service {
         if (L.isEnabled(L.PUMPCOMM))
             log.debug("bolusStop >>>>> @ " + (bolusingTreatment == null ? "" : bolusingTreatment.insulin));
         DanaRS_Packet_Bolus_Set_Step_Bolus_Stop stop = new DanaRS_Packet_Bolus_Set_Step_Bolus_Stop();
-        stop.forced = true;
+        DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.forced = true;
         if (isConnected()) {
             bleComm.sendMessage(stop);
-            while (!stop.stopped) {
+            while (!DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.stopped) {
                 bleComm.sendMessage(stop);
                 SystemClock.sleep(200);
             }
         } else {
-            stop.stopped = true;
+            DanaRS_Packet_Bolus_Set_Step_Bolus_Stop.stopped = true;
         }
     }
 
