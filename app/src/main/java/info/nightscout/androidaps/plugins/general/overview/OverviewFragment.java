@@ -231,35 +231,35 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             view = inflater.inflate(R.layout.overview_fragment, container, false);
         }
 
-        timeView = (TextView) view.findViewById(R.id.overview_time);
-        bgView = (TextView) view.findViewById(R.id.overview_bg);
-        arrowView = (TextView) view.findViewById(R.id.overview_arrow);
+        timeView = view.findViewById(R.id.overview_time);
+        bgView = view.findViewById(R.id.overview_bg);
+        arrowView = view.findViewById(R.id.overview_arrow);
         if (smallWidth) {
             arrowView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 35);
         }
-        sensitivityView = (TextView) view.findViewById(R.id.overview_sensitivity);
-        timeAgoView = (TextView) view.findViewById(R.id.overview_timeago);
-        timeAgoShortView = (TextView) view.findViewById(R.id.overview_timeagoshort);
-        deltaView = (TextView) view.findViewById(R.id.overview_delta);
-        deltaShortView = (TextView) view.findViewById(R.id.overview_deltashort);
-        avgdeltaView = (TextView) view.findViewById(R.id.overview_avgdelta);
-        baseBasalView = (TextView) view.findViewById(R.id.overview_basebasal);
-        extendedBolusView = (TextView) view.findViewById(R.id.overview_extendedbolus);
-        activeProfileView = (TextView) view.findViewById(R.id.overview_activeprofile);
-        pumpStatusView = (TextView) view.findViewById(R.id.overview_pumpstatus);
-        pumpDeviceStatusView = (TextView) view.findViewById(R.id.overview_pump);
-        openapsDeviceStatusView = (TextView) view.findViewById(R.id.overview_openaps);
-        uploaderDeviceStatusView = (TextView) view.findViewById(R.id.overview_uploader);
-        iobCalculationProgressView = (TextView) view.findViewById(R.id.overview_iobcalculationprogess);
-        loopStatusLayout = (LinearLayout) view.findViewById(R.id.overview_looplayout);
-        pumpStatusLayout = (LinearLayout) view.findViewById(R.id.overview_pumpstatuslayout);
+        sensitivityView = view.findViewById(R.id.overview_sensitivity);
+        timeAgoView = view.findViewById(R.id.overview_timeago);
+        timeAgoShortView = view.findViewById(R.id.overview_timeagoshort);
+        deltaView = view.findViewById(R.id.overview_delta);
+        deltaShortView = view.findViewById(R.id.overview_deltashort);
+        avgdeltaView = view.findViewById(R.id.overview_avgdelta);
+        baseBasalView = view.findViewById(R.id.overview_basebasal);
+        extendedBolusView = view.findViewById(R.id.overview_extendedbolus);
+        activeProfileView = view.findViewById(R.id.overview_activeprofile);
+        pumpStatusView = view.findViewById(R.id.overview_pumpstatus);
+        pumpDeviceStatusView = view.findViewById(R.id.overview_pump);
+        openapsDeviceStatusView = view.findViewById(R.id.overview_openaps);
+        uploaderDeviceStatusView = view.findViewById(R.id.overview_uploader);
+        iobCalculationProgressView = view.findViewById(R.id.overview_iobcalculationprogess);
+        loopStatusLayout = view.findViewById(R.id.overview_looplayout);
+        pumpStatusLayout = view.findViewById(R.id.overview_pumpstatuslayout);
 
         pumpStatusView.setBackgroundColor(MainApp.gc(R.color.colorInitializingBorder));
 
-        iobView = (TextView) view.findViewById(R.id.overview_iob);
-        cobView = (TextView) view.findViewById(R.id.overview_cob);
-        apsModeView = (TextView) view.findViewById(R.id.overview_apsmode);
-        tempTargetView = (TextView) view.findViewById(R.id.overview_temptarget);
+        iobView = view.findViewById(R.id.overview_iob);
+        cobView = view.findViewById(R.id.overview_cob);
+        apsModeView = view.findViewById(R.id.overview_apsmode);
+        tempTargetView = view.findViewById(R.id.overview_temptarget);
 
         iage = view.findViewById(R.id.careportal_insulinage);
         cage = view.findViewById(R.id.careportal_canulaage);
@@ -273,35 +273,35 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         batteryView = view.findViewById(R.id.overview_batterylevel);
         statuslightsLayout = view.findViewById(R.id.overview_statuslights);
 
-        bgGraph = (GraphView) view.findViewById(R.id.overview_bggraph);
-        iobGraph = (GraphView) view.findViewById(R.id.overview_iobgraph);
+        bgGraph = view.findViewById(R.id.overview_bggraph);
+        iobGraph = view.findViewById(R.id.overview_iobgraph);
 
-        treatmentButton = (SingleClickButton) view.findViewById(R.id.overview_treatmentbutton);
+        treatmentButton = view.findViewById(R.id.overview_treatmentbutton);
         treatmentButton.setOnClickListener(this);
-        wizardButton = (SingleClickButton) view.findViewById(R.id.overview_wizardbutton);
+        wizardButton = view.findViewById(R.id.overview_wizardbutton);
         wizardButton.setOnClickListener(this);
-        insulinButton = (SingleClickButton) view.findViewById(R.id.overview_insulinbutton);
+        insulinButton = view.findViewById(R.id.overview_insulinbutton);
         if (insulinButton != null)
             insulinButton.setOnClickListener(this);
-        carbsButton = (SingleClickButton) view.findViewById(R.id.overview_carbsbutton);
+        carbsButton = view.findViewById(R.id.overview_carbsbutton);
         if (carbsButton != null)
             carbsButton.setOnClickListener(this);
-        acceptTempButton = (SingleClickButton) view.findViewById(R.id.overview_accepttempbutton);
+        acceptTempButton = view.findViewById(R.id.overview_accepttempbutton);
         if (acceptTempButton != null)
             acceptTempButton.setOnClickListener(this);
-        quickWizardButton = (SingleClickButton) view.findViewById(R.id.overview_quickwizardbutton);
+        quickWizardButton = view.findViewById(R.id.overview_quickwizardbutton);
         quickWizardButton.setOnClickListener(this);
         quickWizardButton.setOnLongClickListener(this);
-        calibrationButton = (SingleClickButton) view.findViewById(R.id.overview_calibrationbutton);
+        calibrationButton = view.findViewById(R.id.overview_calibrationbutton);
         if (calibrationButton != null)
             calibrationButton.setOnClickListener(this);
-        cgmButton = (SingleClickButton) view.findViewById(R.id.overview_cgmbutton);
+        cgmButton = view.findViewById(R.id.overview_cgmbutton);
         if (cgmButton != null)
             cgmButton.setOnClickListener(this);
 
-        acceptTempLayout = (LinearLayout) view.findViewById(R.id.overview_accepttemplayout);
+        acceptTempLayout = view.findViewById(R.id.overview_accepttemplayout);
 
-        notificationsView = (RecyclerView) view.findViewById(R.id.overview_notifications);
+        notificationsView = view.findViewById(R.id.overview_notifications);
         notificationsView.setHasFixedSize(false);
         llm = new LinearLayoutManager(view.getContext());
         notificationsView.setLayoutManager(llm);
@@ -458,16 +458,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     }
 
     private void setupChartMenu(View view) {
-        chartButton = (ImageButton) view.findViewById(R.id.overview_chartMenuButton);
+        chartButton = view.findViewById(R.id.overview_chartMenuButton);
         chartButton.setOnClickListener(v -> {
             final LoopPlugin.LastRun finalLastRun = LoopPlugin.lastRun;
             boolean predictionsAvailable;
             if (Config.APS)
                 predictionsAvailable = finalLastRun != null && finalLastRun.request.hasPredictions;
-            else if (Config.NSCLIENT)
-                predictionsAvailable = true;
-            else
-                predictionsAvailable = false;
+            else predictionsAvailable = Config.NSCLIENT;
 
             MenuItem item, dividerItem;
             CharSequence title;
@@ -1109,12 +1106,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
             if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopsuperbolusfor), loopPlugin.minutesToEndOfSuspend()));
                 apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
             } else if (loopPlugin.isDisconnected()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopdisconnectedfor), loopPlugin.minutesToEndOfSuspend()));
                 apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
             } else if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuspended()) {
@@ -1135,7 +1132,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             } else {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(MainApp.gs(R.string.disabledloop));
                 apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
             }
@@ -1389,10 +1386,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         boolean predictionsAvailable;
         if (Config.APS)
             predictionsAvailable = finalLastRun != null && finalLastRun.request.hasPredictions;
-        else if (Config.NSCLIENT)
-            predictionsAvailable = true;
-        else
-            predictionsAvailable = false;
+        else predictionsAvailable = Config.NSCLIENT;
         final boolean finalPredictionsAvailable = predictionsAvailable;
 
         // pump status from ns

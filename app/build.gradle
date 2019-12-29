@@ -109,7 +109,7 @@ android {
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 1500
-        version "2.6-rc2"
+        version "2.6-dev"
         buildConfigField "String", "VERSION", '"' + version + '"'
         buildConfigField "String", "BUILDVERSION", '"' + generateGitBuild() + '-' + generateDate() + '"'
         buildConfigField "String", "REMOTE", '"' + generateGitRemote() + '"'
@@ -229,7 +229,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
-        transitive = true;
+        transitive = true
     }
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -349,4 +349,3 @@ printf('--------------\n')
 if (isMaster() && !allCommited()) {
     throw new GradleException('There are uncommitted changes or git system is not available. Clone sources again as described in wiki and do not allow gradle update')
 }
-
