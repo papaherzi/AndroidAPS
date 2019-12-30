@@ -49,6 +49,9 @@
     <color name="cardColorBackground">#121212</color> <!-- 121212 -->
     <color name="cardObjectiveText">#779ECB</color>
 
+    <color name="dialog_title_background">#303030</color>
+    <color name="activity_title_background">#121212</color>
+
     <color name="linearBlockBackground">#3e3d3d</color> <!-- Default 3e3d3d -->
     <color name="configBuilderSelectedBackground">#262525</color>
 
