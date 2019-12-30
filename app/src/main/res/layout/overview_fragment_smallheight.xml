@@ -6,25 +6,18 @@
     android:background="@color/r22_bg"
     tools:context=".plugins.general.overview.OverviewFragment">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/overview_notifications"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:layout_above="@+id/overview_buttons"
+            android:fillViewport="true">
 
             <!-- Loop Layout -->
             <LinearLayout
-                android:id="@+id/overview_looplayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -88,18 +81,10 @@
                 android:orientation="horizontal"
                 android:paddingTop="2dp">
 
-                <TextView
-                    android:id="@+id/overview_pumpstatus"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/overview_notifications"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:paddingBottom="3dp"
-                    android:paddingTop="3dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/initializing"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
-            </LinearLayout>
+                    android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -290,29 +275,39 @@
                 android:visibility="gone">
 
                 <LinearLayout
+                    android:id="@+id/overview_looplayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:paddingTop="2dp">
 
 
-                    <TextView
-                        android:id="@+id/overview_delta"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.5"
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <TextView
-                        android:id="@+id/overview_avgdelta"
+                        android:id="@+id/overview_activeprofile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Profile"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
+                    <TextView
+                        android:id="@+id/overview_temptarget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="TempTarget"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/mdtp_white" />
 
                 </LinearLayout>
 
@@ -443,29 +438,36 @@
                 app:justifyContent="space_around">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:baselineAligned="false"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
+                    android:layout_weight="0"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:text="@string/as" />
 
                     <TextView
+                        android:id="@+id/overview_sensorage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text=":" />
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/overview_sensitivity"
+                        android:id="@+id/overview_batterylevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="" />
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -517,23 +519,35 @@
 
                 </RelativeLayout>
 
+
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp" />
+                    android:layout_height="100dp"
+                    android:visibility="gone" />
 
             </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/overview_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/overview_accepttemplayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_accepttempbutton"
                     style="?android:attr/buttonStyle"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
                     android:layout_marginTop="3dp"
@@ -669,6 +683,5 @@
             </LinearLayout>
 
         </LinearLayout>
-
-    </ScrollView>
+    </RelativeLayout>
 </FrameLayout>
