@@ -14,10 +14,10 @@
         android:padding="5dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:contentDescription="@string/error"
-            android:src="@drawable/ic_error_red_48dp" />
+            android:src="@drawable/ic_error" />
 
         <TextView
             android:id="@+id/error_title"

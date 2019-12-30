@@ -17,9 +17,6 @@
     <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
     <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="color_white">#FFFFFF</color> <!-- Farbe des BG Trend Pfeiles -->
-    <color name="inrange">#A4ECEA</color>
-    <color name="low">#FF0000</color>
-    <color name="high">#FFFF00</color>
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color> <!-- Hintergrundfarbe fuer verschiedene widgets -->
     <color name="tabBgColor">#f0003f59</color>
@@ -52,12 +49,8 @@
     <color name="cardColorBackground">#121212</color> <!-- 121212 -->
     <color name="dialog_title_background">#303030</color>
     <color name="activity_title_background">#121212</color>
-
-    <color name="cardColorBackground">#121212</color>
     <color name="cardObjectiveText">#779ECB</color>
 
-    <color name="dialog_title_background">#303030</color>
-    <color name="activity_title_background">#121212</color>
 
     <color name="linearBlockBackground">#3e3d3d</color> <!-- Default 3e3d3d -->
     <color name="configBuilderSelectedBackground">#262525</color>

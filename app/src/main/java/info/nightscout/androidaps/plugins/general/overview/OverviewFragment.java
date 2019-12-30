@@ -1192,9 +1192,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         if (shorttextmode) {
             if (activeTemp != null) {
-                basalText = activeTemp.percentRate + "% " + activeTemp.toDuration() + " " + DecimalFormatter.to2Decimal(profile.getBasal()) + "U/h";
+                basalText = "0,00" ;
             } else {
-                basalText = DecimalFormatter.to2Decimal(profile.getBasal()) + "U/h";
+                basalText = DecimalFormatter.to2Decimal(profile.getBasal());
             }
             baseBasalView.setOnClickListener(v -> {
                 String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + DecimalFormatter.to2Decimal(profile.getBasal()) + "U/h\n";
@@ -1204,7 +1204,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
             });
 
-        } else {
+
+
+
+            } else {
             if (activeTemp != null) {
                 basalText = DecimalFormatter.to2Decimal(activeTemp.absoluteRate) + "";
             } else {
@@ -1230,7 +1233,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (extendedBolusView != null) { // must not exists in all layouts
             if (shorttextmode) {
                 if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses()) {
-                    extendedBolusText = DecimalFormatter.to2Decimal(extendedBolus.absoluteRate()) + "U/h";
+                    extendedBolusText = DecimalFormatter.to2Decimal(extendedBolus.absoluteRate());
                 }
             } else {
                 if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses()) {
@@ -1319,18 +1322,18 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
 
         if (shorttextmode) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U";
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob);
             iobView.setText(iobtext);
             iobView.setOnClickListener(v -> {
-                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
-                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
-                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
+                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob)
+                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob)
+                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob);
                 OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
             });
         } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
-                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob)
+                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob)
+                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob);
             iobView.setText(iobtext);
 //            iobView.setOnClickListener(v -> {
 //                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"

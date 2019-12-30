@@ -127,6 +127,54 @@
                 android:text="@string/primefill" />
 
             <info.nightscout.androidaps.utils.SingleClickButton
+                android:id="@+id/actions_bgcheck"
+                style="?android:attr/buttonStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/ic_cp_blooddrop_35"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/careportal_bgcheck" />
+
+            <info.nightscout.androidaps.utils.SingleClickButton
+                android:id="@+id/actions_cgmsensorinsert"
+                style="?android:attr/buttonStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/ic_libre_2_35"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/careportal_cgmsensorinsert" />
+
+            <info.nightscout.androidaps.utils.SingleClickButton
+                android:id="@+id/actions_pumpbatterychange"
+                style="?android:attr/buttonStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/white_trans_bg"
+                android:drawableLeft="@drawable/ic_battery_35_4"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/careportal_pumpbatterychange" />
+
+            <info.nightscout.androidaps.utils.SingleClickButton
                 android:id="@+id/actions_historybrowser"
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"

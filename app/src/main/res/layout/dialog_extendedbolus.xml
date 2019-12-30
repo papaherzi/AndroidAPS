@@ -22,10 +22,10 @@
             android:padding="5dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:contentDescription="@string/virtualpump_extendedbolus_label"
-                android:src="@drawable/icon_actions_startextbolus" />
+                android:src="@drawable/ic_extended_bolus" />
 
             <TextView
                 android:layout_width="match_parent"
