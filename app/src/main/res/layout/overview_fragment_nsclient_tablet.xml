@@ -550,12 +550,13 @@
                     android:layout_height="fill_parent"
                     android:layout_marginRight="-4dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_insulin_carbs"
+                    android:drawableTop="@drawable/ic_zahnrad_48"
+                    android:background="@drawable/bg_trans_complete"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/overview_treatment_label"
                     android:textColor="@color/colorTreatmentButton"
-                    android:textSize="10sp" />
+                    android:textSize="0sp" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_insulinbutton"
@@ -564,12 +565,13 @@
                     android:layout_height="fill_parent"
                     android:layout_marginRight="-4dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_bolus"
+                    android:drawableTop="@drawable/ic_pumpe_48"
+                    android:background="@drawable/bg_trans_complete"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/overview_insulin_label"
                     android:textColor="@color/colorInsulinButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -579,13 +581,13 @@
                     android:layout_height="fill_parent"
                     android:layout_marginRight="-4dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_cp_bolus_carbs"
+                    android:drawableTop="@drawable/ic_carb_48"
+                    android:background="@drawable/bg_trans_complete"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/overview_carbs_label"
                     android:textColor="@color/colorCarbsButton"
-                    android:textSize="10sp"
-                    android:visibility="gone" />
+                    android:textSize="0sp" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_wizardbutton"
@@ -594,12 +596,13 @@
                     android:layout_height="fill_parent"
                     android:layout_marginRight="-4dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_calculator"
+                    android:drawableTop="@drawable/ic_calculator_48"
+                    android:background="@drawable/bg_trans_complete"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="@string/overview_calculator_label"
                     android:textColor="@color/colorCalculatorButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -609,14 +612,14 @@
                     android:layout_height="fill_parent"
                     android:layout_marginRight="-4dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/icon_quickwizard"
+                    android:drawableTop="@drawable/ic_wizard_48"
+                    android:background="@drawable/bg_trans_complete"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:text="Quick wizard"
                     android:textColor="@color/colorQuickWizardButton"
-                    android:textSize="10sp"
+                    android:textSize="0sp"
                     android:visibility="gone" />
-
             </LinearLayout>
 
         </LinearLayout>

@@ -26,7 +26,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </androidx.recyclerview.widget.RecyclerView>
-                <!-- Loop Layout -->
+
+<!-- Loop Layout -->
+
                 <LinearLayout
                     android:id="@+id/overview_looplayout"
                     android:layout_width="match_parent"
@@ -85,7 +87,7 @@
 
                 </LinearLayout>
 
-                <!-- Pump Status Layout -->
+<!-- Pump Status Layout -->
 
                 <LinearLayout
                     android:id="@+id/overview_pumpstatuslayout"
@@ -108,7 +110,8 @@
 
                 </LinearLayout>
 
-                <!-- Blutzuckerwert, AVG -->
+<!-- Blutzuckerwert, AVG -->
+
                 <LinearLayout
                     android:baselineAligned="false"
                     android:layout_width="match_parent"
@@ -150,7 +153,7 @@
                             android:textSize="30sp"
                             android:textStyle="bold" />
                     </LinearLayout>
-                    <!--  IOB, COB, AS, BAS und Pumpe -->
+<!--  IOB, COB, AS, BAS und Pumpe -->
                     <LinearLayout
                         android:layout_width="380dp"
                         android:layout_height="85dp"
@@ -320,27 +323,9 @@
 
                 </LinearLayout>
 
-                <!-- Eine gestrichelte Linie
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="5dp"
-                                    android:src="@drawable/dotted"
-                                    android:layerType="software" -->
-                <!-- Careportal
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="horizontal">
 
-                                    <include
-                                        android:id="@+id/careportal_stats"
-                                        layout="@layout/careportal_stats_fragment_on"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content" />
-                                </LinearLayout> -->
+<!--  STATUSLIGHTS -->
 
-                <!--  STATUSLIGHTS -->
                 <LinearLayout
                     android:id="@+id/overview_statuslights"
                     android:layout_width="match_parent"
@@ -401,18 +386,16 @@
 
                 </LinearLayout>
 
-                <!-- Grafiken -->
-                <RelativeLayout
+<!-- Grafiken -->
+               <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_height="200dp">
 
-                    <com.jjoe64.graphview.GraphView
-                        android:id="@+id/overview_bggraph"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="0dp" />
+
+                   <com.jjoe64.graphview.GraphView
+                       android:id="@+id/overview_bggraph"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent" />
 
                     <ImageButton
                         android:id="@+id/overview_chartMenuButton"
@@ -430,7 +413,7 @@
                         android:layout_centerInParent="true"
                         android:textSize="15sp" />
 
-                </RelativeLayout>
+               </RelativeLayout>
 
 
                 <com.jjoe64.graphview.GraphView
@@ -438,6 +421,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:visibility="gone" />
+
+
 
             </LinearLayout>
 
@@ -470,6 +455,14 @@
             </LinearLayout>
 
 
+            <!-- Gestrichelte Linie
+                            <ImageView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="5dp"
+                                 android:src="@drawable/dotted"
+                                 android:layerType="software" /> -->
+
+            <!-- Untere Funktionsbutton Reihe -->
             <!-- Untere Funktionsbutton Reihe -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -599,3 +592,5 @@
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>
+
+

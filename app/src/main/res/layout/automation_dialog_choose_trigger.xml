@@ -22,10 +22,10 @@
             android:padding="5dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:contentDescription="@string/please_choose_a_trigger_type"
-                android:src="@drawable/ic_trigger_green_48dp" />
+                android:src="@drawable/ic_historybrowser" />
 
             <TextView
                 android:id="@+id/actions_care_title"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="100dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/please_choose_a_trigger_type"
                 android:textAlignment="center"
