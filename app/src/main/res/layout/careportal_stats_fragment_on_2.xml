@@ -31,7 +31,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_cartridge_35_2" />
+                    android:src="@drawable/ic_statuslight_cartridge" />
 
                 <TextView
                     android:id="@+id/careportal_insulinage"
@@ -91,7 +91,7 @@
                     android:layout_weight="0"
                     android:gravity="center_vertical"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_battery_35_4" />
+                    android:src="@drawable/ic_battery_35" />
 
                 <TextView
                     android:id="@+id/careportal_pbage"
