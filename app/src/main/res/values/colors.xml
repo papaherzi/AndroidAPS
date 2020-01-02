@@ -30,12 +30,12 @@
     <color name="warning">#f0a30a</color>
     <color name="error_background">#66FC0000</color>
     <color name="ok_background">#323232</color>
+
     <color name="defaultbackground">#424242</color> <!-- Default 424242 -->
     <color name="defaulttext">#FFFFFF</color> <!-- 'BBBBBB -->
 
     <color name="tempTargetBackground">#FFFFFF</color> <!-- Farbe des TT im oberen Graphen -->
     <color name="tempTargetConfirmation">#FFFFFF</color>
-    <color name="tempTargetDisabledBackground">#303F9F</color>
 
 
     <color name="colorPrimary">#222222</color>
@@ -44,19 +44,17 @@
     <color name="mdtp_accent_color">#00a3e8</color>
     <color name="colorInitializingBorder">#149baf</color> <!-- Farbe des Startbalkens Verbindungsaufbau zur Pumpe -->
 
-    <color name="cardColorBackground">#121212</color> <!-- 121212 -->
     <color name="dialog_title_background">#303030</color>
     <color name="activity_title_background">#121212</color>
+
+    <color name="cardColorBackground">#121212</color> <!-- 121212 -->
     <color name="cardObjectiveText">#779ECB</color>
 
 
     <color name="linearBlockBackground">#3e3d3d</color> <!-- Default 3e3d3d -->
-    <color name="configBuilderSelectedBackground">#262525</color>
-
-    <color name="colorAcceptTempButton">#FFFFFF</color> <!-- Die Schrift Farbe bei Einblendung des Temporären Basal Vorschlages im Open Loop -->
 
     <!-- Schaltflächen Schrift Farbe unten -->
-
+    <color name="colorAcceptTempButton">#FFFFFF</color>
     <color name="colorTreatmentButton">#FFFFFF</color> <!--  Auch die Farbe fuer die Schrift der Button auf der Wear Seite -->
     <color name="colorTreatmentButton_2">#00000000</color>
     <color name="colorInsulinButton">#00000000</color>
@@ -64,7 +62,6 @@
     <color name="colorCalibrationButton">#00000000</color>
     <color name="colorCalculatorButton">#00000000</color>
     <color name="colorQuickWizardButton">#00000000</color>
-
     <color name="colorSetTempButton">#FFFFFF</color>
     <color name="colorSetExtendedButton">#FFFFFF</color>
     <color name="colorProfileSwitchButton">#FFFFFF</color>
@@ -72,9 +69,6 @@
     <color name="colorScheduled">#de7550</color>
     <color name="colorActive">#25912e</color>
 
-    <color name="loopenabled">#47c8ff</color>
-    <color name="loopdisabled">#f0a30a</color>
-    <color name="looppumpsuspended">#f0a30a</color>
 <!-- Eingeblendete Informationen oben -->
     <color name="notificationAnnouncement">#f0a30a</color>
     <color name="notificationUrgent">#f0a30a</color>   <!-- Update dringend verfüegbar ganz oben -->
@@ -96,11 +90,12 @@
     <color name="ribbonTextWarning">#FFFFFF</color>
     <color name="ribbonTextCritical">#FFFFFF</color>
 
+    <color name="splashBackground">#2E2E2E</color>
+
+<!-- Rig22 Colors -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray">#BBBBBB</color> <!-- #BBBBBB -->
-
-    <color name="ic_launcher_background">#424242</color> <!-- Default 424242 -->
+    <color name="gray">#BBBBBB</color>
     <color name="r22_bg">#222222</color>
     <color name="cyan">#1ba1e2</color>
     <color name="rose">#f7806a</color>
@@ -109,9 +104,6 @@
     <color name="smb">#90FFFFFF</color>
     <color name="treatments">#90FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
-
     <color name="transparent">#20FFFFFF</color>
-    <color name="splashBackground">#2E2E2E</color>
-    <color name="iconColor">#FFFFFF</color>
 
 </resources>
