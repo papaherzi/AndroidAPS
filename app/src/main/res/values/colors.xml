@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="prediction">#ff00ff</color>
+    <color name="basal">#149baf</color>  <!-- Standard #00ffff Zeigt auch die Farbe im Graphen für die Basal Umrandung. Außerdem die Schrift Farbe von Basal wenn man auf das Dropdown Menu klickt -->
     <color name="iob">#1ba1e2</color>
     <color name="iobPred">#00d2d2</color>
     <color name="iobPredAS">#1ea3e5</color>
@@ -16,10 +17,8 @@
     <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
     <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
     <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
-    <color name="color_white">#FFFFFF</color> <!-- Farbe des BG Trend Pfeiles -->
     <color name="actionsConfirm">#FFFF00</color>
-    <color name="listdelimiter">#505050</color> <!-- Hintergrundfarbe fuer verschiedene widgets -->
-    <color name="tabBgColor">#f0003f59</color>
+    <color name="listdelimiter">#505050</color>
     <color name="tabBgColorSelected">#00a3e8</color>
     <color name="deviations">#FF0000</color>
     <color name="cobAlert">#7484E2</color>
