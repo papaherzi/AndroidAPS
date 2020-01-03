@@ -215,7 +215,7 @@ public class GraphData {
         tempBasalsSeries.setDrawBackground(true);
         tempBasalsSeries.setBackgroundColor(MainApp.gc(R.color.tempbasal));
         tempBasalsSeries.setThickness(0);
-//Gestrichelte Basallinie
+        //Gestrichelte Basallinie
         ScaledDataPoint[] basalLine = new ScaledDataPoint[basalLineArray.size()];
         basalLine = basalLineArray.toArray(basalLine);
         basalsLineSeries = new LineGraphSeries<>(basalLine);
@@ -276,7 +276,7 @@ public class GraphData {
             lastTarget = value;
         }
         targetsSeriesArray.add(new DataPoint(toTime, lastTarget));
-//Linien Stärke des TT im oberen Graphen
+        //Linien Stärke des TT im oberen Graphen
         DataPoint[] targets = new DataPoint[targetsSeriesArray.size()];
         targets = targetsSeriesArray.toArray(targets);
         targetsSeries = new LineGraphSeries<>(targets);
@@ -425,12 +425,12 @@ public class GraphData {
                 lastIob = iob;
             }
         }
-
+        //IOB
         ScaledDataPoint[] iobData = new ScaledDataPoint[iobArray.size()];
         iobData = iobArray.toArray(iobData);
         iobSeries = new FixedLineGraphSeries<>(iobData);
         iobSeries.setDrawBackground(true);
-        iobSeries.setBackgroundColor(0x80FFFFFF & MainApp.gc(R.color.iob)); //50%
+        iobSeries.setBackgroundColor(MainApp.gc(R.color.iob)); //50%
         iobSeries.setColor(MainApp.gc(R.color.white));
         iobSeries.setThickness(6);
 
@@ -513,7 +513,7 @@ public class GraphData {
         cobData = cobArray.toArray(cobData);
         cobSeries = new FixedLineGraphSeries<>(cobData);
         cobSeries.setDrawBackground(true);
-        cobSeries.setBackgroundColor(0x99FFFFFF & MainApp.gc(R.color.cob)); //50%
+        cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
         cobSeries.setColor(MainApp.gc(R.color.white));
         cobSeries.setThickness(6);
 
@@ -695,7 +695,7 @@ public class GraphData {
         graph.getViewport().setMinX(fromTime);
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getGridLabelRenderer().setLabelFormatter(new TimeAsXAxisLabelFormatter("HH"));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(6); // only 7 because of the space
+        graph.getGridLabelRenderer().setNumHorizontalLabels(7); // only 7 because of the space
     }
 
     private void addSeries(Series s) {
