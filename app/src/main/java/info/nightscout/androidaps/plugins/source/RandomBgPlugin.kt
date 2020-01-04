@@ -13,18 +13,18 @@ import info.nightscout.androidaps.logging.L
 import info.nightscout.androidaps.plugins.pump.virtual.VirtualPumpPlugin
 import info.nightscout.androidaps.utils.DateUtil
 import info.nightscout.androidaps.utils.T
-import info.nightscout.androidaps.utils.isRunningTest
+import info.nightscout.androidaps.utils.BatteryLevel
 import org.slf4j.LoggerFactory
 import java.util.*
 import kotlin.math.PI
 import kotlin.math.sin
 
 object RandomBgPlugin : PluginBase(PluginDescription()
-        .mainType(PluginType.BGSOURCE)
-        .fragmentClass(BGSourceFragment::class.java.name)
-        .pluginName(R.string.randombg)
-        .shortName(R.string.randombg_short)
-        .description(R.string.description_source_randombg)), BgSourceInterface {
+    .mainType(PluginType.BGSOURCE)
+    .fragmentClass(BGSourceFragment::class.java.name)
+    .pluginName(R.string.randombg)
+    .shortName(R.string.randombg_short)
+    .description(R.string.description_source_randombg)), BgSourceInterface {
 
     private val log = LoggerFactory.getLogger(L.BGSOURCE)
 
@@ -55,7 +55,7 @@ object RandomBgPlugin : PluginBase(PluginDescription()
     }
 
     override fun specialEnableCondition(): Boolean {
-        return VirtualPumpPlugin.getPlugin().isEnabled(PluginType.PUMP) && (MainApp.engineeringMode || isRunningTest())
+        return VirtualPumpPlugin.getPlugin().isEnabled(PluginType.PUMP) && (MainApp.engineeringMode )
     }
 
     override fun handleNewData(intent: Intent) {
