@@ -218,6 +218,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         View view;
 
+//      Darstellung wir overview_fragment_smallheight
+//        smallHeight =true;
+
         if (MainApp.sResources.getBoolean(R.bool.isTablet) && (Config.NSCLIENT)) {
             view = inflater.inflate(R.layout.overview_fragment_nsclient_tablet, container, false);
         } else if (Config.NSCLIENT) {
