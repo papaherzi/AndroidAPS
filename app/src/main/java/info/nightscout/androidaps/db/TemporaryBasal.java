@@ -108,10 +108,6 @@ public class TemporaryBasal implements Interval, DbObjectBase {
         this.pumpId = extendedBolus.pumpId;
     }
 
-    public String toDuration() {
-        return "(" + getRealDuration() + "/" + durationInMinutes + "')";
-    }
-
     public TemporaryBasal clone() {
         TemporaryBasal t = new TemporaryBasal();
         t.date = date;
@@ -497,7 +493,7 @@ public class TemporaryBasal implements Interval, DbObjectBase {
             } else {
                 rate = absoluteRate;
             }
-            return DecimalFormatter.to2Decimal(rate) + "U/h ";
+            return DecimalFormatter.to2Decimal(rate) ;
         } else { // percent
             return percentRate + "% ";
         }

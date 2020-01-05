@@ -218,7 +218,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         View view;
 
-//      Darstellung wir overview_fragment_smallheight
+//      Darstellung wie overview_fragment_smallheight
 //        smallHeight =true;
 
         if (MainApp.sResources.getBoolean(R.bool.isTablet) && (Config.NSCLIENT)) {
@@ -1190,46 +1190,39 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
+        //BAS
         final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
         String basalText = "";
-
         if (shorttextmode) {
             if (activeTemp != null) {
-                basalText = "0,00" ;
+ //               basalText = "T: " + activeTemp.toStringVeryShort();
+                basalText = activeTemp.toStringVeryShort();
             } else {
-                basalText = DecimalFormatter.to2Decimal(profile.getBasal());
+                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
             }
             baseBasalView.setOnClickListener(v -> {
-                String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + DecimalFormatter.to2Decimal(profile.getBasal()) + "U/h\n";
+                String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate,profile.getBasal()) + "\n";
                 if (activeTemp != null) {
                     fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
                 }
                 OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
             });
 
-
-
-
-            } else {
+        } else {
             if (activeTemp != null) {
-                basalText = DecimalFormatter.to2Decimal(activeTemp.absoluteRate) + "";
+                basalText = activeTemp.toStringFull();
             } else {
-                basalText = DecimalFormatter.to2Decimal(pump.getBaseBasalRate());
+                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
             }
-/*            if (Config.NSCLIENT)
-                basalText += "(" + DecimalFormatter.to2Decimal(profile.getBasal()) + " U/h)";
-            else if (pump.getPumpDescription().isTempBasalCapable) {
-                basalText += "(" + DecimalFormatter.to2Decimal(pump.getBaseBasalRate()) + "U/h)";
-            }*/
         }
+        baseBasalView.setText(basalText);
         if (activeTemp != null) {
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
-            baseBasalView.setTextColor(android.R.attr.textColor);
-
+            baseBasalView.setTextColor(MainApp.gc(R.color.black));
         }
 
-        baseBasalView.setText(basalText);
+
 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";

@@ -206,7 +206,7 @@
                 android:paddingRight="0dp"
                 android:text="@string/careportal_pumpbatterychange" />
 
-            <info.nightscout.androidaps.utils.SingleClickButton
+<!--            <info.nightscout.androidaps.utils.SingleClickButton
                 android:id="@+id/medtronic_custom_action_wake_and_tune"
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"
@@ -236,7 +236,7 @@
                 android:drawableLeft="@drawable/ic_rileylink_35"
                 android:paddingLeft="0dp"
                 android:paddingRight="0dp"
-                android:text="@string/medtronic_custom_action_reset_rileylink" />
+                android:text="@string/medtronic_custom_action_reset_rileylink" /> -->
 
             <include
               android:id="@+id/careportal_stats"
