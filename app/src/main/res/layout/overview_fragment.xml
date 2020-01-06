@@ -117,9 +117,12 @@
                     android:layout_weight="0"
                     android:orientation="horizontal">
 
+                    <!--  IOB, COB, AS, BAS und Pumpe -->
+
                     <LinearLayout
                         android:layout_width="260dp"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="45dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
@@ -150,7 +153,7 @@
                             android:textSize="30sp"
                             android:textStyle="bold" />
                     </LinearLayout>
-<!--  IOB, COB, AS, BAS und Pumpe -->
+
                     <LinearLayout
                         android:layout_width="380dp"
                         android:layout_height="85dp"
@@ -193,7 +196,7 @@
                                 android:text=""
                                 android:textColor="@android:color/black" />
 
-                            <TextView
+ <!--                           <TextView
                                 android:id="@+id/overview_iob"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
@@ -205,10 +208,10 @@
                                 android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
                                 android:text=""
-                                android:textColor="@android:color/black" />
+                                android:textColor="@android:color/black" /> -->
 
-                            <TextView
-                                android:id="@+id/overview_cob"
+                           <TextView
+                                android:id="@+id/overview_sensitivity"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
@@ -267,20 +270,20 @@
 
                             </ImageView>
 
-                            <ImageView
+ <!--                           <ImageView
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="17dp"
                                 android:background="@drawable/ic_pumpe_28">
 
-                            </ImageView>
+                            </ImageView> -->
 
                             <ImageView
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="17dp"
-                                android:background="@drawable/ic_carb_28">
+                                android:background="@drawable/ic_as_28">
 
                             </ImageView>
 
@@ -431,10 +434,81 @@
                 </RelativeLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="1dp"
+                        android:text="@string/iob"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/overview_iob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="1dp"
+                        android:text="@string/cob"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/overview_cob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_cobgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
                     android:visibility="gone" />
 
             </LinearLayout>

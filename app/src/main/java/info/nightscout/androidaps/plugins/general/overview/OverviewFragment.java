@@ -154,6 +154,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     LinearLayout pumpStatusLayout;
     GraphView bgGraph;
     GraphView iobGraph;
+    GraphView cobGraph;
     ImageButton chartButton;
 
     TextView iage;
@@ -274,8 +275,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         batteryView = view.findViewById(R.id.overview_batterylevel);
         statuslightsLayout = view.findViewById(R.id.overview_statuslights);
 
-        bgGraph = view.findViewById(R.id.overview_bggraph);
-        iobGraph = view.findViewById(R.id.overview_iobgraph);
+        bgGraph = (GraphView) view.findViewById(R.id.overview_bggraph);
+        iobGraph = (GraphView) view.findViewById(R.id.overview_iobgraph);
+        cobGraph = (GraphView) view.findViewById(R.id.overview_cobgraph);
+
+
 
         treatmentButton = view.findViewById(R.id.overview_treatmentbutton);
         treatmentButton.setOnClickListener(this);
@@ -330,6 +334,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         bgGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         iobGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         iobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
+        cobGraph.getGridLabelRenderer().reloadStyles();
+        cobGraph.getGridLabelRenderer().reloadStyles();
+        cobGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
+        cobGraph.getGridLabelRenderer().reloadStyles();
+        cobGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+        cobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
 
         rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
 
@@ -504,7 +514,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             dividerItem = popup.getMenu().add("");
             dividerItem.setEnabled(false);
 
-            item = popup.getMenu().add(Menu.NONE, CHARTTYPE.IOB.ordinal(), Menu.NONE, MainApp.gs(R.string.overview_show_iob));
+ /*           item = popup.getMenu().add(Menu.NONE, CHARTTYPE.IOB.ordinal(), Menu.NONE, MainApp.gs(R.string.overview_show_iob));
             title = item.getTitle();
             if (titleMaxChars < title.length()) titleMaxChars = title.length();
             s = new SpannableString(title);
@@ -520,7 +530,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             s.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.cob, null)), 0, s.length(), 0);
             item.setTitle(s);
             item.setCheckable(true);
-            item.setChecked(SP.getBoolean("showcob", true));
+            item.setChecked(SP.getBoolean("showcob", true)); */
 
             item = popup.getMenu().add(Menu.NONE, CHARTTYPE.DEV.ordinal(), Menu.NONE, MainApp.gs(R.string.overview_show_deviations));
             title = item.getTitle();
@@ -571,10 +581,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                         SP.putBoolean("showprediction", !item.isChecked());
                     } else if (item.getItemId() == CHARTTYPE.BAS.ordinal()) {
                         SP.putBoolean("showbasals", !item.isChecked());
-                    } else if (item.getItemId() == CHARTTYPE.IOB.ordinal()) {
-                        SP.putBoolean("showiob", !item.isChecked());
-                    } else if (item.getItemId() == CHARTTYPE.COB.ordinal()) {
-                        SP.putBoolean("showcob", !item.isChecked());
                     } else if (item.getItemId() == CHARTTYPE.DEV.ordinal()) {
                         SP.putBoolean("showdeviations", !item.isChecked());
                     } else if (item.getItemId() == CHARTTYPE.SEN.ordinal()) {
@@ -1215,7 +1221,15 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
             }
         }
+
         baseBasalView.setText(basalText);
+        if (activeTemp != null) {
+            baseBasalView.setTextColor(MainApp.gc(R.color.black));
+        } else {
+            baseBasalView.setTextColor(MainApp.gc(R.color.black));
+        }
+
+        /*        baseBasalView.setText(basalText);
         if (activeTemp != null) {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
@@ -1224,7 +1238,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
-        }
+        }*/
 
 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
@@ -1315,7 +1329,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             timeAgoShortView.setText( DateUtil.minAgoShort(lastBG.date) + "′");
 
         // iob
-        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
+/*        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
         TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
         final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
         final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
@@ -1350,10 +1364,37 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
 //                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
             iobView.setText(iobtext);
+        }*/
+        // iob
+        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
+        TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
+        final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
+        final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
+
+        if (shorttextmode) {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U";
+            iobView.setText(iobtext);
+            iobView.setOnClickListener(v -> {
+                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
+                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
+                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
+                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
+            });
+        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
+                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
+                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
+            iobView.setText(iobtext);
+        } else {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
+                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
+                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
+            iobView.setText(iobtext);
         }
 
+
         // cob
-        if (cobView != null) { // view must not exists
+/*        if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
             if (cobInfo.displayCob != null) {
@@ -1362,7 +1403,20 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
             }
             cobView.setText(cobText);
+        }*/
+
+        // cob
+        if (cobView != null) { // view must not exists
+            String cobText = MainApp.gs(R.string.value_unavailable_short);
+            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
+            if (cobInfo.displayCob != null) {
+                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob) + " g";
+                if (cobInfo.futureCarbs > 0)
+                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
+            }
+            cobView.setText(cobText);
         }
+
 
         if (statuslightsLayout != null)
             if (SP.getBoolean(R.string.key_show_statuslights, false)) {
@@ -1493,19 +1547,17 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Profiler.log(log, from + " - 2nd graph - START", updateGUIStart);
 
             final GraphData secondGraphData = new GraphData(iobGraph, IobCobCalculatorPlugin.getPlugin());
+            final GraphData thirdGraphData = new GraphData(cobGraph, IobCobCalculatorPlugin.getPlugin());
 
-            boolean useIobForScale = false;
-            boolean useCobForScale = false;
+            boolean useIobForScale = true;
+            boolean useCobForScale = true;
+
             boolean useDevForScale = false;
             boolean useRatioForScale = false;
             boolean useDSForScale = false;
             boolean useIAForScale = false;
 
-            if (SP.getBoolean("showiob", true)) {
-                useIobForScale = true;
-            } else if (SP.getBoolean("showcob", true)) {
-                useCobForScale = true;
-            } else if (SP.getBoolean("showdeviations", false)) {
+            if (SP.getBoolean("showdeviations", false)) {
                 useDevForScale = true;
             } else if (SP.getBoolean("showratios", false)) {
                 useRatioForScale = true;
@@ -1515,12 +1567,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 useDSForScale = true;
             }
 
-            if (SP.getBoolean("showiob", true))
-                secondGraphData.addIob(fromTime, now, useIobForScale, 1d, SP.getBoolean("showprediction", false));
-            if (SP.getBoolean("showcob", true))
-                secondGraphData.addCob(fromTime, now, useCobForScale, useCobForScale ? 1d : 0.5d);
-            if (SP.getBoolean("showdeviations", false))
+            secondGraphData.addIob(fromTime, now, useIobForScale, 1d, SP.getBoolean("showprediction", false));
+            thirdGraphData.addCob(fromTime, now, useCobForScale, useCobForScale ? 1d : 0.5d);
+
+            if (SP.getBoolean("showdeviations", false)){
                 secondGraphData.addDeviations(fromTime, now, useDevForScale, 1d);
+            }
+
             if (SP.getBoolean("showratios", false))
                 secondGraphData.addRatio(fromTime, now, useRatioForScale, 1d);
             if (SP.getBoolean("showactivitysecondary", true))
@@ -1533,23 +1586,22 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             secondGraphData.formatAxis(fromTime, endTime);
             secondGraphData.addNowLine(now);
 
+            // ------------------ 3nd graph
+
+            thirdGraphData.formatAxis(fromTime, endTime);
+            thirdGraphData.addNowLine(now);
+
             // do GUI update
             FragmentActivity activity = getActivity();
             if (activity != null) {
                 activity.runOnUiThread(() -> {
-                    if (SP.getBoolean("showiob", true)
-                            || SP.getBoolean("showcob", true)
-                            || SP.getBoolean("showdeviations", false)
-                            || SP.getBoolean("showratios", false)
-                            || SP.getBoolean("showactivitysecondary", false)
-                            || SP.getBoolean("showdevslope", false)) {
-                        iobGraph.setVisibility(View.VISIBLE);
-                    } else {
-                        iobGraph.setVisibility(View.GONE);
-                    }
+                    iobGraph.setVisibility(View.VISIBLE);
+                    cobGraph.setVisibility(View.VISIBLE);
+
                     // finally enforce drawing of graphs
                     graphData.performUpdate();
                     secondGraphData.performUpdate();
+                    thirdGraphData.performUpdate();
                     if (L.isEnabled(L.OVERVIEW))
                         Profiler.log(log, from + " - onDataChanged", updateGUIStart);
                 });

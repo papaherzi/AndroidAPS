@@ -97,6 +97,7 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray">#BBBBBB</color>
+    <color name="darkgray">#4e4e4e</color>
     <color name="r22_bg">#222222</color>
     <color name="cyan">#1ba1e2</color>
     <color name="rose">#f7806a</color>
