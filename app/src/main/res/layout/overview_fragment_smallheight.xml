@@ -192,7 +192,7 @@
                                         android:text=""
                                         android:textColor="@android:color/black" />
 
-                                    <TextView
+<!--                                    <TextView
                                         android:id="@+id/overview_iob"
                                         android:layout_width="38dp"
                                         android:layout_height="36dp"
@@ -202,10 +202,10 @@
                                         android:background="@drawable/ic_ball_grey"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:textColor="@android:color/black" /> -->
 
                                     <TextView
-                                        android:id="@+id/overview_cob"
+                                        android:id="@+id/overview_sensitivity"
                                         android:layout_width="36dp"
                                         android:layout_height="36dp"
                                         android:layout_marginStart="2dp"
@@ -260,20 +260,20 @@
 
                                     </ImageView>
 
-                                    <ImageView
+ <!--                                   <ImageView
                                         android:layout_width="25dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="14dp"
                                         android:background="@drawable/ic_pumpe_28">
 
-                                    </ImageView>
+                                    </ImageView> -->
 
                                     <ImageView
                                         android:layout_width="25dp"
                                         android:layout_height="25dp"
                                         android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_carb_28">
+                                        android:background="@drawable/ic_as_28">
 
                                     </ImageView>
 
@@ -359,44 +359,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/mdtp_white" />
 
-            <com.google.android.flexbox.FlexboxLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:alignContent="center"
-                app:alignItems="center"
-                app:flexDirection="row"
-                app:flexWrap="wrap"
-                app:justifyContent="space_around">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
-                        android:text="@string/as" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text=":" />
-
-                    <TextView
-                        android:id="@+id/overview_sensitivity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="" />
-
-                </LinearLayout>
-
-            </com.google.android.flexbox.FlexboxLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -497,45 +460,122 @@
 
             </LinearLayout> -->
 
-<!-- Grafiken -->
-               <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp">
 
-
-                   <com.jjoe64.graphview.GraphView
-                       android:id="@+id/overview_bggraph"
-                       android:layout_width="wrap_content"
-                       android:layout_height="match_parent" />
-
-                    <ImageButton
-                        android:id="@+id/overview_chartMenuButton"
-                        android:layout_width="30dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentTop="true"
-                        android:paddingTop="5dp"
-                        app:srcCompat="@drawable/ic_arrow_drop_down_white_24dp" />
-
-                    <TextView
-                        android:id="@+id/overview_iobcalculationprogess"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:textSize="15sp" />
-
-               </RelativeLayout>
-
+            <!-- Grafiken -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp">
 
                 <com.jjoe64.graphview.GraphView
-                    android:id="@+id/overview_iobgraph"
+                    android:id="@+id/overview_bggraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp" />
+
+                <ImageButton
+                    android:id="@+id/overview_chartMenuButton"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingTop="5dp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_white_24dp" />
+
+                <TextView
+                    android:id="@+id/overview_iobcalculationprogess"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:visibility="gone" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="1dp"
+                    android:text="@string/iob"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/overview_iob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/overview_iobgraph"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_height="90dp"
+                android:background="@color/r22_bg"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="1dp"
+                    android:text="@string/cob"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/overview_cob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/overview_cobgraph"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="90dp"
+                android:background="@color/r22_bg"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+
+
+
+
 
         </ScrollView>
 
