@@ -192,9 +192,9 @@
                                         android:text=""
                                         android:textColor="@android:color/black" />
 
-<!--                                    <TextView
+                                    <TextView
                                         android:id="@+id/overview_iob"
-                                        android:layout_width="38dp"
+                                        android:layout_width="36dp"
                                         android:layout_height="36dp"
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
@@ -202,10 +202,10 @@
                                         android:background="@drawable/ic_ball_grey"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textColor="@android:color/black" /> -->
+                                        android:textColor="@android:color/black" />
 
                                     <TextView
-                                        android:id="@+id/overview_sensitivity"
+                                        android:id="@+id/overview_cob"
                                         android:layout_width="36dp"
                                         android:layout_height="36dp"
                                         android:layout_marginStart="2dp"
@@ -260,20 +260,20 @@
 
                                     </ImageView>
 
- <!--                                   <ImageView
+                                   <ImageView
                                         android:layout_width="25dp"
                                         android:layout_height="25dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="14dp"
                                         android:background="@drawable/ic_pumpe_28">
 
-                                    </ImageView> -->
+                                    </ImageView>
 
                                     <ImageView
                                         android:layout_width="25dp"
                                         android:layout_height="25dp"
                                         android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_as_28">
+                                        android:background="@drawable/ic_carb_28">
 
                                     </ImageView>
 
@@ -492,7 +492,7 @@
             </RelativeLayout>
 
 
-            <LinearLayout
+ <!--           <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -519,7 +519,7 @@
                     android:text=""
                     android:textSize="16sp"
                     android:textStyle="bold"/>
-            </LinearLayout>
+            </LinearLayout> -->
 
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/overview_iobgraph"
@@ -531,7 +531,7 @@
                 android:background="@color/r22_bg"
                 android:visibility="gone" />
 
-            <LinearLayout
+<!--            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -559,7 +559,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"/>
 
-            </LinearLayout>
+            </LinearLayout> -->
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/overview_cobgraph"
                 android:layout_width="wrap_content"
@@ -570,12 +570,6 @@
                 android:visibility="gone" />
 
         </LinearLayout>
-
-
-
-
-
-
 
         </ScrollView>
 

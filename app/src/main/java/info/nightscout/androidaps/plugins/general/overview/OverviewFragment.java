@@ -1329,50 +1329,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             timeAgoShortView.setText( DateUtil.minAgoShort(lastBG.date) + "′");
 
         // iob
-/*        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
-        TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
-        final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
-        final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
-
-        if (shorttextmode) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob);
-            iobView.setText(iobtext);
-            iobView.setOnClickListener(v -> {
-                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob)
-                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob)
-                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob);
-                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
-            });
-        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob)
-                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob)
-                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob);
-            iobView.setText(iobtext);
-//            iobView.setOnClickListener(v -> {
-//                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
-//                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
-//                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
-//                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1, null);
-//            });
-//        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
-//            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-//                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
-//                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
-//            iobView.setText(iobtext);
-        } else {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) ;
-//                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
-//                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
-            iobView.setText(iobtext);
-        }*/
-        // iob
         TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
         TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
         final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
         final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
 
         if (shorttextmode) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U";
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob);
             iobView.setText(iobtext);
             iobView.setOnClickListener(v -> {
                 String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
@@ -1394,25 +1357,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
 
         // cob
-/*        if (cobView != null) { // view must not exists
+        if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
-            }
-            cobView.setText(cobText);
-        }*/
-
-        // cob
-        if (cobView != null) { // view must not exists
-            String cobText = MainApp.gs(R.string.value_unavailable_short);
-            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-            if (cobInfo.displayCob != null) {
-                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob) + " g";
-                if (cobInfo.futureCarbs > 0)
-                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
             }
             cobView.setText(cobText);
         }
@@ -1460,7 +1411,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (sensitivityView != null) {
             AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
             if (autosensData != null)
-                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
+                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f", autosensData.autosensResult.ratio * 100));
             else
                 sensitivityView.setText("");
         }
