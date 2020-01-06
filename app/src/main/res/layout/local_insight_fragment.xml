@@ -10,25 +10,19 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-<!-- Accu Chek Inside -->
         <LinearLayout
+            android:id="@+id/status_item_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical" />
+
+        <!-- Accu Chek Inside -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableTop="@drawable/ic_insight" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/status_item_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
 
         <Button
             android:id="@+id/refresh"
