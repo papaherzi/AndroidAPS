@@ -206,7 +206,7 @@
                 android:paddingRight="0dp"
                 android:text="@string/careportal_pumpbatterychange" />
 
-<!--            <info.nightscout.androidaps.utils.SingleClickButton
+ <!--           <info.nightscout.androidaps.utils.SingleClickButton
                 android:id="@+id/medtronic_custom_action_wake_and_tune"
                 style="?android:attr/buttonStyle"
                 android:layout_width="fill_parent"

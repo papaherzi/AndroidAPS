@@ -1217,11 +1217,14 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         }
         baseBasalView.setText(basalText);
         if (activeTemp != null) {
-            baseBasalView.setTextColor(MainApp.gc(R.color.black));
+            Drawable drawable = baseBasalView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+            baseBasalView.setTextColor(MainApp.gc(R.color.white));
         } else {
+            Drawable drawable = baseBasalView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         }
-
 
 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
