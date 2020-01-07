@@ -1518,13 +1518,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             boolean useIAForScale = false;
 
             if (SP.getBoolean("showdeviations", false)) {
-                useDevForScale = true;
+                useDevForScale = false;
             } else if (SP.getBoolean("showratios", false)) {
-                useRatioForScale = true;
+                useRatioForScale = false;
             } else if (SP.getBoolean("showactivitysecondary", false)) {
-                useIAForScale = true;
+                useIAForScale = false;
             } else if (SP.getBoolean("showdevslope", false)) {
-                useDSForScale = true;
+                useDSForScale = false;
             }
 
             secondGraphData.addIob(fromTime, now, useIobForScale, 1d, SP.getBoolean("showprediction", false));
