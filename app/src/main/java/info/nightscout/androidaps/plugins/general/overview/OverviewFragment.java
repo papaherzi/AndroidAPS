@@ -1407,7 +1407,16 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             uploaderDeviceStatusView.setOnClickListener(v -> OKDialog.show(getActivity(), MainApp.gs(R.string.uploader), NSDeviceStatus.getInstance().getExtendedUploaderStatus()));
         }
 
-        // Sensitivity
+        // Sensitivity Standard
+/*        if (sensitivityView != null) {
+            AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
+            if (autosensData != null)
+                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
+            else
+                sensitivityView.setText("");
+        }*/
+
+        // Sensitivity Sphere
         if (sensitivityView != null) {
             AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
             if (autosensData != null)
