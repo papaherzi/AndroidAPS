@@ -41,7 +41,18 @@
                         android:text="@string/initializing"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:drawableTop="@drawable/ic_medtronic_veo" />
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="fill_parent"
@@ -474,18 +485,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@color/listdelimiter" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:drawableTop="@drawable/ic_medtronic_veo" />
-
-                </LinearLayout>
 
 
             </LinearLayout>
