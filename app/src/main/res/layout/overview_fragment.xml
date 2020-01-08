@@ -269,7 +269,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
-                                android:layout_marginStart="12dp"
+                                android:layout_marginStart="11dp"
                                 android:background="@drawable/ic_delta_28">
 
                             </ImageView>
@@ -278,7 +278,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
-                                android:layout_marginStart="18dp"
+                                android:layout_marginStart="16dp"
                                 android:background="@drawable/ic_clock_28">
 
                             </ImageView>
