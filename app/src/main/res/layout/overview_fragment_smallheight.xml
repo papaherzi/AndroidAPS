@@ -199,7 +199,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_bg"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />
@@ -213,7 +213,7 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_bg"
                                         android:gravity="center"
                                         android:paddingTop="8dp"
                                         android:paddingBottom="8dp"
@@ -228,7 +228,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_bg"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />

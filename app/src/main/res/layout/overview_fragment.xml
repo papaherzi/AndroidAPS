@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="10dp"
+                    android:paddingTop="5dp"
                     >
 
                     <TextView
@@ -198,11 +198,11 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizeMinTextSize="12sp"
                                 android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeMinTextSize="12sp"
                                 android:autoSizeStepGranularity="2sp"
-                                android:background="@drawable/ic_ball_grey"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/bloodclucose_bg"
                                 android:gravity="center"
                                 android:text=""
                                 android:textColor="@android:color/black" />
@@ -212,14 +212,14 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
+                                android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeMinTextSize="7sp"
+                                android:autoSizeStepGranularity="1sp"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/bloodclucose_bg"
+                                android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizeMinTextSize="7sp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeStepGranularity="1sp"
-                                android:background="@drawable/ic_ball_grey"
-                                android:gravity="center"
                                 android:text=""
                                 android:textColor="@android:color/black" />
 
