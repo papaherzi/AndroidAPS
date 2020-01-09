@@ -1227,12 +1227,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.white));
 
-        } else {
+        } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
             Drawable drawable = iobView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
-
 
         // cob
         if (cobView != null) { // view must not exists
