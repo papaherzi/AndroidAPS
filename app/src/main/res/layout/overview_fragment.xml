@@ -32,8 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="5dp"
-                    >
+                    android:paddingTop="5dp">
 
                     <TextView
                         android:id="@+id/overview_apsmode"
@@ -153,7 +152,7 @@
 <!--  IOB, COB, AS, BAS und Pumpe -->
                     <LinearLayout
                         android:layout_width="380dp"
-                        android:layout_height="88dp"
+                        android:layout_height="85dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         android:paddingTop="15dp">
@@ -170,10 +169,10 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeStepGranularity="2sp"
                                 android:autoSizeTextType="uniform"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeStepGranularity="2sp"
                                 android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
                                 android:text=""
@@ -184,10 +183,10 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeStepGranularity="2sp"
                                 android:autoSizeTextType="uniform"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeStepGranularity="2sp"
                                 android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
                                 android:text=""
@@ -198,14 +197,13 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeStepGranularity="2sp"
                                 android:autoSizeTextType="uniform"
+                                android:autoSizeMinTextSize="12sp"
+                                android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeStepGranularity="2sp"
                                 android:background="@drawable/bloodclucose_bg"
                                 android:gravity="center"
-                                android:text=""
-                                android:textColor="@android:color/black" />
+                                android:text="" />
 
                             <TextView
                                 android:id="@+id/overview_cob"
@@ -220,9 +218,7 @@
                                 android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
-                                android:text=""
-                                android:textColor="@android:color/black" />
-
+                                android:text="" />
 
                             <TextView
                                 android:id="@+id/overview_basebasal"
@@ -237,10 +233,9 @@
                                 android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
-                                android:text=""
-                                android:textColor="@android:color/black" />
+                                android:text="" />
 
-                            <!--                            <TextView
+<!--                            <TextView
                                 android:id="@+id/overview_sensitivity"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
@@ -319,7 +314,7 @@
                             </ImageView> -->
 
                         </LinearLayout>
-                        <!-- Overview Pump
+<!-- Overview Pump
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="43dp"
@@ -488,8 +483,8 @@
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
                     android:layout_width="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_marginBottom="8dp"
                     android:layout_height="90dp"
                     android:background="@color/r22_bg"
@@ -527,8 +522,8 @@
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_cobgraph"
                     android:layout_width="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
                     android:background="@color/r22_bg"
                     android:visibility="gone" />

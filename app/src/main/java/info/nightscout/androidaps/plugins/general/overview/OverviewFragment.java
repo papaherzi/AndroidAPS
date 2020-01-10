@@ -1233,6 +1233,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
 
+
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);

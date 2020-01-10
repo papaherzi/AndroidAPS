@@ -524,8 +524,8 @@
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/overview_iobgraph"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
                 android:layout_marginBottom="8dp"
                 android:layout_height="90dp"
                 android:background="@color/r22_bg"
@@ -563,8 +563,8 @@
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/overview_cobgraph"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
                 android:layout_height="90dp"
                 android:background="@color/r22_bg"
                 android:visibility="gone" />
