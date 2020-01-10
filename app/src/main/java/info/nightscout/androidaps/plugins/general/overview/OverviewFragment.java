@@ -1287,10 +1287,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (activeTemp != null) {
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
-            baseBasalView.setTextColor(MainApp.gc(R.color.black));
+            baseBasalView.setTextColor(MainApp.gc(R.color.defaulttextcolor));
         }*/
 
         baseBasalView.setText(basalText);
+
         if (activeTemp != null) {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
