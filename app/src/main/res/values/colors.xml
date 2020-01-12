@@ -107,5 +107,6 @@
     <color name="treatments">#90FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
     <color name="transparent">#20FFFFFF</color>
+    <color name="plastic">#EBEBEA</color>
 
 </resources>
