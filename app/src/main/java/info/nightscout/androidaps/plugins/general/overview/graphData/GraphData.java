@@ -129,7 +129,7 @@ public class GraphData {
         inRangeAreaSeries.setColor(0);
         inRangeAreaSeries.setDrawBackground(true);
         inRangeAreaSeries.setBackgroundColor(MainApp.gc(R.color.inrangebackground));
-//        inRangeAreaSeries.setColor(R.color.inrangebackgroundBorder);
+//        inRangeAreaSeries.setColor(R.color.inrangebackgroundborder);
 
         addSeries(inRangeAreaSeries);
     }
@@ -685,7 +685,7 @@ public class GraphData {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(2);
         paint.setPathEffect(new DashPathEffect(new float[]{10, 20}, 0));
-        paint.setColor(0x80ffffff);
+        paint.setColor(0xffffffff);
         seriesNow.setCustomPaint(paint);
 
         addSeries(seriesNow);

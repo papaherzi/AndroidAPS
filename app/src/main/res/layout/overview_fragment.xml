@@ -412,7 +412,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_battery_35_4"
+                        android:drawableLeft="@drawable/ic_battery_35"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
