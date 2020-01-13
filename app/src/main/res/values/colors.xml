@@ -25,7 +25,7 @@
     <color name="inrangebackground">#10FFFFFF</color> <!-- Grafikbereich fuer die gewaehlten BG Werte hoch und tief im Graphen -->
     <color name="basebasal">#32a6b8</color>
     <color name="tempbasal">#32a6b8</color> <!-- Farbe TEMP Basal im Graphen -->
-    <color name="graphgrid">#30FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
+    <color name="graphgrid">#20FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
     <color name="colorLightGray">#d8d8d8</color>
     <color name="warning">#f0a30a</color>
     <color name="error_background">#66FC0000</color>
@@ -104,9 +104,9 @@
     <color name="teal">#50149baf</color>
     <color name="amber">#f0a30a</color>
     <color name="smb">#90FFFFFF</color>
-    <color name="treatments">#90FFFFFF</color>
+    <color name="treatments">#90ffffff</color>
     <color name="color_white">#FFFFFF</color>
     <color name="transparent">#20FFFFFF</color>
     <color name="plastic">#EBEBEA</color>
-
+    <color name="plastic_grey">#666666</color>
 </resources>

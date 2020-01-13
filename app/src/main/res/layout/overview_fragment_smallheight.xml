@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/r22_bg"
+    android:background="@color/plastic"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <RelativeLayout
@@ -44,8 +44,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_aaps_logo_dark"
+                        android:background="@drawable/bloodclucose_2"
+                        android:drawableLeft="@drawable/ic_aaps_logo_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingEnd="2dp"
@@ -61,8 +61,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_user_dark"
+                        android:background="@drawable/bloodclucose_2"
+                        android:drawableLeft="@drawable/ic_user_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -76,8 +76,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_zielkreuz_dark"
+                        android:background="@drawable/bloodclucose_2"
+                        android:drawableLeft="@drawable/ic_zielkreuz_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -129,7 +129,7 @@
                             android:layout_gravity="top|center"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/bloodclucose_bg"
+                            android:background="@drawable/bloodclucose_2"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="00.0"
                             android:textColor="@color/white"
@@ -145,7 +145,7 @@
                             android:layout_marginTop="2dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textColor="@color/white"
+                            android:textColor="@color/plastic_grey"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -174,10 +174,10 @@
                                         android:layout_marginStart="0dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_2"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:textColor="@android:color/white" />
 
                                     <TextView
                                         android:id="@+id/overview_timeago"
@@ -186,10 +186,10 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_2"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:textColor="@android:color/white" />
 
                                     <TextView
                                         android:id="@+id/overview_iob"
@@ -198,10 +198,9 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_bg"
+                                        android:background="@drawable/bloodclucose_2"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_cob"
@@ -212,12 +211,11 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
-                                        android:background="@drawable/bloodclucose_bg"
+                                        android:background="@drawable/bloodclucose_2"
                                         android:gravity="center"
                                         android:paddingTop="8dp"
                                         android:paddingBottom="8dp"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
 
                                     <TextView
@@ -227,10 +225,9 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_bg"
+                                        android:background="@drawable/bloodclucose_2"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
                                 </LinearLayout>
 
@@ -246,7 +243,7 @@
                                         android:layout_height="25dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="5dp"
-                                        android:background="@drawable/ic_delta_28">
+                                        android:background="@drawable/ic_delta_28_dark">
 
                                     </ImageView>
 
@@ -255,7 +252,7 @@
                                         android:layout_height="25dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="12dp"
-                                        android:background="@drawable/ic_clock_28">
+                                        android:background="@drawable/ic_clock_28_dark">
 
                                     </ImageView>
 
@@ -264,7 +261,7 @@
                                         android:layout_height="25dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_pumpe_28">
+                                        android:background="@drawable/ic_pumpe_28_dark">
 
                                     </ImageView>
 
@@ -272,7 +269,7 @@
                                         android:layout_width="25dp"
                                         android:layout_height="25dp"
                                         android:layout_marginStart="13dp"
-                                        android:background="@drawable/ic_carb_28">
+                                        android:background="@drawable/ic_carb_28_dark">
 
                                     </ImageView>
 
@@ -281,7 +278,7 @@
                                         android:layout_height="25dp"
                                         android:layout_gravity="end"
                                         android:layout_marginStart="12dp"
-                                        android:background="@drawable/ic_bas_28">
+                                        android:background="@drawable/ic_bas_28_dark">
 
                                     </ImageView>
 
@@ -463,7 +460,8 @@
             <!-- Grafiken -->
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="200dp">
+                android:layout_height="200dp"
+                android:background="@color/plastic_grey">
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_bggraph"
@@ -525,9 +523,8 @@
                 android:layout_width="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="8dp"
                 android:layout_height="90dp"
-                android:background="@color/r22_bg"
+                android:background="@color/plastic_grey"
                 android:visibility="gone" />
 
 <!--            <LinearLayout
@@ -565,7 +562,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
                 android:layout_height="90dp"
-                android:background="@color/r22_bg"
+                android:background="@color/plastic_grey"
                 android:visibility="gone" />
 
         </LinearLayout>

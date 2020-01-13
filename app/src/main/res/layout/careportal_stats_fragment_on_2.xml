@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/r22_bg"
+    android:background="@color/plastic"
     tools:context=".plugins.general.careportal.CareportalFragment">
 
     <LinearLayout
@@ -22,7 +22,8 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_weight="1"
-                android:background="@drawable/white_trans_bg">
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/bloodclucose_2">
 
                 <ImageView
                     android:layout_width="32dp"
@@ -48,8 +49,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/white_trans_bg">
+                android:background="@drawable/bloodclucose_2">
 
                 <ImageView
                     android:layout_width="32dp"
@@ -82,7 +84,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:background="@drawable/white_trans_bg"
+                android:background="@drawable/bloodclucose_2"
                 android:layout_weight="1">
 
                 <ImageView
@@ -110,7 +112,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:background="@drawable/white_trans_bg"
+                android:background="@drawable/bloodclucose_2"
                 android:layout_weight="1">
 
                 <ImageView

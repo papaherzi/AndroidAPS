@@ -129,6 +129,7 @@ public class GraphData {
         inRangeAreaSeries.setColor(0);
         inRangeAreaSeries.setDrawBackground(true);
         inRangeAreaSeries.setBackgroundColor(MainApp.gc(R.color.inrangebackground));
+//        inRangeAreaSeries.setColor(R.color.inrangebackgroundBorder);
 
         addSeries(inRangeAreaSeries);
     }
@@ -207,14 +208,14 @@ public class GraphData {
         baseBasalsSeries = new LineGraphSeries<>(baseBasal);
         baseBasalsSeries.setDrawBackground(true);
         baseBasalsSeries.setBackgroundColor(MainApp.gc(R.color.basebasal));
-        baseBasalsSeries.setThickness(0);
+        baseBasalsSeries.setThickness(6);
 
         ScaledDataPoint[] tempBasal = new ScaledDataPoint[tempBasalArray.size()];
         tempBasal = tempBasalArray.toArray(tempBasal);
         tempBasalsSeries = new LineGraphSeries<>(tempBasal);
         tempBasalsSeries.setDrawBackground(true);
         tempBasalsSeries.setBackgroundColor(MainApp.gc(R.color.tempbasal));
-        tempBasalsSeries.setThickness(0);
+        tempBasalsSeries.setThickness(6);
         //Gestrichelte Basallinie
         ScaledDataPoint[] basalLine = new ScaledDataPoint[basalLineArray.size()];
         basalLine = basalLineArray.toArray(basalLine);
@@ -515,7 +516,7 @@ public class GraphData {
         cobSeries.setDrawBackground(true);
         cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
         cobSeries.setColor(MainApp.gc(R.color.white));
-        cobSeries.setThickness(6);
+        cobSeries.setThickness(3);
 
         if (useForScale) {
             maxY = maxCobValueFound;
@@ -684,7 +685,7 @@ public class GraphData {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(2);
         paint.setPathEffect(new DashPathEffect(new float[]{10, 20}, 0));
-        paint.setColor(Color.WHITE);
+        paint.setColor(0x80ffffff);
         seriesNow.setCustomPaint(paint);
 
         addSeries(seriesNow);
