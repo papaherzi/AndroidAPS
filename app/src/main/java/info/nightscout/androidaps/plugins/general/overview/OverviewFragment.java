@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -1097,12 +1098,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
             if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopsuperbolusfor), loopPlugin.minutesToEndOfSuspend()));
                 apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (loopPlugin.isDisconnected()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopdisconnectedfor), loopPlugin.minutesToEndOfSuspend()));
                 apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuspended()) {
@@ -1123,7 +1124,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             } else {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(MainApp.gs(R.string.disabledloop));
                 apsModeView.setTextColor(MainApp.gc(R.color.white));
             }
@@ -1225,7 +1226,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (iobView != null) {
 //            Drawable drawable = iobView.getBackground();
 //            drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_IN));
-            iobView.setTextColor(MainApp.gc(R.color.colorLightGray));
+            iobView.setTextColor(MainApp.gc(R.color.gray));
+//            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
         } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
 //            Drawable drawable = iobView.getBackground();
@@ -1242,7 +1244,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
 //                Drawable drawable = cobView.getBackground();
 //                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
-                cobView.setTextColor(MainApp.gc(R.color.colorLightGray));
+                cobView.setTextColor(MainApp.gc(R.color.gray));
+//                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
                     if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
@@ -1285,7 +1288,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         baseBasalView.setText(basalText);
         if (activeTemp != null) {
-            baseBasalView.setTextColor(MainApp.gc(R.color.colorLightGray));
+            baseBasalView.setTextColor(MainApp.gc(R.color.gray));
+//            baseBasalView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
         } else {
             baseBasalView.setTextColor(MainApp.gc(R.color.white));
         }

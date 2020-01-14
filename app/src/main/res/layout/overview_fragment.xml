@@ -141,11 +141,11 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="top|center"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
                             android:textColor="@color/plastic_grey"
-                            android:textSize="30sp"
+                            android:textSize="32sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 <!--  IOB, COB, AS, BAS und Pumpe -->
