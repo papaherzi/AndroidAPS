@@ -247,7 +247,7 @@ public class CareportalFragment extends Fragment implements View.OnClickListener
         } else if (careportalEvent.isOlderThan(warnThreshold)) {
             return MainApp.gc(R.color.high);
         } else {
-            return Color.WHITE;
+            return Color.BLACK;
         }
 
     }
