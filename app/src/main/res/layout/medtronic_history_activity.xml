@@ -22,7 +22,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="20dp"
             android:text="Type:"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/darkgray"/>
 
         <Spinner
             android:id="@+id/medtronic_historytype"
@@ -38,7 +39,8 @@
             android:layout_weight="1"
             android:background="@drawable/pillborder"
             android:gravity="center_horizontal"
-            android:text="@string/medtronic_pump_history" />
+            android:text="@string/medtronic_pump_history"
+            android:textColor="@color/darkgray"/>
 
 
     </LinearLayout>

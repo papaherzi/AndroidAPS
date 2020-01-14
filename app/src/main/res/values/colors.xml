@@ -33,8 +33,8 @@
     <color name="ok_background">#323232</color>
 
     <color name="defaultbackground">#424242</color> <!-- Default 424242 -->
-    <color name="defaulttext">#FFFFFF</color> <!-- 'BBBBBB -->
-    <color name="defaulttextcolor">#B3FFFFFF</color>
+    <color name="defaulttext">#BBBBBB</color> <!-- 'BBBBBB -->
+    <color name="defaulttextcolor">#BBBBBB</color>
 
     <color name="tempTargetBackground">#FFFFFF</color> <!-- Farbe des TT im oberen Graphen -->
     <color name="tempTargetConfirmation">#FFFFFF</color>
