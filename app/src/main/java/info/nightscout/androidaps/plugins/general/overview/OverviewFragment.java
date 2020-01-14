@@ -1265,51 +1265,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         } else {
             baseBasalView.setTextColor(MainApp.gc(R.color.defaulttextcolor));
         }*/
-        // bas
-        final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
-        String basalText = "";
-        if (shorttextmode) {
-            if (activeTemp != null) {
-//               basalText = "T: " + activeTemp.toStringVeryShort();
-                basalText = activeTemp.toStringVeryShort();
-            } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
-            }
-            baseBasalView.setOnClickListener(v -> {
-                String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate,profile.getBasal()) + "\n";
-                if (activeTemp != null) {
-                    fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
-                }
-                OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
-            });
-
-        } else {
-            if (activeTemp != null) {
-                basalText = activeTemp.toStringFull();
-            } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
-            }
-        }
-
-        baseBasalView.setText(basalText);
-        if (activeTemp != null) {
-            baseBasalView.setTextColor(MainApp.gc(R.color.gray));
-//            baseBasalView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
-        } else {
-            baseBasalView.setTextColor(MainApp.gc(R.color.white));
-        }
-
-        baseBasalView.setText(basalText);
-
-/*        if (activeTemp != null) {
-     Drawable drawable = baseBasalView.getBackground();
-     drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
-     baseBasalView.setTextColor(MainApp.gc(R.color.white));
- } else {
-     Drawable drawable = baseBasalView.getBackground();
-     drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
-     baseBasalView.setTextColor(MainApp.gc(R.color.black));
- }*/
 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";
@@ -1425,46 +1380,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
             iobView.setText(iobtext);
         }*/
-
-        // iob
-        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
-        TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
-        final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
-        final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
-
-        if (shorttextmode) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob);
-            iobView.setText(iobtext);
-            iobView.setOnClickListener(v -> {
-                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
-                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
-                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
-                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
-            });
-        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
-                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
-            iobView.setText(iobtext);
-        } else {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
-                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
-            iobView.setText(iobtext);
-        }
-        if (iobView != null) {
-//            Drawable drawable = iobView.getBackground();
-//            drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_IN));
-            iobView.setTextColor(MainApp.gc(R.color.gray));
-//            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
-
-        } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
-//            Drawable drawable = iobView.getBackground();
-//            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
-            iobView.setTextColor(MainApp.gc(R.color.white));
-        }
-
-
  //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
@@ -1543,6 +1458,43 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             cobView.setText(cobText);
         }*/
 
+        // iob
+        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
+        TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
+        final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
+        final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
+
+        if (shorttextmode) {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob);
+            iobView.setText(iobtext);
+            iobView.setOnClickListener(v -> {
+                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
+                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
+                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
+                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
+            });
+        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
+                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
+                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
+            iobView.setText(iobtext);
+        } else {
+            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
+                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
+                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
+            iobView.setText(iobtext);
+        }
+        if (iobView != null) {
+//            Drawable drawable = iobView.getBackground();
+//            drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_IN));
+            iobView.setTextColor(MainApp.gc(R.color.gray));
+//            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
+
+        } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
+//            Drawable drawable = iobView.getBackground();
+//            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            iobView.setTextColor(MainApp.gc(R.color.white));
+        }
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
@@ -1566,7 +1518,51 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
             cobView.setText(cobText);
         }
+        // bas
+        final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
+        String basalText = "";
+        if (shorttextmode) {
+            if (activeTemp != null) {
+//               basalText = "T: " + activeTemp.toStringVeryShort();
+                basalText = activeTemp.toStringVeryShort();
+            } else {
+                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
+            }
+            baseBasalView.setOnClickListener(v -> {
+                String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate,profile.getBasal()) + "\n";
+                if (activeTemp != null) {
+                    fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
+                }
+                OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
+            });
 
+        } else {
+            if (activeTemp != null) {
+                basalText = activeTemp.toStringFull();
+            } else {
+                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
+            }
+        }
+
+        baseBasalView.setText(basalText);
+        if (activeTemp != null) {
+            baseBasalView.setTextColor(MainApp.gc(R.color.gray));
+//            baseBasalView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
+        } else {
+            baseBasalView.setTextColor(MainApp.gc(R.color.white));
+        }
+
+        baseBasalView.setText(basalText);
+
+/*        if (activeTemp != null) {
+     Drawable drawable = baseBasalView.getBackground();
+     drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
+     baseBasalView.setTextColor(MainApp.gc(R.color.white));
+ } else {
+     Drawable drawable = baseBasalView.getBackground();
+     drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+     baseBasalView.setTextColor(MainApp.gc(R.color.black));
+ }*/
         if (statuslightsLayout != null)
             if (SP.getBoolean(R.string.key_show_statuslights, false)) {
                 StatuslightHandler handler = new StatuslightHandler();
