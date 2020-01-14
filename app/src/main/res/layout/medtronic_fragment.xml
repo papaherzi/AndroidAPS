@@ -39,7 +39,8 @@
                         android:layout_marginRight="5dp"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="@string/initializing"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/darkgray"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -75,7 +76,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/rileylink_status"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -85,7 +87,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray" />
 
                     <com.joanzapata.iconify.widget.IconTextView
                         android:id="@+id/medtronic_rl_status"
@@ -95,8 +98,8 @@
                         android:gravity="start"
                         android:paddingLeft="5dp"
                         android:text="{fa-bluetooth-b}"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
 
                 </LinearLayout>
@@ -123,7 +126,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/medtronic_pump_status"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -133,7 +137,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <com.joanzapata.iconify.widget.IconTextView
                         android:id="@+id/medtronic_pump_status"
@@ -143,8 +148,8 @@
                         android:gravity="start"
                         android:paddingLeft="5dp"
                         android:text="{fa-bluetooth-b}"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray" />
 
 
                 </LinearLayout>
@@ -154,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="content"
+                    android:textColor="@color/darkgray"
                     android:textAlignment="center" />
 
                 <View
@@ -177,7 +183,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_battery_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -187,7 +194,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <com.joanzapata.iconify.widget.IconTextView
                         android:id="@+id/medtronic_pumpstate_battery"
@@ -196,7 +204,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:text=""
                         android:textSize="14sp" />
 
@@ -224,7 +232,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_lastconnection_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -234,7 +243,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:id="@+id/medtronic_lastconnection"
@@ -243,7 +253,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -269,7 +279,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_lastbolus_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -279,7 +290,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:id="@+id/medtronic_lastbolus"
@@ -288,7 +300,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -315,7 +327,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_basebasalrate_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray" />
 
                     <TextView
                         android:layout_width="5dp"
@@ -325,7 +338,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:id="@+id/medtronic_basabasalrate"
@@ -334,7 +348,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -360,7 +374,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_tempbasal_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -370,7 +385,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray" />
 
                     <TextView
                         android:id="@+id/medtronic_tempbasal"
@@ -379,7 +395,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -406,7 +422,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/pump_reservoir_label"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray" />
 
                     <TextView
                         android:layout_width="5dp"
@@ -416,7 +433,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:id="@+id/medtronic_reservoir"
@@ -425,7 +443,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -452,7 +470,8 @@
                         android:gravity="end"
                         android:paddingRight="5dp"
                         android:text="@string/medtronic_errors"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:layout_width="5dp"
@@ -462,7 +481,8 @@
                         android:paddingEnd="2dp"
                         android:paddingStart="2dp"
                         android:text=":"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textColor="@color/darkgray"/>
 
                     <TextView
                         android:id="@+id/medtronic_errors"
@@ -471,7 +491,7 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/darkgray"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -516,7 +536,7 @@
                     android:layout_marginBottom="2dp"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
-                    android:background="@drawable/white_trans_bg"
+                    android:background="@drawable/bloodclucose_2"
                     android:drawableLeft="@drawable/ic_database_reset"
                     android:text="@string/combo_refresh"
                     android:textSize="14sp" />
@@ -532,7 +552,7 @@
                     android:layout_marginBottom="2dp"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
-                    android:background="@drawable/white_trans_bg"
+                    android:background="@drawable/bloodclucose_2"
                     android:drawableLeft="@drawable/ic_history"
                     android:text="@string/danar_history"
                     android:textSize="14sp" />
@@ -548,7 +568,7 @@
                     android:layout_marginBottom="2dp"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
-                    android:background="@drawable/white_trans_bg"
+                    android:background="@drawable/bloodclucose_2"
                     android:drawableLeft="@drawable/ic_stats"
                     android:text="RL Stats"
                     android:textSize="14sp" />
