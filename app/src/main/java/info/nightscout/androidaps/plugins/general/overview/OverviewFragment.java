@@ -1391,7 +1391,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         } else
             flag &= ~Paint.STRIKE_THRU_TEXT_FLAG;
         bgView.setPaintFlags(flag);
-
+        //timeago
         if (timeAgoView != null)
             timeAgoView.setText(DateUtil.minAgo(lastBG.date) + "′");
         if (timeAgoShortView != null)
@@ -1447,18 +1447,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
-        // cob
-/*        if (cobView != null) { // view must not exists
-            String cobText = MainApp.gs(R.string.value_unavailable_short);
-            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-            if (cobInfo.displayCob != null) {
-                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
-                if (cobInfo.futureCarbs > 0)
-                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
-            }
-            cobView.setText(cobText);
-        }*/
-
         // iob
         TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
         TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
@@ -1486,25 +1474,36 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             iobView.setText(iobtext);
         }
         if (iobView != null) {
-//            Drawable drawable = iobView.getBackground();
-//            drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_IN));
-            iobView.setTextColor(MainApp.gc(R.color.gray));
+            Drawable drawable = iobView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+            iobView.setTextColor(MainApp.gc(R.color.white));
 //            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
         } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
-//            Drawable drawable = iobView.getBackground();
-//            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            Drawable drawable = iobView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.white));
         }
+        // cob
+/*        if (cobView != null) { // view must not exists
+            String cobText = MainApp.gs(R.string.value_unavailable_short);
+            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
+            if (cobInfo.displayCob != null) {
+                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
+                if (cobInfo.futureCarbs > 0)
+                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
+            }
+            cobView.setText(cobText);
+        }*/
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
-//                Drawable drawable = cobView.getBackground();
-//                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
-                cobView.setTextColor(MainApp.gc(R.color.gray));
+                Drawable drawable = cobView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+                cobView.setTextColor(MainApp.gc(R.color.white));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
                 if (cobInfo.futureCarbs > 0)
@@ -1512,8 +1511,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
-//                Drawable drawable = cobView.getBackground();
-//                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+                Drawable drawable = cobView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
                 cobView.setTextColor(MainApp.gc(R.color.white));
             }
 
@@ -1545,25 +1544,26 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
-        baseBasalView.setText(basalText);
+/*        baseBasalView.setText(basalText);
         if (activeTemp != null) {
             baseBasalView.setTextColor(MainApp.gc(R.color.gray));
-//            baseBasalView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
+            baseBasalView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
         } else {
+            baseBasalView.setTextColor(MainApp.gc(R.color.white));
+        }*/
+
+        baseBasalView.setText(basalText);
+
+        if (activeTemp != null) {
+             Drawable drawable = baseBasalView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+        baseBasalView.setTextColor(MainApp.gc(R.color.white));
+        } else {
+            Drawable drawable = baseBasalView.getBackground();
+            drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             baseBasalView.setTextColor(MainApp.gc(R.color.white));
         }
 
-        baseBasalView.setText(basalText);
-
-/*        if (activeTemp != null) {
-     Drawable drawable = baseBasalView.getBackground();
-     drawable.setColorFilter(new PorterDuffColorFilter(0xff149baf, PorterDuff.Mode.SRC_IN));
-     baseBasalView.setTextColor(MainApp.gc(R.color.white));
- } else {
-     Drawable drawable = baseBasalView.getBackground();
-     drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
-     baseBasalView.setTextColor(MainApp.gc(R.color.black));
- }*/
         if (statuslightsLayout != null)
             if (SP.getBoolean(R.string.key_show_statuslights, false)) {
                 StatuslightHandler handler = new StatuslightHandler();

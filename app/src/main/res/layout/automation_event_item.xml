@@ -9,7 +9,6 @@
     android:layout_marginBottom="8dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="@drawable/white_trans_bg_radius20"
     android:padding="8dp">
 
     <CheckBox

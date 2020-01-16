@@ -204,7 +204,6 @@
                         android:layout_weight="1"
                         android:gravity="start"
                         android:paddingLeft="5dp"
-                        android:textColor="@color/darkgray"
                         android:text=""
                         android:textSize="14sp" />
 
