@@ -198,7 +198,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_2"
+                                        android:background="@drawable/umrandung_amber"
                                         android:gravity="center"
                                         android:text="" />
 
@@ -211,7 +211,7 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
-                                        android:background="@drawable/bloodclucose_2"
+                                        android:background="@drawable/umrandung_amber"
                                         android:gravity="center"
                                         android:paddingTop="8dp"
                                         android:paddingBottom="8dp"
@@ -225,7 +225,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_2"
+                                        android:background="@drawable/umrandung_amber"
                                         android:gravity="center"
                                         android:text="" />
 

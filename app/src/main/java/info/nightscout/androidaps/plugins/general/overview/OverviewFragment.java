@@ -1512,7 +1512,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_OUT));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
                 cobView.setTextColor(MainApp.gc(R.color.white));
             }
 
