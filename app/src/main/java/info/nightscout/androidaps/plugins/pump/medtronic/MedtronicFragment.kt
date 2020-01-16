@@ -62,7 +62,7 @@ class MedtronicFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        medtronic_pumpstatus.setBackgroundColor(MainApp.gc(R.color.colorInitializingBorder))
+        medtronic_pumpstatus.setBackgroundColor(MainApp.gc(R.color.plastic))
 
         medtronic_rl_status.text = MainApp.gs(RileyLinkServiceState.NotStarted.getResourceId(RileyLinkTargetDevice.MedtronicPump))
 

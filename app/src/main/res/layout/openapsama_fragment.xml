@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/r22_bg"
+    android:background="@color/plastic"
     android:paddingTop="2dp"
     tools:context=".plugins.aps.openAPSAMA.OpenAPSAMAFragment">
 
