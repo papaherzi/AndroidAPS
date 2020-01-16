@@ -200,7 +200,7 @@
                                 android:autoSizeMinTextSize="12sp"
                                 android:autoSizeMaxTextSize="18sp"
                                 android:autoSizeStepGranularity="2sp"
-                                android:background="@drawable/bloodclucose_2"
+                                android:background="@drawable/umrandung_amber"
                                 android:gravity="center"
                                 android:text="" />
 
@@ -213,7 +213,7 @@
                                 android:autoSizeMinTextSize="7sp"
                                 android:autoSizeStepGranularity="1sp"
                                 android:autoSizeTextType="uniform"
-                                android:background="@drawable/bloodclucose_2"
+                                android:background="@drawable/umrandung_amber"
                                 android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
@@ -228,7 +228,7 @@
                                 android:autoSizeMinTextSize="12sp"
                                 android:autoSizeStepGranularity="2sp"
                                 android:autoSizeTextType="uniform"
-                                android:background="@drawable/bloodclucose_2"
+                                android:background="@drawable/umrandung_amber"
                                 android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"

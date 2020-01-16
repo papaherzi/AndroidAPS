@@ -112,5 +112,6 @@
     <color name="sienna3">#cd6839</color>
     <color name="crimson">#911d10</color>
     <color name="plastic_grey">#666666</color>
+    <color name="sphere_plastic_grey">#8c8c8c</color>
 
 </resources>

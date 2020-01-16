@@ -1475,7 +1475,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         }
         if (iobView != null) {
             Drawable drawable = iobView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
             iobView.setTextColor(MainApp.gc(R.color.white));
 //            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
@@ -1502,7 +1502,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.white));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
@@ -1512,7 +1512,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_OUT));
                 cobView.setTextColor(MainApp.gc(R.color.white));
             }
 
@@ -1556,7 +1556,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         if (activeTemp != null) {
              Drawable drawable = baseBasalView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
         baseBasalView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = baseBasalView.getBackground();
