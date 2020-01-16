@@ -1393,9 +1393,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         bgView.setPaintFlags(flag);
 
         if (timeAgoView != null)
-            timeAgoView.setText(DateUtil.minAgo(lastBG.date));
+            timeAgoView.setText(DateUtil.minAgo(lastBG.date) + "′");
         if (timeAgoShortView != null)
-            timeAgoShortView.setText("(" + DateUtil.minAgoShort(lastBG.date) + ")");
+            timeAgoShortView.setText( DateUtil.minAgoShort(lastBG.date) + "′");
+
 
         if (lastBG != null) {
 //            int color = MainApp.gc(R.color.inrange);
@@ -1509,7 +1510,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
             }
-            if (cobInfo.displayCob == 0) {
+            if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
 //                Drawable drawable = cobView.getBackground();
 //                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
