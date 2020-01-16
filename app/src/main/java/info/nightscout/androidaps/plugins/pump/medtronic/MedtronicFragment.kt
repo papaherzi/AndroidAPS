@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import info.nightscout.androidaps.MainApp
 import info.nightscout.androidaps.R
+import info.nightscout.androidaps.R.color.black
 import info.nightscout.androidaps.events.EventExtendedBolusChange
 import info.nightscout.androidaps.events.EventPumpStatusChanged
 import info.nightscout.androidaps.events.EventTempBasalChange
@@ -299,23 +300,20 @@ class MedtronicFragment : Fragment() {
 
         medtronic_tempbasal.text = TreatmentsPlugin.getPlugin()
                 .getTempBasalFromHistory(System.currentTimeMillis())?.toStringFull() ?: ""
-        medtronic_tempbasal.setTextColor(MainApp.gc(R.color.black))
+        medtronic_tempbasal.setTextColor(MainApp.gc(black))
 
         // battery
         if (MedtronicUtil.getBatteryType() == BatteryType.None || pumpStatus.batteryVoltage == null) {
             medtronic_pumpstate_battery.text = "{fa-battery-" + pumpStatus.batteryRemaining / 25 + "}  "
-            medtronic_pumpstate_battery.setTextColor(MainApp.gc(R.color.black))
         } else {
             medtronic_pumpstate_battery.text = "{fa-battery-" + pumpStatus.batteryRemaining / 25 + "}  " + pumpStatus.batteryRemaining + "%" + String.format("  (%.2f V)", pumpStatus.batteryVoltage)
-            medtronic_pumpstate_battery.setTextColor(MainApp.gc(R.color.black))
         }
         SetWarnColor.setColorInverse(medtronic_pumpstate_battery, pumpStatus.batteryRemaining.toDouble(), 25.0, 10.0)
-
-
+        medtronic_pumpstate_battery.setTextColor(MainApp.gc(black))
         // reservoir
         medtronic_reservoir.text = MainApp.gs(R.string.reservoirvalue, pumpStatus.reservoirRemainingUnits, pumpStatus.reservoirFullUnits)
         SetWarnColor.setColorInverse(medtronic_reservoir, pumpStatus.reservoirRemainingUnits, 50.0, 20.0)
-        medtronic_reservoir.setTextColor(MainApp.gc(R.color.black))
+        medtronic_reservoir.setTextColor(MainApp.gc(black))
         medtronic_errors.text = pumpStatus.errorInfo
     }
 }
