@@ -93,6 +93,8 @@
     <color name="ribbonTextCritical">#FFFFFF</color>
 
     <color name="splashBackground">#2E2E2E</color>
+    <!-- Treatment Text   -->
+    <color name="treatment">#B2B2B2</color>
 
 <!-- Rig22 Colors -->
     <color name="white">#FFFFFF</color>

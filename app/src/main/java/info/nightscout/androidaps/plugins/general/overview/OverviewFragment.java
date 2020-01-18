@@ -72,6 +72,7 @@ import info.nightscout.androidaps.dialogs.ProfileSwitchDialog;
 import info.nightscout.androidaps.dialogs.ProfileViewerDialog;
 import info.nightscout.androidaps.dialogs.TempTargetDialog;
 import info.nightscout.androidaps.dialogs.TreatmentDialog;
+import info.nightscout.androidaps.events.EventTreatmentChange;
 import info.nightscout.androidaps.dialogs.WizardDialog;
 import info.nightscout.androidaps.events.EventAcceptOpenLoopChange;
 import info.nightscout.androidaps.events.EventCareportalEventChange;
@@ -83,7 +84,6 @@ import info.nightscout.androidaps.events.EventPumpStatusChanged;
 import info.nightscout.androidaps.events.EventRefreshOverview;
 import info.nightscout.androidaps.events.EventTempBasalChange;
 import info.nightscout.androidaps.events.EventTempTargetChange;
-import info.nightscout.androidaps.events.EventTreatmentChange;
 import info.nightscout.androidaps.interfaces.Constraint;
 import info.nightscout.androidaps.interfaces.PluginType;
 import info.nightscout.androidaps.interfaces.PumpDescription;
@@ -198,7 +198,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     Handler sLoopHandler = new Handler();
     Runnable sRefreshLoop = null;
 
-    public enum CHARTTYPE {PRE, BAS, IOB, COB, DEV, SEN, ACTPRIM, ACTSEC, DEVSLOPE}
+    public enum CHARTTYPE {PRE, BAS, IOB, COB, DEV, SEN, ACTPRIM, ACTSEC, DEVSLOPE, TREATM}
 
     private static final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
     private static ScheduledFuture<?> scheduledUpdate = null;
@@ -506,6 +506,15 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             item.setCheckable(true);
             item.setChecked(SP.getBoolean("showactivityprimary", true));
 
+            item = popup.getMenu().add(Menu.NONE, CHARTTYPE.TREATM.ordinal(), Menu.NONE, MainApp.gs(R.string.overview_show_treatments));
+            title = item.getTitle();
+            if (titleMaxChars < title.length()) titleMaxChars = title.length();
+            s = new SpannableString(title);
+            s.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.treatment, null)), 0, s.length(), 0);
+            item.setTitle(s);
+            item.setCheckable(true);
+            item.setChecked(SP.getBoolean("showtreatments", true));
+
             dividerItem = popup.getMenu().add("");
             dividerItem.setEnabled(false);
 
@@ -590,6 +599,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                         SP.putBoolean("showactivitysecondary", !item.isChecked());
                     } else if (item.getItemId() == CHARTTYPE.DEVSLOPE.ordinal()) {
                         SP.putBoolean("showdevslope", !item.isChecked());
+                    } else if (item.getItemId() == CHARTTYPE.TREATM.ordinal()) {
+                        SP.putBoolean("showtreatments", !item.isChecked());
                     }
                     scheduleUpdateGUI("onGraphCheckboxesCheckedChanged");
                     return true;
@@ -1412,7 +1423,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //                color = MainApp.gc(R.color.low);
             {
                 Drawable drawable = bgView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 bgView.setTextColor(MainApp.gc(R.color.white));
             }
 
@@ -1420,7 +1431,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //                color = MainApp.gc(R.color.high);
             {
                 Drawable drawable = bgView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 bgView.setTextColor(MainApp.gc(R.color.white));
             }
             bgView.setText(lastBG.valueToUnitsToString(units));
@@ -1674,7 +1685,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             graphData.formatAxis(fromTime, endTime);
 
             // Treatments
-            graphData.addTreatments(fromTime, endTime);
+            if (SP.getBoolean("showtreatments", true)) {
+                graphData.addTreatments(fromTime, endTime);
+            }
 
             if (SP.getBoolean("showactivityprimary", true)) {
                 graphData.addActivity(fromTime, endTime, false, 0.8d);
