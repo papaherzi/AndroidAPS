@@ -4,15 +4,11 @@
     <string name="af_lang" translatable="false">Afrikaans</string>
     <string name="bg_lang" translatable="false">Bulgarian</string>
     <string name="nl_lang" translatable="false">Dutch</string>
-    <!--    <string name="fi_lang" translatable="false">Finnish</string> -->
     <string name="fr_lang" translatable="false">French</string>
     <string name="de_lang" translatable="false">German</string>
     <string name="el_lang" translatable="false">Greek</string>
-    <!--   <string name="he_lang" translatable="false">Hebrew</string> -->
     <string name="zh_lang" translatable="false">Chinese</string>
-    <!--    <string name="ga_lang" translatable="false">Irish</string> -->
     <string name="it_lang" translatable="false">Italian</string>
-    <!--    <string name="ja_lang" translatable="false">Japanese</string> -->
     <string name="ko_lang" translatable="false">Korean</string>
     <string name="lt_lang" translatable="false">Lithuanian</string>
     <string name="pl_lang" translatable="false">Polish</string>
@@ -1687,6 +1683,13 @@
     <string name="alreadyset">Already set</string>
     <string name="message">Message</string>
     <string name="clearqueueconfirm">Clear queue? All data in queue will be lost!</string>
+
     <string name="overview_show_treatments">Show Treatments</string>
+
+    <string name="ebstopsloop">Use of Extended bolus feature will stop closed loop mode for the time of running extended bolus. Do you really want it?</string>
+    <string name="closed_loop_disabled_with_eb">Closed loop disabled because of running Extended bolus</string>
+    <string name="extended_bolus_short">EB</string>
+    <string name="phonechecker">\"PhoneChecker\"</string>
+
 
 </resources>
