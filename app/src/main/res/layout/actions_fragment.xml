@@ -257,6 +257,14 @@
 
         </androidx.gridlayout.widget.GridLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/tools"
+            android:textColor="@color/darkgray"/>
+
         <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
