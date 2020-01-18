@@ -1,4 +1,3 @@
-
 package info.nightscout.androidaps.plugins.general.overview;
 
 import android.annotation.SuppressLint;
@@ -247,7 +246,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         avgdeltaView = (TextView) view.findViewById(R.id.overview_avgdelta);
         baseBasalView = (TextView) view.findViewById(R.id.overview_basebasal);
         extendedBolusView = (TextView) view.findViewById(R.id.overview_extendedbolus);
-        extendedBolusLayout = view.findViewById(R.id.overview_extendedbolus_layout);
+//        extendedBolusLayout = view.findViewById(R.id.overview_extendedbolus_layout);
         activeProfileView = (TextView) view.findViewById(R.id.overview_activeprofile);
         pumpStatusView = (TextView) view.findViewById(R.id.overview_pumpstatus);
         pumpDeviceStatusView = (TextView) view.findViewById(R.id.overview_pump);
@@ -1115,7 +1114,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         } else {
             apsModeView.setVisibility(View.GONE);
         }
-
         // temp target
         TempTarget tempTarget = TreatmentsPlugin.getPlugin().getTempTargetFromHistory();
         if (tempTarget != null) {
@@ -1129,8 +1127,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             tempTargetView.setText(Profile.toTargetRangeString(profile.getTargetLowMgdl(), profile.getTargetHighMgdl(), Constants.MGDL, units));
             tempTargetView.setVisibility(View.VISIBLE);
         }
-
-
         activeProfileView.setText(ProfileFunctions.getInstance().getProfileNameWithDuration());
         if (profile.getPercentage() != 100 || profile.getTimeshift() != 0) {
             activeProfileView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
@@ -1270,7 +1266,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
             OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
         });
-
         if (activeTemp != null) {
             baseBasalView.setTextColor(MainApp.gc(R.color.basal));
         } else {
@@ -1280,7 +1275,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";
         if (extendedBolusView != null) { // must not exists in all layouts
-
             if (shorttextmode) {
                 if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses()) {
                     extendedBolusText = DecimalFormatter.to2Decimal(extendedBolus.absoluteRate()) + "U/h";
@@ -1298,21 +1292,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             } else {
                 extendedBolusView.setVisibility(View.VISIBLE);
                 if (extendedBolusLayout != null) extendedBolusLayout.setVisibility(View.VISIBLE);
-
-            if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses())
-                extendedBolusText = shorttextmode ? DecimalFormatter.to2Decimal(extendedBolus.absoluteRate()) + "U/h" : extendedBolus.toStringMedium();
-            extendedBolusView.setText(extendedBolusText);
-            extendedBolusView.setOnClickListener(v -> {
-                if (extendedBolus != null)
-                    OKDialog.show(getActivity(), MainApp.gs(R.string.extended_bolus), extendedBolus.toString());
-            });
-            // hide whole line for APS mode
-            if (extendedBolusLayout != null) {
-                if (extendedBolusText.equals(""))
-                    extendedBolusLayout.setVisibility(View.GONE);
-                else
-                    extendedBolusLayout.setVisibility(View.VISIBLE);
-
             }
         }
 
@@ -1375,18 +1354,15 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         } else
             flag &= ~Paint.STRIKE_THRU_TEXT_FLAG;
         bgView.setPaintFlags(flag);
-
         if (timeAgoView != null)
             timeAgoView.setText(DateUtil.minAgo(lastBG.date));
         if (timeAgoShortView != null)
             timeAgoShortView.setText("(" + DateUtil.minAgoShort(lastBG.date) + ")");
-
         // iob
         TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
         TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
         final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
         final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
-
         if (shorttextmode) {
             String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U";
             iobView.setText(iobtext);
@@ -1407,7 +1383,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
             iobView.setText(iobtext);
         }*/
- //Start with updating the BG as it is unaffected by loop.
+        //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
             return;
@@ -1582,9 +1558,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         baseBasalView.setText(basalText);
 
         if (activeTemp != null) {
-             Drawable drawable = baseBasalView.getBackground();
+            Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-        baseBasalView.setTextColor(MainApp.gc(R.color.white));
+            baseBasalView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
@@ -1794,3 +1770,4 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
 
 }
+

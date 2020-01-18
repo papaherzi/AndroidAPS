@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </androidx.recyclerview.widget.RecyclerView>
-<!-- Loop Layout -->
+                <!-- Loop Layout -->
                 <LinearLayout
                     android:id="@+id/overview_looplayout"
                     android:layout_width="match_parent"
@@ -83,7 +83,7 @@
 
                 </LinearLayout>
 
-<!-- Pump Status Layout -->
+                <!-- Pump Status Layout -->
 
                 <LinearLayout
                     android:id="@+id/overview_pumpstatuslayout"
@@ -106,7 +106,7 @@
 
                 </LinearLayout>
 
-<!-- Blutzuckerwert, AVG -->
+                <!-- Blutzuckerwert, AVG -->
                 <LinearLayout
                     android:baselineAligned="false"
                     android:layout_width="match_parent"
@@ -116,7 +116,6 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -149,7 +148,7 @@
                             android:textSize="32sp"
                             android:textStyle="bold" />
                     </LinearLayout>
-<!--  IOB, COB, AS, BAS und Pumpe -->
+                    <!--  IOB, COB, AS, BAS und Pumpe -->
                     <LinearLayout
                         android:layout_width="380dp"
                         android:layout_height="92dp"
@@ -158,82 +157,10 @@
                         android:paddingTop="10dp">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_weight="0"
                             android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/overview_bg"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="6dp"
-                                android:text="00.0"
-                                android:textSize="42sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/overview_arrow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginTop="-5dp"
-                                android:layout_marginEnd="4dp"
-                                android:paddingStart="-2dp"
-                                android:paddingEnd="0dp"
-                                android:text="→"
-                                android:textSize="28sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/overview_timeago"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="-2dp"
-                                android:paddingStart="2dp"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/overview_delta"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="-2dp"
-                                android:paddingStart="2dp"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/overview_avgdelta"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:textSize="14sp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="6dp"
-                        android:orientation="vertical">
 
 
                             <TextView
@@ -282,20 +209,6 @@
                                 android:paddingLeft="2dp"
                                 android:paddingRight="2dp"
                                 android:text="" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="1dp"
-                                android:text="@string/cob"
-                                android:textSize="16sp" />
-
 
                             <TextView
                                 android:id="@+id/overview_cob"
@@ -347,7 +260,6 @@
                                 android:text=""
                                 android:textColor="@android:color/black" /> -->
 
-
                         </LinearLayout>
 
                         <LinearLayout
@@ -357,7 +269,6 @@
                             android:layout_weight="0"
                             android:orientation="horizontal">
 
-
                             <ImageView
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
@@ -365,6 +276,7 @@
                                 android:layout_marginStart="11dp"
                                 android:background="@drawable/ic_delta_28_dark">
 
+                            </ImageView>
 
                             <ImageView
                                 android:layout_width="28dp"
@@ -399,46 +311,6 @@
                                 android:layout_marginStart="19dp"
                                 android:background="@drawable/ic_bas_28_dark">
 
-                            <TextView
-                                android:id="@+id/overview_basebasal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="0.50U/h @17:35 1/30min - 0.40U/h"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/overview_extendedbolus_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="1dp"
-                                android:text="@string/extended_bolus_short"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:layout_width="5dp"
-                                android:layout_height="wrap_content"
-                                android:text=":"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/overview_extendedbolus"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="0.50U/h @17:35 1/30min - 0.40U/h"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
                             </ImageView>
 
                             <!--                            <ImageView
@@ -447,57 +319,52 @@
                                 android:layout_gravity="end"
                                 android:layout_marginStart="18dp"
                                 android:background="@drawable/ic_as_28">
-
                             </ImageView> -->
 
                         </LinearLayout>
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="1dp"
-                                android:text="AS"
-                                android:textSize="16sp" />
-
+                        <!-- Overview Pump
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/white_trans_bg"
+                            android:orientation="horizontal">
                             <TextView
-                                android:id="@+id/overview_sensitivity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="20dp"
+                                android:id="@+id/overview_pump"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="2dp"
                                 android:text=""
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                                android:textColor="#FFFFFF"
+                                android:textSize="17sp" />
+                        </LinearLayout> -->
+
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
-
                 </LinearLayout>
 
-<!-- Eine gestrichelte Linie
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:src="@drawable/dotted"
-                    android:layerType="software" -->
-<!-- Careportal
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
+                <!-- Eine gestrichelte Linie
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="5dp"
+                                    android:src="@drawable/dotted"
+                                    android:layerType="software" -->
+                <!-- Careportal
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+                                    <include
+                                        android:id="@+id/careportal_stats"
+                                        layout="@layout/careportal_stats_fragment_on"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout> -->
 
-                    <include
-                        android:id="@+id/careportal_stats"
-                        layout="@layout/careportal_stats_fragment_on"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout> -->
-
-<!--  STATUSLIGHTS -->
+                <!--  STATUSLIGHTS -->
                 <LinearLayout
                     android:id="@+id/overview_statuslights"
                     android:layout_width="match_parent"
@@ -516,15 +383,15 @@
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
-<!--                    <TextView
-                        android:id="@+id/overview_insulinage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_statuslight_insulin"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:text="" />  -->
+                    <!--                    <TextView
+                                            android:id="@+id/overview_insulinage"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginHorizontal="1dp"
+                                            android:background="@drawable/bloodclucose_bg"
+                                            android:drawableLeft="@drawable/ic_statuslight_insulin"
+                                            android:gravity="center_vertical|center_horizontal"
+                                            android:text="" />  -->
 
                     <TextView
                         android:id="@+id/overview_reservoirlevel"
@@ -558,6 +425,7 @@
 
                 </LinearLayout>
 
+                <!-- Graphen -->
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -590,34 +458,31 @@
                 </RelativeLayout>
 
 
- <!--               <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="1dp"
-                        android:text="@string/iob"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="5dp"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/overview_iob"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text=""
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
-                </LinearLayout> -->
+                <!--               <LinearLayout
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:orientation="horizontal">
+                                   <TextView
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:layout_marginStart="8dp"
+                                       android:layout_marginEnd="1dp"
+                                       android:text="@string/iob"
+                                       android:textSize="16sp" />
+                                   <TextView
+                                       android:layout_width="5dp"
+                                       android:layout_height="wrap_content"
+                                       android:text=":"
+                                       android:textSize="16sp" />
+                                   <TextView
+                                       android:id="@+id/overview_iob"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:layout_marginStart="14dp"
+                                       android:text=""
+                                       android:textSize="16sp"
+                                       android:textStyle="bold"/>
+                               </LinearLayout> -->
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
@@ -628,43 +493,39 @@
                     android:background="@color/plastic_grey"
                     android:visibility="gone" />
 
- <!--               <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="1dp"
-                        android:text="@string/cob"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="5dp"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/overview_cob"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text=""
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout> -->
- <!--               <com.jjoe64.graphview.GraphView
-                    android:id="@+id/overview_cobgraph"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
-                    android:visibility="gone" /> -->
+                <!--               <LinearLayout
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:orientation="horizontal">
+                                   <TextView
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:layout_marginStart="8dp"
+                                       android:layout_marginEnd="1dp"
+                                       android:text="@string/cob"
+                                       android:textSize="16sp" />
+                                   <TextView
+                                       android:layout_width="5dp"
+                                       android:layout_height="wrap_content"
+                                       android:text=":"
+                                       android:textSize="16sp" />
+                                   <TextView
+                                       android:id="@+id/overview_cob"
+                                       android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content"
+                                       android:layout_marginStart="8dp"
+                                       android:text=""
+                                       android:textSize="16sp"
+                                       android:textStyle="bold"/>
+                               </LinearLayout> -->
+                <!--               <com.jjoe64.graphview.GraphView
+                                   android:id="@+id/overview_cobgraph"
+                                   android:layout_width="wrap_content"
+                                   android:layout_marginStart="0dp"
+                                   android:layout_marginEnd="0dp"
+                                   android:layout_height="90dp"
+                                   android:background="@color/plastic_grey"
+                                   android:visibility="gone" /> -->
 
             </LinearLayout>
 
@@ -697,14 +558,14 @@
             </LinearLayout>
 
 
-<!-- Gestrichelte Linie
-                <ImageView
-                     android:layout_width="match_parent"
-                     android:layout_height="5dp"
-                     android:src="@drawable/dotted"
-                     android:layerType="software" /> -->
+            <!-- Gestrichelte Linie
+                            <ImageView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="5dp"
+                                 android:src="@drawable/dotted"
+                                 android:layerType="software" /> -->
 
-<!-- Untere Funktionsbutton Reihe -->
+            <!-- Untere Funktionsbutton Reihe -->
             <!-- Untere Funktionsbutton Reihe -->
             <LinearLayout
                 android:layout_width="match_parent"
