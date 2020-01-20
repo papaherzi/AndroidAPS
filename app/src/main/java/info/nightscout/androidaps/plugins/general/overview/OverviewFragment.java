@@ -140,6 +140,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     TextView avgdeltaView;
     TextView baseBasalView;
     TextView extendedBolusView;
+    LinearLayout extendedBolusLayout;
     TextView activeProfileView;
     TextView iobView;
     TextView cobView;
@@ -239,22 +240,24 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (smallWidth) {
             arrowView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 35);
         }
-        sensitivityView = view.findViewById(R.id.overview_sensitivity);
-        timeAgoView = view.findViewById(R.id.overview_timeago);
-        timeAgoShortView = view.findViewById(R.id.overview_timeagoshort);
-        deltaView = view.findViewById(R.id.overview_delta);
-        deltaShortView = view.findViewById(R.id.overview_deltashort);
-        avgdeltaView = view.findViewById(R.id.overview_avgdelta);
-        baseBasalView = view.findViewById(R.id.overview_basebasal);
-        extendedBolusView = view.findViewById(R.id.overview_extendedbolus);
-        activeProfileView = view.findViewById(R.id.overview_activeprofile);
-        pumpStatusView = view.findViewById(R.id.overview_pumpstatus);
-        pumpDeviceStatusView = view.findViewById(R.id.overview_pump);
-        openapsDeviceStatusView = view.findViewById(R.id.overview_openaps);
-        uploaderDeviceStatusView = view.findViewById(R.id.overview_uploader);
-        iobCalculationProgressView = view.findViewById(R.id.overview_iobcalculationprogess);
-        loopStatusLayout = view.findViewById(R.id.overview_looplayout);
-        pumpStatusLayout = view.findViewById(R.id.overview_pumpstatuslayout);
+
+        sensitivityView = (TextView) view.findViewById(R.id.overview_sensitivity);
+        timeAgoView = (TextView) view.findViewById(R.id.overview_timeago);
+        timeAgoShortView = (TextView) view.findViewById(R.id.overview_timeagoshort);
+        deltaView = (TextView) view.findViewById(R.id.overview_delta);
+        deltaShortView = (TextView) view.findViewById(R.id.overview_deltashort);
+        avgdeltaView = (TextView) view.findViewById(R.id.overview_avgdelta);
+        baseBasalView = (TextView) view.findViewById(R.id.overview_basebasal);
+        extendedBolusView = (TextView) view.findViewById(R.id.overview_extendedbolus);
+        extendedBolusLayout = view.findViewById(R.id.overview_extendedbolus_layout);
+        activeProfileView = (TextView) view.findViewById(R.id.overview_activeprofile);
+        pumpStatusView = (TextView) view.findViewById(R.id.overview_pumpstatus);
+        pumpDeviceStatusView = (TextView) view.findViewById(R.id.overview_pump);
+        openapsDeviceStatusView = (TextView) view.findViewById(R.id.overview_openaps);
+        uploaderDeviceStatusView = (TextView) view.findViewById(R.id.overview_uploader);
+        iobCalculationProgressView = (TextView) view.findViewById(R.id.overview_iobcalculationprogess);
+        loopStatusLayout = (LinearLayout) view.findViewById(R.id.overview_looplayout);
+        pumpStatusLayout = (LinearLayout) view.findViewById(R.id.overview_pumpstatuslayout);
 
         pumpStatusView.setBackgroundColor(MainApp.gc(R.color.colorInitializingBorder));
 
@@ -1073,8 +1076,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (deltaShortView != null)
                     deltaShortView.setText(Profile.toSignedUnitsString(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units));
                 if (avgdeltaView != null)
-                    avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
-                            "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
+                    avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) + "\n" +
+                            "øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1265,21 +1268,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
  //               basalText = "T: " + activeTemp.toStringVeryShort();
                 basalText = activeTemp.toStringVeryShort();
             } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
+                basalText = MainApp.gs(R.string.pump_basebasalrate, profile.getBasal());
             }
-            baseBasalView.setOnClickListener(v -> {
-                String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate,profile.getBasal()) + "\n";
-                if (activeTemp != null) {
-                    fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
-                }
-                OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
-            });
-
         } else {
             if (activeTemp != null) {
                 basalText = activeTemp.toStringFull();
             } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate,profile.getBasal());
+                basalText = MainApp.gs(R.string.pump_basebasalrate, profile.getBasal());
             }
         }
 
@@ -1292,20 +1287,31 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         baseBasalView.setText(basalText);
 
+        baseBasalView.setOnClickListener(v -> {
+            String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate, profile.getBasal()) + "\n";
+            if (activeTemp != null) {
+                fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
+            }
+            OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
+
+
         if (activeTemp != null) {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
+
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
-        }
+            baseBasalView.setTextColor(MainApp.gc(R.color.defaulttextcolor));
+
 
 
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";
         if (extendedBolusView != null) { // must not exists in all layouts
+
             if (shorttextmode) {
                 if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses()) {
                     extendedBolusText = DecimalFormatter.to2Decimal(extendedBolus.absoluteRate());
@@ -1315,14 +1321,22 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     extendedBolusText = extendedBolus.toString();
                 }
             }
+            
+            if (extendedBolus != null && !pump.isFakingTempsByExtendedBoluses())
+                extendedBolusText = shorttextmode ? DecimalFormatter.to2Decimal(extendedBolus.absoluteRate()) + "U/h" : extendedBolus.toStringMedium();
+
             extendedBolusView.setText(extendedBolusText);
-            if (Config.NSCLIENT) {
-                extendedBolusView.setOnClickListener(v -> OKDialog.show(getActivity(), MainApp.gs(R.string.extended_bolus), extendedBolus.toString()));
+            extendedBolusView.setOnClickListener(v -> {
+                if (extendedBolus != null)
+                    OKDialog.show(getActivity(), MainApp.gs(R.string.extended_bolus), extendedBolus.toString());
+            });
+            // hide whole line for APS mode
+            if (extendedBolusLayout != null) {
+                if (extendedBolusText.equals(""))
+                    extendedBolusLayout.setVisibility(View.GONE);
+                else
+                    extendedBolusLayout.setVisibility(View.VISIBLE);
             }
-            if (extendedBolusText.equals(""))
-                extendedBolusView.setVisibility(Config.NSCLIENT ? View.INVISIBLE : View.GONE);
-            else
-                extendedBolusView.setVisibility(View.VISIBLE);
         }
 
 
