@@ -130,10 +130,9 @@
                             android:layout_gravity="top|center"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/bloodclucose_2"
+                            android:background="@drawable/sphere_amber_stroke"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="00.0"
-                            android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="normal" />
 
@@ -146,7 +145,6 @@
                             android:layout_marginTop="2dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textColor="@color/plastic_grey"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
