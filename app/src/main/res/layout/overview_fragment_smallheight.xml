@@ -517,6 +517,24 @@
                     android:background="@color/plastic_grey"
                     android:visibility="gone" />
 
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_cobgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_height="90dp"
+                    android:background="@color/plastic_grey"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_devgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_height="90dp"
+                    android:background="@color/plastic_grey"
+                    android:visibility="gone" />
+
                 <!--            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
