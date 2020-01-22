@@ -1726,6 +1726,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             boolean useIAForScale = false;
 
             boolean anyDev = false;
+            boolean anyIob = false;
+            boolean anyCob = false;
 
             if (SP.getBoolean("showdeviations", false)) {
                 useDevForScale = true;
@@ -1740,7 +1742,20 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 useDSForScale = true;
                 anyDev = true;
             }
+
+            if (SP.getBoolean("showiob", false)) {
+                useIobForScale = true;
+                anyIob = true;
+            }
+
+            if (SP.getBoolean("showcob", false)) {
+                useCobForScale = true;
+                anyCob = true;
+            }
+
             final boolean showDevGraph = anyDev;
+            final boolean showiobGraph = anyIob;
+            final boolean showcobGraph = anyCob;
 
             iobGraphData.addIob(fromTime, now, useIobForScale, useCobForScale ? 1d : 0.5d, SP.getBoolean("showprediction", false));
             cobGraphData.addCob(fromTime, now, useCobForScale, useCobForScale ? 1d : 0.5d);
@@ -1776,8 +1791,22 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             FragmentActivity activity = getActivity();
             if (activity != null) {
                 activity.runOnUiThread(() -> {
-                    iobGraph.setVisibility(View.VISIBLE);
-                    cobGraph.setVisibility(View.VISIBLE);
+//                    iobGraph.setVisibility(View.VISIBLE);
+//                    cobGraph.setVisibility(View.VISIBLE);
+
+
+                    if (showiobGraph) {
+                        iobGraph.setVisibility(View.VISIBLE);
+                    } else {
+                        iobGraph.setVisibility(View.GONE);
+                    }
+
+                    if (showcobGraph) {
+                        cobGraph.setVisibility(View.VISIBLE);
+                    } else {
+                        cobGraph.setVisibility(View.GONE);
+                    }
+
                     if (showDevGraph) {
                         devGraph.setVisibility(View.VISIBLE);
                     } else {
