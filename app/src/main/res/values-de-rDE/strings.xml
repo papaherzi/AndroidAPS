@@ -1444,4 +1444,5 @@ Unerwartetes Verhalten.</string>
     <string name="alreadyset">Bereits festgelegt</string>
     <string name="message">Nachricht</string>
     <string name="clearqueueconfirm">Warteschlange löschen? Alle Daten in der Warteschlange gehen verloren!</string>
+    <string name="overview_show_treatments">Behandlungen</string>
 </resources>

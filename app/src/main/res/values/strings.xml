@@ -1691,5 +1691,6 @@
     <string name="closed_loop_disabled_with_eb">Closed loop disabled because of running Extended bolus</string>
     <string name="extended_bolus_short">EB</string>
     <string name="phonechecker">\"PhoneChecker\"</string>
+    <string name="overview_show_treatments">Show Treatments</string>
 
 </resources>

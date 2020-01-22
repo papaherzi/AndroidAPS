@@ -82,8 +82,7 @@
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
                         android:text="TempTarget"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="@color/mdtp_white" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
 
@@ -130,10 +129,9 @@
                             android:layout_gravity="top|center"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/bloodclucose_bg"
+                            android:background="@drawable/sphere_amber_stroke"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="00.0"
-                            android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="normal" />
 
@@ -146,7 +144,6 @@
                             android:layout_marginTop="2dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -175,7 +172,7 @@
                                         android:layout_marginStart="0dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_bg"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />
@@ -187,7 +184,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/bloodclucose_bg"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />
@@ -201,8 +198,7 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:background="@drawable/sphere_cyan_stroke"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_cob"
@@ -217,8 +213,7 @@
                                         android:gravity="center"
                                         android:paddingTop="8dp"
                                         android:paddingBottom="8dp"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
 
                                     <TextView
@@ -230,8 +225,7 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:background="@drawable/sphere_teal_stroke"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textColor="@android:color/black" />
+                                        android:text="" />
 
                                 </LinearLayout>
 
@@ -350,14 +344,14 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/overview_extendedbolus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textAlignment="center"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/mdtp_white" />
+                <!--           <TextView
+                               android:id="@+id/overview_extendedbolus"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:gravity="center_horizontal"
+                               android:textAlignment="center"
+                               android:textAppearance="?android:attr/textAppearanceSmall"
+                               android:textColor="@color/mdtp_white" /> -->
 
 
 
@@ -458,7 +452,8 @@
                 <!-- Grafiken -->
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:background="@color/r22_bg">
 
                     <com.jjoe64.graphview.GraphView
                         android:id="@+id/overview_bggraph"
@@ -517,7 +512,24 @@
                     android:layout_width="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_cobgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_devgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
                     android:background="@color/r22_bg"
                     android:visibility="gone" />
@@ -547,14 +559,14 @@
                                     android:textSize="16sp"
                                     android:textStyle="bold"/>
                             </LinearLayout> -->
-                <com.jjoe64.graphview.GraphView
-                    android:id="@+id/overview_cobgraph"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/r22_bg"
-                    android:visibility="gone" />
+                <!--           <com.jjoe64.graphview.GraphView
+                               android:id="@+id/overview_cobgraph"
+                               android:layout_width="wrap_content"
+                               android:layout_marginStart="0dp"
+                               android:layout_marginEnd="0dp"
+                               android:layout_height="90dp"
+                               android:background="@color/plastic_grey"
+                               android:visibility="gone" /> -->
 
             </LinearLayout>
 

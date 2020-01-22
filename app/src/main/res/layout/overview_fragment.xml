@@ -79,8 +79,7 @@
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
                         android:text="TempTarget"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="@color/mdtp_white" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
 
@@ -117,7 +116,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="260dp"
+                        android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="horizontal">
@@ -128,9 +127,9 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_gravity="top|center"
-                            android:layout_marginStart="15dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="14dp"
-                            android:background="@drawable/bloodclucose_bg"
+                            android:background="@drawable/sphere_amber_stroke"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="00.0"
                             android:textSize="30sp"
@@ -142,86 +141,96 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="top|center"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textColor="@color/white"
-                            android:textSize="30sp"
+                            android:textSize="32sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                     <!--  IOB, COB, AS, BAS und Pumpe -->
                     <LinearLayout
                         android:layout_width="380dp"
-                        android:layout_height="85dp"
+                        android:layout_height="92dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:paddingTop="15dp">
+                        android:paddingTop="10dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="46dp"
                             android:layout_weight="0"
                             android:orientation="horizontal">
 
 
                             <TextView
                                 android:id="@+id/overview_deltashort"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
                                 android:layout_marginStart="5dp"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeStepGranularity="2sp"
-                                android:background="@drawable/ic_ball_grey"
+                                android:background="@drawable/bloodclucose_bg"
                                 android:gravity="center"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp"
                                 android:text=""
+                                android:textSize="18dp"
                                 android:textColor="@android:color/black" />
 
                             <TextView
                                 android:id="@+id/overview_timeago"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="5dp"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeStepGranularity="2sp"
-                                android:background="@drawable/ic_ball_grey"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="3dp"
+                                android:background="@drawable/bloodclucose_bg"
                                 android:gravity="center"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp"
                                 android:text=""
+                                android:textSize="18dp"
                                 android:textColor="@android:color/black" />
 
                             <TextView
                                 android:id="@+id/overview_iob"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="5dp"
-                                android:autoSizeTextType="uniform"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeStepGranularity="2sp"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="3dp"
                                 android:background="@drawable/sphere_cyan_stroke"
                                 android:gravity="center"
-                                android:text="" />
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp"
+                                android:text=""
+                                android:textSize="18dp"/>
 
                             <TextView
                                 android:id="@+id/overview_cob"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="5dp"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="3dp"
                                 android:autoSizeMaxTextSize="18sp"
                                 android:autoSizeMinTextSize="7sp"
                                 android:autoSizeStepGranularity="1sp"
                                 android:autoSizeTextType="uniform"
                                 android:background="@drawable/sphere_amber_stroke"
                                 android:gravity="center"
+                                android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
+                                android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
                                 android:text="" />
 
                             <TextView
                                 android:id="@+id/overview_basebasal"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_marginStart="3dp"
+                                android:background="@drawable/sphere_teal_stroke"
+                                android:gravity="center"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp"
+                                android:text=""
+                                android:textSize="18dp"/>
+
+                            <!--                            <TextView
+                                android:id="@+id/overview_sensitivity"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_marginStart="5dp"
@@ -229,27 +238,12 @@
                                 android:autoSizeMinTextSize="12sp"
                                 android:autoSizeStepGranularity="2sp"
                                 android:autoSizeTextType="uniform"
-                                android:background="@drawable/sphere_teal_stroke"
+                                android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
                                 android:paddingTop="8dp"
                                 android:paddingBottom="8dp"
-                                android:text="" />
-
-                            <!--                            <TextView
-                                                            android:id="@+id/overview_sensitivity"
-                                                            android:layout_width="40dp"
-                                                            android:layout_height="40dp"
-                                                            android:layout_marginStart="5dp"
-                                                            android:autoSizeMaxTextSize="18sp"
-                                                            android:autoSizeMinTextSize="12sp"
-                                                            android:autoSizeStepGranularity="2sp"
-                                                            android:autoSizeTextType="uniform"
-                                                            android:background="@drawable/ic_ball_grey"
-                                                            android:gravity="center"
-                                                            android:paddingTop="8dp"
-                                                            android:paddingBottom="8dp"
-                                                            android:text=""
-                                                            android:textColor="@android:color/black" /> -->
+                                android:text=""
+                                android:textColor="@android:color/black" /> -->
 
                         </LinearLayout>
 
@@ -273,7 +267,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
-                                android:layout_marginStart="16dp"
+                                android:layout_marginStart="19dp"
                                 android:background="@drawable/ic_clock_28">
 
                             </ImageView>
@@ -282,7 +276,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
-                                android:layout_marginStart="17dp"
+                                android:layout_marginStart="19dp"
                                 android:background="@drawable/ic_pumpe_28">
 
                             </ImageView>
@@ -290,7 +284,7 @@
                             <ImageView
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
-                                android:layout_marginStart="17dp"
+                                android:layout_marginStart="19dp"
                                 android:background="@drawable/ic_carb_28">
 
                             </ImageView>
@@ -299,7 +293,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="end"
-                                android:layout_marginStart="15dp"
+                                android:layout_marginStart="19dp"
                                 android:background="@drawable/ic_bas_28">
 
                             </ImageView>
@@ -314,22 +308,22 @@
 
                         </LinearLayout>
                         <!-- Overview Pump
-                                                <LinearLayout
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="43dp"
-                                                    android:layout_marginTop="5dp"
-                                                    android:layout_weight="1"
-                                                    android:background="@drawable/white_trans_bg"
-                                                    android:orientation="horizontal">
-                                                    <TextView
-                                                        android:id="@+id/overview_pump"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="30dp"
-                                                        android:layout_marginStart="2dp"
-                                                        android:text=""
-                                                        android:textColor="#FFFFFF"
-                                                        android:textSize="17sp" />
-                                                </LinearLayout> -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="43dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/white_trans_bg"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/overview_pump"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="2dp"
+                                android:text=""
+                                android:textColor="#FFFFFF"
+                                android:textSize="17sp" />
+                        </LinearLayout> -->
 
 
                     </LinearLayout>
@@ -390,7 +384,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_statuslight_cartridge"
+                        android:drawableLeft="@drawable/ic_cartridge_35_2"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -416,11 +410,12 @@
 
                 </LinearLayout>
 
-                <!-- Grafiken -->
+                <!-- Graphen -->
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@color/r22_bg">
 
                     <com.jjoe64.graphview.GraphView
                         android:id="@+id/overview_bggraph"
@@ -479,7 +474,24 @@
                     android:layout_width="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_cobgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_height="90dp"
+                    android:background="@color/r22_bg"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/overview_devgraph"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
                     android:background="@color/r22_bg"
                     android:visibility="gone" />
@@ -509,14 +521,14 @@
                                        android:textSize="16sp"
                                        android:textStyle="bold"/>
                                </LinearLayout> -->
-                <com.jjoe64.graphview.GraphView
-                    android:id="@+id/overview_cobgraph"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/r22_bg"
-                    android:visibility="gone" />
+                <!--               <com.jjoe64.graphview.GraphView
+                                   android:id="@+id/overview_cobgraph"
+                                   android:layout_width="wrap_content"
+                                   android:layout_marginStart="0dp"
+                                   android:layout_marginEnd="0dp"
+                                   android:layout_height="90dp"
+                                   android:background="@color/plastic_grey"
+                                   android:visibility="gone" /> -->
 
             </LinearLayout>
 
