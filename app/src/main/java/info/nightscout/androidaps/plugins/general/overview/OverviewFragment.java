@@ -366,6 +366,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         cobGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         cobGraph.getGridLabelRenderer().reloadStyles();
         cobGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+        cobGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         cobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
         devGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         devGraph.getGridLabelRenderer().reloadStyles();
@@ -377,7 +378,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         bgGraph.setOnLongClickListener(v -> {
             rangeToDisplay += 6;
-            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+//            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay > 24 ? 3 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
             SP.putBoolean(R.string.key_objectiveusescale, true);
