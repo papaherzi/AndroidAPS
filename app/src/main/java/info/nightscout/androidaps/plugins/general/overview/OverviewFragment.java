@@ -30,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -305,6 +306,34 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (cgmButton != null)
             cgmButton.setOnClickListener(this);
 
+
+        if (SP.getBoolean(R.string.key_colored_icons, false)) {
+            if (wizardButton != null) {
+                Drawable drawable = wizardButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff67e86a, PorterDuff.Mode.MULTIPLY));
+            }
+            if (insulinButton != null) {
+                Drawable drawable = insulinButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
+            }
+            if (carbsButton != null) {
+                Drawable drawable = carbsButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
+            }
+            if (calibrationButton != null) {
+                Drawable drawable = calibrationButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
+            }
+            if (cgmButton != null) {
+                Drawable drawable = cgmButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
+            }
+            if (quickWizardButton != null) {
+                Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
+            }
+        }
+
         acceptTempLayout = (LinearLayout) view.findViewById(R.id.overview_accepttemplayout);
 
         notificationsView = (RecyclerView) view.findViewById(R.id.overview_notifications);
@@ -338,6 +367,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         cobGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         cobGraph.getGridLabelRenderer().reloadStyles();
         cobGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+        cobGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         cobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
         devGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         devGraph.getGridLabelRenderer().reloadStyles();
@@ -349,7 +379,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         bgGraph.setOnLongClickListener(v -> {
             rangeToDisplay += 6;
-            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+//            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay > 24 ? 3 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
             SP.putBoolean(R.string.key_objectiveusescale, true);
@@ -1356,11 +1387,18 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
+//            Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28).mutate();
+//            TypedValue typedValue = new TypedValue();
+//            getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
+//            icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
+
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.black));
+                Drawable mDrawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
+                mDrawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_ATOP));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
                 if (cobInfo.futureCarbs > 0)
