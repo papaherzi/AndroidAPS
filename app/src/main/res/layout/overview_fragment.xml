@@ -277,17 +277,16 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_pumpe_28">
+                                app:srcCompat="@drawable/ic_pumpe_28">
 
                             </ImageView>
 
 
                             <ImageView
-                                android:id="@+id/carbicon"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_carb_28">
+                                app:srcCompat="@drawable/ic_carb_28">
 
                             </ImageView>
 
@@ -296,7 +295,7 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="end"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_bas_28">
+                                app:srcCompat="@drawable/ic_bas_28">
 
                             </ImageView>
 

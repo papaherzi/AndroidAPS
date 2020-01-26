@@ -29,6 +29,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
@@ -154,6 +155,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     TextView openapsDeviceStatusView;
     TextView uploaderDeviceStatusView;
     TextView iobCalculationProgressView;
+    TextView carbView;
     LinearLayout loopStatusLayout;
     LinearLayout pumpStatusLayout;
     GraphView bgGraph;
@@ -249,6 +251,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         avgdeltaView = (TextView) view.findViewById(R.id.overview_avgdelta);
         baseBasalView = (TextView) view.findViewById(R.id.overview_basebasal);
         extendedBolusView = (TextView) view.findViewById(R.id.overview_extendedbolus);
+
 //        extendedBolusLayout = view.findViewById(R.id.overview_extendedbolus_layout);
         activeProfileView = (TextView) view.findViewById(R.id.overview_activeprofile);
         pumpStatusView = (TextView) view.findViewById(R.id.overview_pumpstatus);
@@ -359,16 +362,19 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         bgGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         bgGraph.getGridLabelRenderer().reloadStyles();
         bgGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
+
         iobGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         iobGraph.getGridLabelRenderer().reloadStyles();
         iobGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
         iobGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         iobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
+
         cobGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         cobGraph.getGridLabelRenderer().reloadStyles();
         cobGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
         cobGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         cobGraph.getGridLabelRenderer().setNumVerticalLabels(3);
+
         devGraph.getGridLabelRenderer().setGridColor(MainApp.gc(R.color.graphgrid));
         devGraph.getGridLabelRenderer().reloadStyles();
         devGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
@@ -1372,37 +1378,30 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
-        // cob
-/*        if (cobView != null) { // view must not exists
-            String cobText = MainApp.gs(R.string.value_unavailable_short);
-            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-            if (cobInfo.displayCob != null) {
-                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
-                if (cobInfo.futureCarbs > 0)
-                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
-            }
-            cobView.setText(cobText);
-        }*/
+
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-//            Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28).mutate();
-//            TypedValue typedValue = new TypedValue();
-//            getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
-//            icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
 
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.black));
-                Drawable mDrawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
-                mDrawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_ATOP));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
+
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//                icon.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
+
+//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28).mutate();
+//                TypedValue typedValue = new TypedValue();
+//                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
+//                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
+
             }
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
@@ -1413,6 +1412,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
             cobView.setText(cobText);
         }
+
         // bas
         final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
         String basalText = "";
