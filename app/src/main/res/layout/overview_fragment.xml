@@ -283,28 +283,31 @@
                             </ImageView>
 
                             <ImageView
+                                android:id="@+id/pumpsymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_pumpe_28_dark">
+                                app:srcCompat="@drawable/ic_pumpe_28_dark">
 
                             </ImageView>
 
                             <ImageView
+                                android:id="@+id/carbsymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_carb_28_dark">
+                                app:srcCompat="@drawable/ic_carb_28_dark">
 
                             </ImageView>
 
                             <ImageView
+                                android:id="@+id/bassymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="end"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_bas_28_dark">
+                                app:srcCompat="@drawable/ic_bas_28_dark">
 
                             </ImageView>
 

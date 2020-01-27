@@ -84,15 +84,15 @@ class StatuslightHandler {
             view.setText(text);
 //            view.setBackgroundColor(MainApp.gc(R.color.transparent));
             if (check.apply(urgentThreshold)) {
-                view.setTextColor(MainApp.gc(R.color.white));
+                view.setTextColor(MainApp.gc(R.color.color_white));
                 Drawable drawable = view.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff7806a, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
             } else if (check.apply(warnThreshold)) {
-                view.setTextColor(MainApp.gc(R.color.white));
+                view.setTextColor(MainApp.gc(R.color.color_white));
                 Drawable drawable = view.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
             } else {
-                view.setTextColor(MainApp.gc(R.color.white));
+                view.setTextColor(MainApp.gc(R.color.color_white));
                 Drawable drawable = view.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
             }

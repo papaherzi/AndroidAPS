@@ -32,6 +32,7 @@ import android.widget.TextView;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -195,7 +196,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
     private boolean accepted;
 
-    private int rangeToDisplay = 4; // for graph
+    private int rangeToDisplay = 6; // for graph
 
     Handler sLoopHandler = new Handler();
     Runnable sRefreshLoop = null;
@@ -326,11 +327,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
             if (calibrationButton != null) {
                 Drawable drawable = calibrationButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff7806a, PorterDuff.Mode.SRC_ATOP));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_ATOP));
             }
             if (cgmButton != null) {
                 Drawable drawable = cgmButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff7806a, PorterDuff.Mode.SRC_ATOP));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_ATOP));
             }
             if (quickWizardButton != null) {
                 Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
@@ -385,9 +386,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
 
         bgGraph.setOnLongClickListener(v -> {
-            rangeToDisplay += 4;
+            rangeToDisplay += 6;
 //            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
-            rangeToDisplay = rangeToDisplay > 24 ? 2 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
             SP.putBoolean(R.string.key_objectiveusescale, true);
@@ -1421,20 +1422,25 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 cobView.setTextColor(MainApp.gc(R.color.white));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
-                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
-                icon.setColorFilter(Color.parseColor("#343434"), PorterDuff.Mode.SRC_ATOP);
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
+//                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
 
-//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.carb_28).mutate();
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
+//                icon.setColorFilter(Color.parseColor("#f0a30a"), PorterDuff.Mode.SRC_ATOP);
+
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark).mutate();
 //                TypedValue typedValue = new TypedValue();
 //                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
 //                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
 
-//                Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//               Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
 //                Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-//                DrawableCompat.setTint(wrappedDrawable, Color.YELLOW);
+//                DrawableCompat.setTint(unwrappedDrawable, Color.YELLOW);
 
 //               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
 //               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+
+
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
