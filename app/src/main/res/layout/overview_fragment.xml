@@ -170,7 +170,9 @@
                                 android:background="@drawable/bloodclucose_2"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
+                                android:paddingTop="8dp"
                                 android:paddingRight="2dp"
+                                android:paddingBottom="8dp"
                                 android:text=""
                                 android:textSize="18dp"
                                 android:textColor="@android:color/white" />
@@ -183,7 +185,9 @@
                                 android:background="@drawable/bloodclucose_2"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
+                                android:paddingTop="8dp"
                                 android:paddingRight="2dp"
+                                android:paddingBottom="8dp"
                                 android:text=""
                                 android:textSize="18dp"
                                 android:textColor="@android:color/white" />
@@ -196,7 +200,9 @@
                                 android:background="@drawable/sphere_amber_stroke"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
+                                android:paddingTop="8dp"
                                 android:paddingRight="2dp"
+                                android:paddingBottom="8dp"
                                 android:text=""
                                 android:textSize="18dp"/>
 
@@ -223,11 +229,13 @@
                                 android:layout_height="44dp"
                                 android:layout_marginStart="3dp"
                                 android:background="@drawable/sphere_amber_stroke"
-                                android:gravity="center"
+                                android:gravity="center_horizontal|center_vertical"
                                 android:paddingLeft="2dp"
+                                android:paddingTop="8dp"
                                 android:paddingRight="2dp"
+                                android:paddingBottom="8dp"
                                 android:text=""
-                                android:textSize="18dp"/>
+                                android:textSize="18dp" />
 
                             <!--                            <TextView
                                 android:id="@+id/overview_sensitivity"
@@ -240,7 +248,9 @@
                                 android:autoSizeTextType="uniform"
                                 android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
+                                android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
+                                android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
                                 android:text=""
                                 android:textColor="@android:color/black" /> -->

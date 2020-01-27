@@ -194,7 +194,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
     private boolean accepted;
 
-    private int rangeToDisplay = 6; // for graph
+    private int rangeToDisplay = 4; // for graph
 
     Handler sLoopHandler = new Handler();
     Runnable sRefreshLoop = null;
@@ -307,29 +307,33 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
 
         if (SP.getBoolean(R.string.key_colored_icons, false)) {
+            if (treatmentButton != null) {
+                Drawable drawable = treatmentButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
+            }
             if (wizardButton != null) {
                 Drawable drawable = wizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff67e86a, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
             }
             if (insulinButton != null) {
                 Drawable drawable = insulinButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_ATOP));
             }
             if (carbsButton != null) {
                 Drawable drawable = carbsButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_ATOP));
             }
             if (calibrationButton != null) {
                 Drawable drawable = calibrationButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff7806a, PorterDuff.Mode.SRC_ATOP));
             }
             if (cgmButton != null) {
                 Drawable drawable = cgmButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff7806a, PorterDuff.Mode.SRC_ATOP));
             }
             if (quickWizardButton != null) {
                 Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_ATOP));
             }
         }
 
@@ -380,9 +384,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
 
         bgGraph.setOnLongClickListener(v -> {
-            rangeToDisplay += 6;
+            rangeToDisplay += 4;
 //            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
-            rangeToDisplay = rangeToDisplay > 24 ? 3 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay > 24 ? 2 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
             SP.putBoolean(R.string.key_objectiveusescale, true);
@@ -1124,65 +1128,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         Constraint<Boolean> closedLoopEnabled = MainApp.getConstraintChecker().isClosedLoopAllowed();
 
         // open loop mode
-/*        final LoopPlugin.LastRun finalLastRun = LoopPlugin.lastRun;
-        if (Config.APS && pump.getPumpDescription().isTempBasalCapable) {
-            apsModeView.setVisibility(View.VISIBLE);
-            apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonDefault));
-            apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
-            final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
-            if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
-                apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
-                apsModeView.setText(String.format(MainApp.gs(R.string.loopsuperbolusfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
-            } else if (loopPlugin.isDisconnected()) {
-                apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonCritical));
-                apsModeView.setText(String.format(MainApp.gs(R.string.loopdisconnectedfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
-            } else if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuspended()) {
-                apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
-                apsModeView.setText(String.format(MainApp.gs(R.string.loopsuspendedfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
-            } else if (pump.isSuspended()) {
-                apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
-                apsModeView.setText(MainApp.gs(R.string.pumpsuspended));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
-            } else if (loopPlugin.isEnabled(PluginType.LOOP)) {
-                if (closedLoopEnabled.value()) {
-                    apsModeView.setText(MainApp.gs(R.string.closedloop));
-                } else {
-                    apsModeView.setText(MainApp.gs(R.string.openloop));
-                }
-            } else {
-                apsModeView.setBackgroundColor(MainApp.gc(R.color.ribbonCritical));
-                apsModeView.setText(MainApp.gs(R.string.disabledloop));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
-            }
-        } else {
-            apsModeView.setVisibility(View.GONE);
-        }
-        // temp target
-        TempTarget tempTarget = TreatmentsPlugin.getPlugin().getTempTargetFromHistory();
-        if (tempTarget != null) {
-            tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
-            tempTargetView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
-            tempTargetView.setVisibility(View.VISIBLE);
-            tempTargetView.setText(Profile.toTargetRangeString(tempTarget.low, tempTarget.high, Constants.MGDL, units) + " " + DateUtil.untilString(tempTarget.end()));
-        } else {
-            tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
-            tempTargetView.setBackgroundColor(MainApp.gc(R.color.ribbonDefault));
-            tempTargetView.setText(Profile.toTargetRangeString(profile.getTargetLowMgdl(), profile.getTargetHighMgdl(), Constants.MGDL, units));
-            tempTargetView.setVisibility(View.VISIBLE);
-        }
-        activeProfileView.setText(ProfileFunctions.getInstance().getProfileNameWithDuration());
-        if (profile.getPercentage() != 100 || profile.getTimeshift() != 0) {
-            activeProfileView.setBackgroundColor(MainApp.gc(R.color.ribbonWarning));
-            activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
-        } else {
-            activeProfileView.setBackgroundColor(MainApp.gc(R.color.ribbonDefault));
-            activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
-        }*/
-
-        // open loop mode
         final LoopPlugin.LastRun finalLastRun = LoopPlugin.lastRun;
         if (Config.APS && pump.getPumpDescription().isTempBasalCapable) {
             apsModeView.setVisibility(View.VISIBLE);
@@ -1289,35 +1234,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
-/*        final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
-        String basalText = "";
-        if (shorttextmode) {
-            if (activeTemp != null) {
-                basalText = "T: " + activeTemp.toStringVeryShort();
-            } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate, profile.getBasal());
-            }
-        } else {
-            if (activeTemp != null) {
-                basalText = activeTemp.toStringFull();
-            } else {
-                basalText = MainApp.gs(R.string.pump_basebasalrate, profile.getBasal());
-            }
-        }
-        baseBasalView.setText(basalText);
-        baseBasalView.setOnClickListener(v -> {
-            String fullText = MainApp.gs(R.string.pump_basebasalrate_label) + ": " + MainApp.gs(R.string.pump_basebasalrate, profile.getBasal()) + "\n";
-            if (activeTemp != null) {
-                fullText += MainApp.gs(R.string.pump_tempbasal_label) + ": " + activeTemp.toStringFull();
-            }
-            OKDialog.show(getActivity(), MainApp.gs(R.string.basal), fullText);
-        });
-        if (activeTemp != null) {
-            baseBasalView.setTextColor(MainApp.gc(R.color.basal));
-        } else {
-            baseBasalView.setTextColor(MainApp.gc(R.color.defaulttextcolor));
-        }*/
-
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";
         if (extendedBolusView != null) { // must not exists in all layouts
@@ -1389,46 +1305,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             }
         }
-
-        // **** BG value ****
- /*       if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
-            return;
-        }
-        Integer flag = bgView.getPaintFlags();
-        if (actualBG == null) {
-            flag |= Paint.STRIKE_THRU_TEXT_FLAG;
-        } else
-            flag &= ~Paint.STRIKE_THRU_TEXT_FLAG;
-        bgView.setPaintFlags(flag);
-        if (timeAgoView != null)
-            timeAgoView.setText(DateUtil.minAgo(lastBG.date));
-        if (timeAgoShortView != null)
-            timeAgoShortView.setText("(" + DateUtil.minAgoShort(lastBG.date) + ")");
-        // iob
-        TreatmentsPlugin.getPlugin().updateTotalIOBTreatments();
-        TreatmentsPlugin.getPlugin().updateTotalIOBTempBasals();
-        final IobTotal bolusIob = TreatmentsPlugin.getPlugin().getLastCalculationTreatments().round();
-        final IobTotal basalIob = TreatmentsPlugin.getPlugin().getLastCalculationTempBasals().round();
-        if (shorttextmode) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U";
-            iobView.setText(iobtext);
-            iobView.setOnClickListener(v -> {
-                String iobtext1 = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U\n"
-                        + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U\n"
-                        + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U\n";
-                OKDialog.show(getActivity(), MainApp.gs(R.string.iob), iobtext1);
-            });
-        } else if (MainApp.sResources.getBoolean(R.bool.isTablet)) {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-                    + MainApp.gs(R.string.bolus) + ": " + DecimalFormatter.to2Decimal(bolusIob.iob) + "U "
-                    + MainApp.gs(R.string.basal) + ": " + DecimalFormatter.to2Decimal(basalIob.basaliob) + "U)";
-            iobView.setText(iobtext);
-        } else {
-            String iobtext = DecimalFormatter.to2Decimal(bolusIob.iob + basalIob.basaliob) + "U ("
-                    + DecimalFormatter.to2Decimal(bolusIob.iob) + "/"
-                    + DecimalFormatter.to2Decimal(basalIob.basaliob) + ")";
-            iobView.setText(iobtext);
-        }*/
         //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
