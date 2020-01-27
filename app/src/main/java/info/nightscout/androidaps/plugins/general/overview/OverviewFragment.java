@@ -29,6 +29,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
@@ -1410,17 +1411,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             iobView.setTextColor(MainApp.gc(R.color.white));
         }
         // cob
-/*        if (cobView != null) { // view must not exists
-            String cobText = MainApp.gs(R.string.value_unavailable_short);
-            CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-            if (cobInfo.displayCob != null) {
-                cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
-                if (cobInfo.futureCarbs > 0)
-                    cobText += "(" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) + ")";
-            }
-            cobView.setText(cobText);
-        }*/
-        // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
@@ -1430,6 +1420,21 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.white));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
+
+                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+                icon.setColorFilter(Color.parseColor("#343434"), PorterDuff.Mode.SRC_ATOP);
+
+//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.carb_28).mutate();
+//                TypedValue typedValue = new TypedValue();
+//                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
+//                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
+
+//                Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//                Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+//                DrawableCompat.setTint(wrappedDrawable, Color.YELLOW);
+
+//               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
+//               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
