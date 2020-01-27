@@ -33,11 +33,13 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -1391,13 +1393,20 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 cobView.setTextColor(MainApp.gc(R.color.black));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
-//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.carb_28);
 //                icon.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
 
-//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.ic_carb_28).mutate();
+//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.carb_28).mutate();
 //                TypedValue typedValue = new TypedValue();
 //                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
 //                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
+
+//                Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//                Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+//                DrawableCompat.setTint(wrappedDrawable, Color.YELLOW);
+
+//               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
+//               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
