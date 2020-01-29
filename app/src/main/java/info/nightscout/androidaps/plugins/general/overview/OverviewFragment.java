@@ -1305,7 +1305,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.white));
+                bgView.setTextColor(MainApp.gc(R.color.black));
             }
 
             else if (lastBG.valueToUnits(units) > highLine)
@@ -1313,7 +1313,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.white));
+                bgView.setTextColor(MainApp.gc(R.color.black));
             }
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
@@ -1326,22 +1326,14 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     deltaView.setText(Profile.toUnitsString(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units) + " " );
                 if (deltaShortView != null)
                     deltaShortView.setText(Profile.toSignedUnitsString(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units));
-                    Drawable drawable = deltaShortView.getBackground();
-                    drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
-                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
-
                 if (avgdeltaView != null)
                     avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
                             "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
-
-                if (glucoseStatus != null && glucoseStatus.short_avgdelta > 10) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
-                }
-                if (glucoseStatus != null && glucoseStatus.short_avgdelta < 10) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
-                }
+                    /*else {
+                        Drawable drawable3 = deltaShortView.getBackground();
+                        drawable3.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_ATOP));
+                        deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                    }*/
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1349,6 +1341,20 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     deltaShortView.setText("---");
                 if (avgdeltaView != null)
                     avgdeltaView.setText("");
+            }
+
+            if (glucoseStatus.delta > 10){
+                Drawable drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+            if (glucoseStatus.delta < 10)
+                drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+            }else   {
+                Drawable drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
             }
         }
 
