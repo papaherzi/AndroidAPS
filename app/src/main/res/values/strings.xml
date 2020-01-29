@@ -1692,6 +1692,4 @@
     <string name="extended_bolus_short">EB</string>
     <string name="phonechecker">\"PhoneChecker\"</string>
     <string name="overview_show_treatments">Show Treatments</string>
-    <string name="key_colored_icons" translatable="false">key_colored_icons</string>
-    <string name="colored_icons">Show colored icons</string>
 </resources>

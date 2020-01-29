@@ -226,11 +226,6 @@
                 validate:minNumber="0"
                 validate:testType="numericRange" />
 
-            <SwitchPreference
-                android:defaultValue="false"
-                android:key="@string/key_colored_icons"
-                android:title="@string/colored_icons" />
-
         </PreferenceScreen>
 
     </PreferenceCategory>

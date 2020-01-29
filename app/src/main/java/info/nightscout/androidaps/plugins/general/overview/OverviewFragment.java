@@ -311,34 +311,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (cgmButton != null)
             cgmButton.setOnClickListener(this);
 
-
-        if (SP.getBoolean(R.string.key_colored_icons, false)) {
-            if (wizardButton != null) {
-                Drawable drawable = wizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff67e86a, PorterDuff.Mode.MULTIPLY));
-            }
-            if (insulinButton != null) {
-                Drawable drawable = insulinButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
-            }
-            if (carbsButton != null) {
-                Drawable drawable = carbsButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
-            }
-            if (calibrationButton != null) {
-                Drawable drawable = calibrationButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
-            }
-            if (cgmButton != null) {
-                Drawable drawable = cgmButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffe93057, PorterDuff.Mode.MULTIPLY));
-            }
-            if (quickWizardButton != null) {
-                Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.MULTIPLY));
-            }
-        }
-
         acceptTempLayout = (LinearLayout) view.findViewById(R.id.overview_accepttemplayout);
 
         notificationsView = (RecyclerView) view.findViewById(R.id.overview_notifications);
