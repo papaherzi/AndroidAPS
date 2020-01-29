@@ -196,7 +196,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
     private boolean accepted;
 
-    private int rangeToDisplay = 6; // for graph
+    private int rangeToDisplay = 3; // for graph
 
     Handler sLoopHandler = new Handler();
     Runnable sRefreshLoop = null;
@@ -385,15 +385,24 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
 
+
         bgGraph.setOnLongClickListener(v -> {
-            rangeToDisplay += 6;
-//            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
-            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay * 2;
+            rangeToDisplay = rangeToDisplay > 24 ? 3 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
             SP.putBoolean(R.string.key_objectiveusescale, true);
             return false;
         });
+
+/*        bgGraph.setOnLongClickListener(v -> {
+            rangeToDisplay += 6;
+            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
+            updateGUI("rangeChange");
+            SP.putBoolean(R.string.key_objectiveusescale, true);
+            return false;
+        });*/
 
         setupChartMenu(view);
 
