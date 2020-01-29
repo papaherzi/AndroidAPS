@@ -307,38 +307,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (cgmButton != null)
             cgmButton.setOnClickListener(this);
 
-
-        if (SP.getBoolean(R.string.key_colored_icons, false)) {
-            if (treatmentButton != null) {
-                Drawable drawable = treatmentButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (wizardButton != null) {
-                Drawable drawable = wizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (insulinButton != null) {
-                Drawable drawable = insulinButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (carbsButton != null) {
-                Drawable drawable = carbsButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (calibrationButton != null) {
-                Drawable drawable = calibrationButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (cgmButton != null) {
-                Drawable drawable = cgmButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_ATOP));
-            }
-            if (quickWizardButton != null) {
-                Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff1ba1e2, PorterDuff.Mode.SRC_ATOP));
-            }
-        }
-
         acceptTempLayout = (LinearLayout) view.findViewById(R.id.overview_accepttemplayout);
 
         notificationsView = (RecyclerView) view.findViewById(R.id.overview_notifications);
