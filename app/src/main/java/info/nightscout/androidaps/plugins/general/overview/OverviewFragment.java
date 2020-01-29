@@ -199,7 +199,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
     private boolean accepted;
 
-    private int rangeToDisplay = 6; // for graph
+    private int rangeToDisplay = 3; // for graph
 
     Handler sLoopHandler = new Handler();
     Runnable sRefreshLoop = null;
@@ -383,11 +383,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         devGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         devGraph.getGridLabelRenderer().setNumVerticalLabels(3);
 
-        rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
+        rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 3);
 
         bgGraph.setOnLongClickListener(v -> {
-            rangeToDisplay += 6;
-//            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            rangeToDisplay = rangeToDisplay * 2;
             rangeToDisplay = rangeToDisplay > 24 ? 3 : rangeToDisplay;
             SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
             updateGUI("rangeChange");
