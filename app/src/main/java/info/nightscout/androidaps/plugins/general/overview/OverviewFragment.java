@@ -383,7 +383,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         devGraph.getGridLabelRenderer().setLabelVerticalWidth(axisWidth);
         devGraph.getGridLabelRenderer().setNumVerticalLabels(3);
 
-        rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 6);
+        rangeToDisplay = SP.getInt(R.string.key_rangetodisplay, 3);
 
 
         bgGraph.setOnLongClickListener(v -> {
