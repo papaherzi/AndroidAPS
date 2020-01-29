@@ -31,7 +31,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
@@ -39,7 +38,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -157,7 +155,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     TextView openapsDeviceStatusView;
     TextView uploaderDeviceStatusView;
     TextView iobCalculationProgressView;
-    TextView carbView;
     LinearLayout loopStatusLayout;
     LinearLayout pumpStatusLayout;
     GraphView bgGraph;
@@ -253,7 +250,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         avgdeltaView = (TextView) view.findViewById(R.id.overview_avgdelta);
         baseBasalView = (TextView) view.findViewById(R.id.overview_basebasal);
         extendedBolusView = (TextView) view.findViewById(R.id.overview_extendedbolus);
-
 //        extendedBolusLayout = view.findViewById(R.id.overview_extendedbolus_layout);
         activeProfileView = (TextView) view.findViewById(R.id.overview_activeprofile);
         pumpStatusView = (TextView) view.findViewById(R.id.overview_pumpstatus);
@@ -365,6 +361,15 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             SP.putBoolean(R.string.key_objectiveusescale, true);
             return false;
         });
+
+/*        bgGraph.setOnLongClickListener(v -> {
+            rangeToDisplay += 6;
+            rangeToDisplay = rangeToDisplay > 24 ? 6 : rangeToDisplay;
+            SP.putInt(R.string.key_rangetodisplay, rangeToDisplay);
+            updateGUI("rangeChange");
+            SP.putBoolean(R.string.key_objectiveusescale, true);
+            return false;
+        });*/
 
         setupChartMenu(view);
 
@@ -1074,29 +1079,29 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (Config.APS && pump.getPumpDescription().isTempBasalCapable) {
             apsModeView.setVisibility(View.VISIBLE);
             Drawable drawable = apsModeView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
-            apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            apsModeView.setTextColor(MainApp.gc(R.color.white));
             final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
             if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopsuperbolusfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
+                apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (loopPlugin.isDisconnected()) {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopdisconnectedfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
+                apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuspended()) {
                 drawable = apsModeView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(String.format(MainApp.gs(R.string.loopsuspendedfor), loopPlugin.minutesToEndOfSuspend()));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
+                apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (pump.isSuspended()) {
                 drawable = apsModeView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(MainApp.gs(R.string.pumpsuspended));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
+                apsModeView.setTextColor(MainApp.gc(R.color.white));
             } else if (loopPlugin.isEnabled(PluginType.LOOP)) {
                 if (closedLoopEnabled.value()) {
                     apsModeView.setText(MainApp.gs(R.string.closedloop));
@@ -1105,9 +1110,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             } else {
                 drawable = apsModeView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff911d10, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffcd6839, PorterDuff.Mode.SRC_IN));
                 apsModeView.setText(MainApp.gs(R.string.disabledloop));
-                apsModeView.setTextColor(MainApp.gc(R.color.ribbonTextCritical));
+                apsModeView.setTextColor(MainApp.gc(R.color.white));
             }
         } else {
             apsModeView.setVisibility(View.GONE);
@@ -1118,11 +1123,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (profile.getPercentage() != 100 || profile.getTimeshift() != 0) {
             Drawable drawable = activeProfileView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
-            activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
+            activeProfileView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = activeProfileView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
-            activeProfileView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            activeProfileView.setTextColor(MainApp.gc(R.color.white));
         }
 
         // temp target
@@ -1132,13 +1137,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_IN));
             tempTargetView.setVisibility(View.VISIBLE);
             tempTargetView.setText(Profile.toTargetRangeString(tempTarget.low, tempTarget.high, Constants.MGDL, units) + " " + DateUtil.untilString(tempTarget.end()));
-            tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextWarning));
+            tempTargetView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = tempTargetView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4144, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
             tempTargetView.setText(Profile.toTargetRangeString(profile.getTargetLowMgdl(), profile.getTargetHighMgdl(), Constants.MGDL, units));
             tempTargetView.setVisibility(View.VISIBLE);
-            tempTargetView.setTextColor(MainApp.gc(R.color.ribbonTextDefault));
+            tempTargetView.setTextColor(MainApp.gc(R.color.white));
         }
         // **** Temp button ****
         if (acceptTempLayout != null) {
@@ -1176,7 +1181,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
-
         final ExtendedBolus extendedBolus = TreatmentsPlugin.getPlugin().getExtendedBolusFromHistory(System.currentTimeMillis());
         String extendedBolusText = "";
         if (extendedBolusView != null) { // must not exists in all layouts
@@ -1199,6 +1203,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (extendedBolusLayout != null) extendedBolusLayout.setVisibility(View.VISIBLE);
             }
         }
+
 
         // QuickWizard button
         QuickWizardEntry quickWizardEntry = QuickWizard.INSTANCE.getActive();
@@ -1247,17 +1252,37 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             }
         }
+        //Start with updating the BG as it is unaffected by loop.
+        // **** BG value ****
+        if (lastBG != null) {
+            int color = MainApp.gc(R.color.inrange);
+            if (lastBG.valueToUnits(units) < lowLine)
+                color = MainApp.gc(R.color.low);
+            else if (lastBG.valueToUnits(units) > highLine)
+                color = MainApp.gc(R.color.high);
+            bgView.setText(lastBG.valueToUnitsToString(units));
+            arrowView.setText(lastBG.directionToSymbol());
+            bgView.setTextColor(color);
+            arrowView.setTextColor(color);
+        }
 
+        //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
             return;
+
+
         }
+
+
         Integer flag = bgView.getPaintFlags();
         if (actualBG == null) {
             flag |= Paint.STRIKE_THRU_TEXT_FLAG;
         } else
             flag &= ~Paint.STRIKE_THRU_TEXT_FLAG;
         bgView.setPaintFlags(flag);
+
+
         //timeago
         if (timeAgoView != null)
             timeAgoView.setText(DateUtil.minAgo(lastBG.date) + "′");
@@ -1280,7 +1305,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.black));
+                bgView.setTextColor(MainApp.gc(R.color.white));
             }
 
             else if (lastBG.valueToUnits(units) > highLine)
@@ -1288,7 +1313,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.black));
+                bgView.setTextColor(MainApp.gc(R.color.white));
             }
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
@@ -1301,9 +1326,22 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     deltaView.setText(Profile.toUnitsString(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units) + " " );
                 if (deltaShortView != null)
                     deltaShortView.setText(Profile.toSignedUnitsString(glucoseStatus.delta, glucoseStatus.delta * Constants.MGDL_TO_MMOLL, units));
+                    Drawable drawable = deltaShortView.getBackground();
+                    drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
+
                 if (avgdeltaView != null)
                     avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
                             "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
+
+                if (glucoseStatus != null && glucoseStatus.short_avgdelta > 10) {
+                    drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                }
+                if (glucoseStatus != null && glucoseStatus.short_avgdelta < 10) {
+                    drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                    deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                }
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1351,12 +1389,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
-
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
             CobInfo cobInfo = IobCobCalculatorPlugin.getPlugin().getCobInfo(false, "Overview COB");
-
             if (cobInfo.displayCob != null) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
@@ -1364,24 +1400,28 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 cobView.setTextColor(MainApp.gc(R.color.black));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
-//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.carb_28);
-//                icon.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.MULTIPLY));
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
+//                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
 
-//                Drawable icon = ContextCompat.getDrawable(getContext(), R.drawable.carb_28).mutate();
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
+//                icon.setColorFilter(Color.parseColor("#f0a30a"), PorterDuff.Mode.SRC_ATOP);
+
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark).mutate();
 //                TypedValue typedValue = new TypedValue();
 //                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
 //                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
 
-//                Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//               Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
 //                Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-//                DrawableCompat.setTint(wrappedDrawable, Color.YELLOW);
+//                DrawableCompat.setTint(unwrappedDrawable, Color.YELLOW);
 
 //               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
 //               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
+
+
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
-
             }
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
@@ -1392,7 +1432,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
             cobView.setText(cobText);
         }
-
         // bas
         final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
         String basalText = "";
@@ -1480,20 +1519,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             uploaderDeviceStatusView.setOnClickListener(v -> OKDialog.show(getActivity(), MainApp.gs(R.string.uploader), NSDeviceStatus.getInstance().getExtendedUploaderStatus()));
         }
 
-        // Sensitivity Standard
-/*        if (sensitivityView != null) {
-            AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
-            if (autosensData != null)
-                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
-            else
-                sensitivityView.setText("");
-        }*/
-
-        // Sensitivity Sphere
+        // Sensitivity
         if (sensitivityView != null) {
             AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
             if (autosensData != null)
-                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f", autosensData.autosensResult.ratio * 100));
+                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
             else
                 sensitivityView.setText("");
         }
@@ -1698,3 +1728,5 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
 
 }
+
+
