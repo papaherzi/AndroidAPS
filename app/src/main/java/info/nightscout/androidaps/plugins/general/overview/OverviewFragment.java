@@ -1347,7 +1347,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
-            if (glucoseStatus.delta < 10)
+            if (glucoseStatus.delta < -10)
                 drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));

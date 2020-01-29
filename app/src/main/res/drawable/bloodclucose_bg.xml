@@ -12,6 +12,6 @@
     <solid
         android:color="#EBEBEA" />
     <stroke
-        android:width="2dp"
+        android:width="0dp"
         android:color="@color/white" />
 </shape>
