@@ -1079,7 +1079,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (Config.APS && pump.getPumpDescription().isTempBasalCapable) {
             apsModeView.setVisibility(View.VISIBLE);
             Drawable drawable = apsModeView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4142, PorterDuff.Mode.SRC_IN));
             apsModeView.setTextColor(MainApp.gc(R.color.white));
             final LoopPlugin loopPlugin = LoopPlugin.getPlugin();
             if (loopPlugin.isEnabled(PluginType.LOOP) && loopPlugin.isSuperBolus()) {
@@ -1126,7 +1126,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             activeProfileView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = activeProfileView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4142, PorterDuff.Mode.SRC_IN));
             activeProfileView.setTextColor(MainApp.gc(R.color.white));
         }
 
@@ -1140,7 +1140,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             tempTargetView.setTextColor(MainApp.gc(R.color.white));
         } else {
             Drawable drawable = tempTargetView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xff3f4142, PorterDuff.Mode.SRC_IN));
             tempTargetView.setText(Profile.toTargetRangeString(profile.getTargetLowMgdl(), profile.getTargetHighMgdl(), Constants.MGDL, units));
             tempTargetView.setVisibility(View.VISIBLE);
             tempTargetView.setTextColor(MainApp.gc(R.color.white));
@@ -1318,8 +1318,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
             arrowView.setTextColor(MainApp.gc(R.color.white));
-//            bgView.setTextColor(color);
-//            arrowView.setTextColor(color);
+
             GlucoseStatus glucoseStatus = GlucoseStatus.getGlucoseStatusData();
             if (glucoseStatus != null) {
                 if (deltaView != null)
@@ -1329,11 +1328,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (avgdeltaView != null)
                     avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
                             "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
-                    /*else {
-                        Drawable drawable3 = deltaShortView.getBackground();
-                        drawable3.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_ATOP));
-                        deltaShortView.setTextColor(MainApp.gc(R.color.black));
-                    }*/
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1347,7 +1341,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
-            if (glucoseStatus.delta < -10)
+            if (glucoseStatus.delta < -1)
                 drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));

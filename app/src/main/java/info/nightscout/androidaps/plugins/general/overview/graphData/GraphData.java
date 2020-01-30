@@ -484,10 +484,14 @@ public class GraphData {
     // scale in % of vertical size (like 0.3)
     public void addCob(long fromTime, long toTime, boolean useForScale, double scale) {
         List<DataPointWithLabelInterface> minFailoverActiveList = new ArrayList<>();
+        List<FixedLineGraphSeries<ScaledDataPoint>> cobSeriesList = new ArrayList<>();
+        List<PointsWithLabelGraphSeries> minFailoverList = new ArrayList<>();
         FixedLineGraphSeries<ScaledDataPoint> cobSeries;
         List<ScaledDataPoint> cobArray = new ArrayList<>();
+        Boolean newSer = false;
         Double maxCobValueFound = 0d;
         int lastCob = 0;
+        long lastTime = fromTime;
         Scale cobScale = new Scale();
 
         for (long time = fromTime; time <= toTime; time += 5 * 60 * 1000L) {
@@ -495,6 +499,24 @@ public class GraphData {
             if (autosensData != null) {
                 int cob = (int) autosensData.cob;
                 if (cob != lastCob) {
+                    newSer = true;
+                    if (lastCob == 0 && cobArray.isEmpty()) {
+                        cobArray.add(new ScaledDataPoint(lastTime, 0, cobScale));
+                        cobArray.add(new ScaledDataPoint(time, 0, cobScale));
+
+                        ScaledDataPoint[] cobData = new ScaledDataPoint[cobArray.size()];
+                        cobData = cobArray.toArray(cobData);
+                        cobSeries = new FixedLineGraphSeries<>(cobData);
+                        cobSeries.setDrawBackground(true);
+                        cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
+                        cobSeries.setColor(MainApp.gc(R.color.white));
+                        cobSeries.setThickness(2);
+
+                        cobSeriesList.add(cobSeries);
+                        cobArray = new ArrayList<>();
+                    } else if (cob == 0) {
+                        lastTime = time;
+                    }
                     if (autosensData.carbsFromBolus > 0)
                         cobArray.add(new ScaledDataPoint(time, lastCob, cobScale));
                     cobArray.add(new ScaledDataPoint(time, cob, cobScale));
@@ -506,17 +528,62 @@ public class GraphData {
                     autosensData.setChartTime(time);
                     minFailoverActiveList.add(autosensData);
                 }
+                if (cob == 0.0) {
+
+                    if (time + 5 * 60 * 1000L > toTime && lastCob == 0 && cobArray.isEmpty()) {
+                        cobArray.add(new ScaledDataPoint(lastTime, 0, cobScale));
+                        cobArray.add(new ScaledDataPoint(toTime, 0, cobScale));
+
+                        ScaledDataPoint[] cobData = new ScaledDataPoint[cobArray.size()];
+                        cobData = cobArray.toArray(cobData);
+                        cobSeries = new FixedLineGraphSeries<>(cobData);
+                        cobSeries.setDrawBackground(true);
+                        cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
+                        cobSeries.setColor(MainApp.gc(R.color.white));
+                        cobSeries.setThickness(2);
+
+                        cobSeriesList.add(cobSeries);
+                        cobArray = new ArrayList<>();
+                    }
+                    if (!newSer || cobArray.isEmpty()) continue;
+
+                    // finish series
+                    ScaledDataPoint[] cobData = new ScaledDataPoint[cobArray.size()];
+                    cobData = cobArray.toArray(cobData);
+                    cobSeries = new FixedLineGraphSeries<>(cobData);
+                    cobSeries.setDrawBackground(true);
+                    cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
+                    cobSeries.setColor(MainApp.gc(R.color.white));
+                    cobSeries.setThickness(6);
+
+                    cobSeriesList.add(cobSeries);
+
+                    DataPointWithLabelInterface[] minFailover = new DataPointWithLabelInterface[minFailoverActiveList.size()];
+                    minFailover = minFailoverActiveList.toArray(minFailover);
+                    minFailoverList.add(new PointsWithLabelGraphSeries<>(minFailover));
+
+                    cobArray = new ArrayList<>();
+                    newSer = false;
+                }
             }
         }
 
         // COB
-        ScaledDataPoint[] cobData = new ScaledDataPoint[cobArray.size()];
-        cobData = cobArray.toArray(cobData);
-        cobSeries = new FixedLineGraphSeries<>(cobData);
-        cobSeries.setDrawBackground(true);
-        cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
-        cobSeries.setColor(MainApp.gc(R.color.white));
-        cobSeries.setThickness(6);
+        if (!cobArray.isEmpty()) {
+            ScaledDataPoint[] cobData = new ScaledDataPoint[cobArray.size()];
+            cobData = cobArray.toArray(cobData);
+            cobSeries = new FixedLineGraphSeries<>(cobData);
+            cobSeries.setDrawBackground(true);
+            cobSeries.setBackgroundColor(MainApp.gc(R.color.cob)); //50%
+            cobSeries.setColor(MainApp.gc(R.color.white));
+            cobSeries.setThickness(6);
+
+            cobSeriesList.add(cobSeries);
+
+            DataPointWithLabelInterface[] minFailover = new DataPointWithLabelInterface[minFailoverActiveList.size()];
+            minFailover = minFailoverActiveList.toArray(minFailover);
+            minFailoverList.add(new PointsWithLabelGraphSeries<>(minFailover));
+        }
 
         if (useForScale) {
             maxY = maxCobValueFound;
@@ -525,11 +592,12 @@ public class GraphData {
 
         cobScale.setMultiplier(maxY * scale / maxCobValueFound);
 
-        addSeries(cobSeries);
-
-        DataPointWithLabelInterface[] minFailover = new DataPointWithLabelInterface[minFailoverActiveList.size()];
-        minFailover = minFailoverActiveList.toArray(minFailover);
-        addSeries(new PointsWithLabelGraphSeries<>(minFailover));
+        for (FixedLineGraphSeries Ser: cobSeriesList) {
+            addSeries(Ser);
+        }
+        for (PointsWithLabelGraphSeries Ser: minFailoverList) {
+            addSeries(Ser);
+        }
     }
 
     // scale in % of vertical size (like 0.3)
@@ -674,7 +742,7 @@ public class GraphData {
     public void addNowLine(long now) {
         LineGraphSeries<DataPoint> seriesNow;
         DataPoint[] nowPoints = new DataPoint[]{
-                new DataPoint(now, 0),
+                new DataPoint(now, minY),
                 new DataPoint(now, maxY)
         };
 

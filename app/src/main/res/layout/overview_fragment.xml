@@ -180,13 +180,13 @@
                                 android:layout_width="44dp"
                                 android:layout_height="44dp"
                                 android:layout_marginStart="3dp"
-                                android:background="@drawable/bloodclucose_bg"
+                                android:background="@drawable/sphere_timeago"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
                                 android:paddingRight="2dp"
                                 android:text=""
-                                android:textSize="18dp"
-                                android:textColor="@android:color/black" />
+                                android:textColor="@android:color/black"
+                                android:textSize="18dp" />
 
                             <TextView
                                 android:id="@+id/overview_iob"
@@ -259,7 +259,7 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="11dp"
-                                android:background="@drawable/ic_delta_28">
+                                android:background="@drawable/ic_delta_28_rose">
 
                             </ImageView>
 
@@ -277,7 +277,7 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_pumpe_28">
+                                app:srcCompat="@drawable/ic_pumpe_28_cyan">
 
                             </ImageView>
 
@@ -286,7 +286,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_carb_28">
+                                app:srcCompat="@drawable/ic_carb_28_amber">
 
                             </ImageView>
 
@@ -295,7 +295,7 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="end"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_bas_28">
+                                app:srcCompat="@drawable/ic_bas_28_teal">
 
                             </ImageView>
 
