@@ -172,7 +172,7 @@
                                         android:layout_marginStart="0dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_bg"
+                                        android:background="@drawable/sphere_rose_stroke"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />
@@ -184,7 +184,7 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
-                                        android:background="@drawable/bloodclucose_bg"
+                                        android:background="@drawable/sphere_timeago"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/black" />

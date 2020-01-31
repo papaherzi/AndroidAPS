@@ -1318,7 +1318,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
             arrowView.setTextColor(MainApp.gc(R.color.white));
-
+//            bgView.setTextColor(color);
+//            arrowView.setTextColor(color);
             GlucoseStatus glucoseStatus = GlucoseStatus.getGlucoseStatusData();
             if (glucoseStatus != null) {
                 if (deltaView != null)
@@ -1328,6 +1329,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (avgdeltaView != null)
                     avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
                             "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
+                    /*else {
+                        Drawable drawable3 = deltaShortView.getBackground();
+                        drawable3.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_ATOP));
+                        deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                    }*/
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1337,15 +1343,17 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     avgdeltaView.setText("");
             }
 
-            if (glucoseStatus.delta > 10){
+            if (glucoseStatus != null && glucoseStatus.delta > 9){
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
-            if (glucoseStatus.delta < -1)
-                drawable = deltaShortView.getBackground();
+            }
+            if (glucoseStatus != null && glucoseStatus.delta <-9) {
+                Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
-            }else   {
+            }
+            else   {
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
