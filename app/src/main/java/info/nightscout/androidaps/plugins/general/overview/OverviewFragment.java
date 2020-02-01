@@ -31,6 +31,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
@@ -1266,15 +1267,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             arrowView.setTextColor(color);
         }
 
-        //Start with updating the BG as it is unaffected by loop.
-        // **** BG value ****
-        if (lastBG == null) { //left this here as it seems you want to exit at this point if it is null...
-            return;
-
-
-        }
-
-
         Integer flag = bgView.getPaintFlags();
         if (actualBG == null) {
             flag |= Paint.STRIKE_THRU_TEXT_FLAG;
@@ -1282,13 +1274,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             flag &= ~Paint.STRIKE_THRU_TEXT_FLAG;
         bgView.setPaintFlags(flag);
 
-
         //timeago
         if (timeAgoView != null)
             timeAgoView.setText(DateUtil.minAgo(lastBG.date) + "′");
         if (timeAgoShortView != null)
             timeAgoShortView.setText( DateUtil.minAgoShort(lastBG.date) + "′");
-
 
         if (lastBG != null) {
 //            int color = MainApp.gc(R.color.inrange);
@@ -1318,8 +1308,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
             arrowView.setTextColor(MainApp.gc(R.color.white));
-//            bgView.setTextColor(color);
-//            arrowView.setTextColor(color);
+
             GlucoseStatus glucoseStatus = GlucoseStatus.getGlucoseStatusData();
             if (glucoseStatus != null) {
                 if (deltaView != null)
@@ -1329,11 +1318,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 if (avgdeltaView != null)
                     avgdeltaView.setText("øΔ15m: " + Profile.toUnitsString(glucoseStatus.short_avgdelta, glucoseStatus.short_avgdelta * Constants.MGDL_TO_MMOLL, units) +
                             "  øΔ40m: " + Profile.toUnitsString(glucoseStatus.long_avgdelta, glucoseStatus.long_avgdelta * Constants.MGDL_TO_MMOLL, units));
-                    /*else {
-                        Drawable drawable3 = deltaShortView.getBackground();
-                        drawable3.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_ATOP));
-                        deltaShortView.setTextColor(MainApp.gc(R.color.black));
-                    }*/
             } else {
                 if (deltaView != null)
                     deltaView.setText("Δ " + MainApp.gs(R.string.notavailable));
@@ -1343,12 +1327,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     avgdeltaView.setText("");
             }
 
-            if (glucoseStatus != null && glucoseStatus.delta > 9){
+            if (glucoseStatus != null && glucoseStatus.delta >+9) {
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
             }
-            if (glucoseStatus != null && glucoseStatus.delta <-9) {
+            else if (glucoseStatus != null && glucoseStatus.delta <-9) {
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
@@ -1397,6 +1381,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
+
         // cob
         if (cobView != null) { // view must not exists
             String cobText = MainApp.gs(R.string.value_unavailable_short);
@@ -1407,9 +1392,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.black));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
-
-//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
-//                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
+                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_amber);
+                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
 
 //                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
 //                icon.setColorFilter(Color.parseColor("#f0a30a"), PorterDuff.Mode.SRC_ATOP);
@@ -1419,14 +1403,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //                getContext().getTheme().resolveAttribute((MainApp.gc(R.color.amber)), typedValue, true);
 //                icon.setColorFilter(typedValue.data, PorterDuff.Mode.SRC_ATOP);
 
-//               Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
-//                Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+//                Drawable unwrappedDrawable = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28);
+//                DrawableCompat.wrap( unwrappedDrawable );
 //                DrawableCompat.setTint(unwrappedDrawable, Color.YELLOW);
 
 //               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
 //               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
-
-
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;

@@ -185,8 +185,8 @@
                                 android:paddingLeft="2dp"
                                 android:paddingRight="2dp"
                                 android:text=""
-                                android:textColor="@android:color/black"
-                                android:textSize="18dp" />
+                                android:textSize="18dp"
+                                android:textColor="@android:color/black" />
 
                             <TextView
                                 android:id="@+id/overview_iob"
