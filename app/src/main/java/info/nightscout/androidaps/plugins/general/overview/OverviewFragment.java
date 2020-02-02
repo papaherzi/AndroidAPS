@@ -1412,6 +1412,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
+                    cobView.setTextColor(MainApp.gc(R.color.black));
             }
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
@@ -1421,6 +1422,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
 
             cobView.setText(cobText);
+            cobView.setTextColor(MainApp.gc(R.color.black));
         }
         // bas
         final TemporaryBasal activeTemp = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
