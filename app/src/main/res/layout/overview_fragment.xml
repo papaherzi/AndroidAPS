@@ -207,8 +207,7 @@
                                 android:paddingTop="8dp"
                                 android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp"/>
+                                android:text="" />
 
                             <TextView
                                 android:id="@+id/overview_cob"
