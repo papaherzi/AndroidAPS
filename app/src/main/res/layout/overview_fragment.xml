@@ -41,8 +41,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_aaps_logo_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_aaps_logo_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingEnd="2dp"
@@ -58,8 +58,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_user_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_user_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -73,8 +73,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_zielkreuz_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_zielkreuz_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -375,8 +375,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_katheter_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_katheter_35_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -395,8 +395,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_statuslight_cartridge"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_cartridge_35_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -405,8 +405,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_libre_2_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_libre_35_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -415,8 +415,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_bg"
-                        android:drawableLeft="@drawable/ic_battery_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_battery_35_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
