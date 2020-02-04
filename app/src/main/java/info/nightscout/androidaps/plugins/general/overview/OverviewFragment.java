@@ -1392,8 +1392,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
                 cobView.setTextColor(MainApp.gc(R.color.black));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
-                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_amber);
-                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
+
+//                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_amber);
+//                icon.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_ATOP));
 
 //                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
 //                icon.setColorFilter(Color.parseColor("#f0a30a"), PorterDuff.Mode.SRC_ATOP);
