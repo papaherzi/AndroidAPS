@@ -39,6 +39,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -127,6 +128,7 @@ import info.nightscout.androidaps.utils.ToastUtils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 
+import static info.nightscout.androidaps.R.drawable.*;
 import static info.nightscout.androidaps.utils.DateUtil.now;
 
 public class OverviewFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
@@ -634,11 +636,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     return true;
                 }
             });
-            chartButton.setImageResource(R.drawable.ic_arrow_drop_up_white_24dp);
+            chartButton.setImageResource( ic_arrow_drop_up_white_24dp);
             popup.setOnDismissListener(new PopupMenu.OnDismissListener() {
                 @Override
                 public void onDismiss(PopupMenu menu) {
-                    chartButton.setImageResource(R.drawable.ic_arrow_drop_down_white_24dp);
+                    chartButton.setImageResource( ic_arrow_drop_down_white_24dp);
                 }
             });
             popup.show();

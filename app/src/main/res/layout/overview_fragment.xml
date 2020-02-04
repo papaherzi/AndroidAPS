@@ -34,6 +34,7 @@
                     android:orientation="horizontal"
                     android:paddingTop="5dp">
 
+
                     <TextView
                         android:id="@+id/overview_apsmode"
                         android:layout_width="wrap_content"
@@ -41,14 +42,13 @@
                         android:layout_marginLeft="2dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_aaps_logo_black"
+                        android:drawableLeft="@drawable/ic_loop_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingEnd="2dp"
                         android:paddingBottom="3dp"
                         android:text="Open Loop"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
-
 
                     <TextView
                         android:id="@+id/overview_activeprofile"
@@ -293,7 +293,7 @@
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_carb_28_amber">
+                                app:srcCompat="@drawable/ic_carb_28">
 
                             </ImageView>
 

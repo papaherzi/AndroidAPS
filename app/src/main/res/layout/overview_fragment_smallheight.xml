@@ -43,7 +43,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_aaps_logo_black"
+                        android:drawableLeft="@drawable/ic_loop_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingEnd="2dp"
