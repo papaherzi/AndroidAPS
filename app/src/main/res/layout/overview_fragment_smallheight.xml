@@ -388,7 +388,7 @@
                         android:drawableLeft="@drawable/ic_katheter_20_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""
-                        android:textSize="10dp"/>
+                        android:textSize="12dp"/>
 
                     <!--                    <TextView
                                             android:id="@+id/overview_insulinage"
@@ -409,7 +409,7 @@
                         android:drawableLeft="@drawable/ic_cartridge_20_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""
-                        android:textSize="10dp"/>
+                        android:textSize="12dp"/>
 
                     <TextView
                         android:id="@+id/overview_sensorage"
@@ -420,7 +420,7 @@
                         android:drawableLeft="@drawable/ic_libre_2_20_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""
-                        android:textSize="10dp"/>
+                        android:textSize="12dp"/>
 
                     <TextView
                         android:id="@+id/overview_batterylevel"
@@ -431,7 +431,7 @@
                         android:drawableLeft="@drawable/ic_battery_20_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text=""
-                        android:textSize="10dp"/>
+                        android:textSize="12dp"/>
 
                 </LinearLayout>
 

@@ -39,7 +39,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_pille_top"
                         android:drawableLeft="@drawable/ic_aaps_logo_black"
@@ -55,8 +54,6 @@
                         android:id="@+id/overview_activeprofile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_pille_top"
                         android:drawableLeft="@drawable/ic_user_black"
@@ -70,7 +67,6 @@
                         android:id="@+id/overview_temptarget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_pille_top"
@@ -376,7 +372,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_katheter_35_black"
+                        android:drawableLeft="@drawable/ic_katheter_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -396,7 +392,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_cartridge_35_black"
+                        android:drawableLeft="@drawable/ic_cartridge_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -406,7 +402,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_libre_35_black"
+                        android:drawableLeft="@drawable/ic_libre_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -416,7 +412,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
                         android:background="@drawable/bg_pille_top"
-                        android:drawableLeft="@drawable/ic_battery_35_black"
+                        android:drawableLeft="@drawable/ic_battery_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
