@@ -49,6 +49,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -1283,12 +1284,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             timeAgoShortView.setText( DateUtil.minAgoShort(lastBG.date) + "′");
 
         if (lastBG != null) {
+            bgView.setTextColor(MainApp.gc(R.color.black));
 //            int color = MainApp.gc(R.color.inrange);
             if (lastBG.valueToUnits(units) > lowLine )
 //                color = MainApp.gc(R.color.low);
             {
                 Drawable drawable = bgView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_IN));
                 bgView.setTextColor(MainApp.gc(R.color.black));
             }
 
@@ -1341,7 +1343,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
             else   {
                 Drawable drawable = deltaShortView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_IN));
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
             }
         }
@@ -1380,7 +1382,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
         } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
             Drawable drawable = iobView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_IN));
             iobView.setTextColor(MainApp.gc(R.color.black));
         }
 
@@ -1413,6 +1415,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //               Drawable icon = VectorDrawableCompat.getDrawable(getContext(), R.drawable.ic_carb_28);
 //               icon.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
 
+//                Drawable drawable1 = AppCompatResources.getDrawable(getContext(), ic_carb_28);
+//                DrawableCompat.setTint(drawable1, 0xfff0a30a);
+
+//                Drawable icon = AppCompatResources.getDrawable( Objects.requireNonNull( getContext() ), R.drawable.ic_carb_28);
+//                DrawableCompat.setTint(icon, 0xFFf0a30a);
+
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
                     cobView.setTextColor(MainApp.gc(R.color.black));
@@ -1420,10 +1428,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             if (cobInfo.displayCob != null && cobInfo.displayCob == 0) {
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_IN));
                 cobView.setTextColor(MainApp.gc(R.color.black));
             }
-
             cobView.setText(cobText);
             cobView.setTextColor(MainApp.gc(R.color.black));
         }
@@ -1469,7 +1476,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
             Drawable drawable = baseBasalView.getBackground();
-            drawable.setColorFilter(new PorterDuffColorFilter(0xffEBEBEA, PorterDuff.Mode.SRC_IN));
+            drawable.setColorFilter(new PorterDuffColorFilter(0xffffffff, PorterDuff.Mode.SRC_IN));
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         }
 
