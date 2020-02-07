@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:text="Date"
-        android:textSize="12dp"
-        android:textColor="@color/darkgray"/>
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/medtronic_history_source"
@@ -22,8 +21,7 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:text="Source"
-        android:textSize="12dp"
-        android:textColor="@color/darkgray"/>
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/medtronic_history_description"
@@ -31,7 +29,6 @@
         android:layout_height="match_parent"
         android:text="Description"
         android:gravity="center_vertical"
-        android:textSize="12dp"
-        android:textColor="@color/darkgray"/>
+        android:textSize="12dp" />
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plastic"
+    android:background="@color/r22_bg"
     android:orientation="vertical"
     tools:context=".plugins.general.maintenance.activities.LogSettingActivity">
 
@@ -11,7 +11,7 @@
         android:id="@+id/logsettings_reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bloodclucose_2"
+        android:background="@drawable/white_trans_bg"
         android:drawableLeft="@drawable/ic_zahnrad_32"
         android:layout_margin="15dp"
         android:text="@string/resettodefaults" />

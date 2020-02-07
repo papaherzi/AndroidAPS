@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/plastic"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.careportal.CareportalFragment">
 
 
@@ -34,8 +34,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="15dp"
                 android:text="@string/careportal_canulaage_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -45,8 +44,7 @@
                 android:paddingEnd="2dp"
                 android:paddingStart="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/careportal_canulaage"
@@ -55,8 +53,8 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:paddingLeft="5dp"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -83,8 +81,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="15dp"
                 android:text="@string/careportal_insulinage_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -94,8 +91,7 @@
                 android:paddingEnd="2dp"
                 android:paddingStart="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/careportal_insulinage"
@@ -104,8 +100,8 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:paddingLeft="5dp"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -132,8 +128,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="15dp"
                 android:text="@string/careportal_pbage_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -143,8 +138,7 @@
                 android:paddingEnd="2dp"
                 android:paddingStart="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/careportal_pbage"
@@ -153,8 +147,8 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:paddingLeft="5dp"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -180,8 +174,7 @@
                 android:paddingRight="5dp"
                 android:paddingStart="15dp"
                 android:text="@string/careportal_sensorage_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -191,8 +184,7 @@
                 android:paddingEnd="2dp"
                 android:paddingStart="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/careportal_sensorage"
@@ -201,8 +193,8 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:paddingLeft="5dp"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

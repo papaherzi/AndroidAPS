@@ -17,7 +17,7 @@
             android:gravity="center_horizontal"
             android:text="@string/invalidprofile"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/darkgray"
+            android:textColor="@android:color/holo_red_light"
             android:textStyle="bold"
             android:visibility="gone" />
 
@@ -28,7 +28,7 @@
             android:gravity="center_horizontal"
             android:text="@string/noprofileset"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/darkgray"
+            android:textColor="@android:color/holo_red_light"
             android:textStyle="bold"
             android:visibility="gone" />
 
@@ -44,8 +44,7 @@
                 android:layout_weight="2"
                 android:gravity="end"
                 android:text="@string/careportal_newnstreatment_profile_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -55,8 +54,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_activeprofile"
@@ -65,7 +63,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -94,8 +92,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/date"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -105,8 +102,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_date"
@@ -115,7 +111,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -141,8 +137,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_units_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -152,8 +147,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_units"
@@ -162,7 +156,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -188,8 +182,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_dia_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -199,8 +192,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_dia"
@@ -209,7 +201,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -235,8 +227,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_ic_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -246,8 +237,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_ic"
@@ -256,7 +246,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -282,8 +272,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_isf_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -293,8 +282,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_isf"
@@ -303,7 +291,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -329,8 +317,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_basal_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -340,8 +327,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_basal"
@@ -350,7 +336,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -367,8 +353,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text=""
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -378,8 +363,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=""
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_basaltotal"
@@ -388,7 +372,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="17dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -420,8 +404,7 @@
                 android:gravity="end"
                 android:layout_marginEnd="5dp"
                 android:text="@string/nsprofileview_target_label"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="5dp"
@@ -431,8 +414,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:text=":"
-                android:textSize="14sp"
-                android:textColor="@color/darkgray"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/profileview_target"
@@ -441,7 +423,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:layout_marginStart="5dp"
-                android:textColor="@color/darkgray"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>

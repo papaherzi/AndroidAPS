@@ -2,20 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/plastic_grey"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.careportal.CareportalFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp"
+        android:paddingBottom="8dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="28dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -23,8 +22,7 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_weight="1"
-                android:layout_marginBottom="1dp"
-                android:background="@drawable/rounded_plastic_bg">
+                android:background="@drawable/white_trans_bg">
 
                 <ImageView
                     android:layout_width="32dp"
@@ -50,9 +48,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
-                android:background="@drawable/rounded_plastic_bg">
+                android:background="@drawable/white_trans_bg">
 
                 <ImageView
                     android:layout_width="32dp"
@@ -85,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:background="@drawable/rounded_plastic_bg"
+                android:background="@drawable/white_trans_bg"
                 android:layout_weight="1">
 
                 <ImageView
@@ -113,7 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="3dp"
-                android:background="@drawable/rounded_plastic_bg"
+                android:background="@drawable/white_trans_bg"
                 android:layout_weight="1">
 
                 <ImageView

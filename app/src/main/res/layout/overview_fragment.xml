@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plastic"
+    android:background="@color/r22_bg"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <RelativeLayout
@@ -34,32 +34,27 @@
                     android:orientation="horizontal"
                     android:paddingTop="5dp">
 
+
                     <TextView
                         android:id="@+id/overview_apsmode"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_aaps_logo_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_loop_black_25"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
-                        android:paddingEnd="2dp"
                         android:paddingBottom="3dp"
                         android:text="Open Loop"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
-
 
                     <TextView
                         android:id="@+id/overview_activeprofile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_user_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_user_black_25"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -70,11 +65,9 @@
                         android:id="@+id/overview_temptarget"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_zielkreuz_white"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_zielkreuz_black_25"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -167,7 +160,7 @@
                                 android:layout_width="44dp"
                                 android:layout_height="44dp"
                                 android:layout_marginStart="5dp"
-                                android:background="@drawable/bloodclucose_2"
+                                android:background="@drawable/sphere_rose_stroke"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
@@ -175,14 +168,14 @@
                                 android:paddingBottom="8dp"
                                 android:text=""
                                 android:textSize="18dp"
-                                android:textColor="@android:color/white" />
+                                android:textColor="@android:color/black" />
 
                             <TextView
                                 android:id="@+id/overview_timeago"
                                 android:layout_width="44dp"
                                 android:layout_height="44dp"
                                 android:layout_marginStart="3dp"
-                                android:background="@drawable/bloodclucose_2"
+                                android:background="@drawable/sphere_timeago"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
@@ -190,7 +183,7 @@
                                 android:paddingBottom="8dp"
                                 android:text=""
                                 android:textSize="18dp"
-                                android:textColor="@android:color/white" />
+                                android:textColor="@android:color/black" />
 
                             <TextView
                                 android:id="@+id/overview_iob"
@@ -201,14 +194,13 @@
                                 android:autoSizeMinTextSize="7sp"
                                 android:autoSizeStepGranularity="1sp"
                                 android:autoSizeTextType="uniform"
-                                android:background="@drawable/sphere_amber_stroke"
+                                android:background="@drawable/sphere_cyan_stroke"
                                 android:gravity="center"
                                 android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
                                 android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp"/>
+                                android:text="" />
 
                             <TextView
                                 android:id="@+id/overview_cob"
@@ -232,14 +224,18 @@
                                 android:layout_width="44dp"
                                 android:layout_height="44dp"
                                 android:layout_marginStart="3dp"
-                                android:background="@drawable/sphere_amber_stroke"
-                                android:gravity="center_horizontal|center_vertical"
+                                android:autoSizeMaxTextSize="18sp"
+                                android:autoSizeMinTextSize="7sp"
+                                android:autoSizeStepGranularity="1sp"
+                                android:autoSizeTextType="uniform"
+                                android:background="@drawable/sphere_teal_stroke"
+                                android:gravity="center"
                                 android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
                                 android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
                                 android:text=""
-                                android:textSize="18dp" />
+                                android:textSize="18dp"/>
 
                             <!--                            <TextView
                                 android:id="@+id/overview_sensitivity"
@@ -252,9 +248,7 @@
                                 android:autoSizeTextType="uniform"
                                 android:background="@drawable/ic_ball_grey"
                                 android:gravity="center"
-                                android:paddingLeft="2dp"
                                 android:paddingTop="8dp"
-                                android:paddingRight="2dp"
                                 android:paddingBottom="8dp"
                                 android:text=""
                                 android:textColor="@android:color/black" /> -->
@@ -273,7 +267,7 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="11dp"
-                                android:background="@drawable/ic_delta_28_dark">
+                                android:background="@drawable/ic_delta_28_rose">
 
                             </ImageView>
 
@@ -282,36 +276,34 @@
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_clock_28_dark">
+                                android:background="@drawable/ic_clock_28">
 
                             </ImageView>
 
                             <ImageView
-                                android:id="@+id/pumpsymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="start"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_pumpe_28_dark">
+                                app:srcCompat="@drawable/ic_pumpe_28_cyan">
 
                             </ImageView>
 
+
                             <ImageView
-                                android:id="@+id/carbsymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_carb_28_dark">
+                                app:srcCompat="@drawable/ic_carb_28_amber">
 
                             </ImageView>
 
                             <ImageView
-                                android:id="@+id/bassymbol"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_gravity="end"
                                 android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_bas_28_dark">
+                                app:srcCompat="@drawable/ic_bas_28_teal">
 
                             </ImageView>
 
@@ -380,8 +372,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_katheter_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_katheter_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -400,8 +392,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_cartridge"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_cartridge_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -410,8 +402,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_libre_2_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_libre_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -420,8 +412,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_battery_35"
+                        android:background="@drawable/bg_pille_top"
+                        android:drawableLeft="@drawable/ic_battery_30_black"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -432,7 +424,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/plastic_grey">
+                    android:background="@color/r22_bg">
 
                     <com.jjoe64.graphview.GraphView
                         android:id="@+id/overview_bggraph"
@@ -492,7 +484,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/r22_bg"
                     android:visibility="gone" />
 
                 <com.jjoe64.graphview.GraphView
@@ -501,7 +493,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/r22_bg"
                     android:visibility="gone" />
 
                 <com.jjoe64.graphview.GraphView
@@ -510,7 +502,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/r22_bg"
                     android:visibility="gone" />
 
                 <!--               <LinearLayout
@@ -601,7 +593,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_zahnrad_48_dark"
+                    android:drawableTop="@drawable/ic_zahnrad_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
@@ -618,7 +610,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_pumpe_48_dark"
+                    android:drawableTop="@drawable/ic_pumpe_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
@@ -635,7 +627,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_carb_48_dark"
+                    android:drawableTop="@drawable/ic_carb_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
@@ -652,7 +644,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calculator_48_dark"
+                    android:drawableTop="@drawable/ic_calculator_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
@@ -669,7 +661,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calibration_48_dark"
+                    android:drawableTop="@drawable/ic_calibration_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
@@ -686,7 +678,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_blooddrop_48_dark"
+                    android:drawableTop="@drawable/ic_blooddrop_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
@@ -703,7 +695,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_wizard_48_dark"
+                    android:drawableTop="@drawable/ic_wizard_48"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="Quick wizard"

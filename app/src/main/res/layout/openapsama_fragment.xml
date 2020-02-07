@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plastic"
+    android:background="@color/r22_bg"
     android:paddingTop="2dp"
     tools:context=".plugins.aps.openAPSAMA.OpenAPSAMAFragment">
 
@@ -29,7 +29,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/bloodclucose_2"
+                    android:background="@drawable/white_trans_bg"
                     android:drawableLeft="@drawable/ic_zahnrad_32"
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
@@ -49,8 +49,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_lastrun_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -60,8 +59,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_lastrun"
@@ -70,7 +68,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -96,7 +94,7 @@
                     android:gravity="center_horizontal"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_inputparameters_label"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -113,8 +111,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/constraints"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -124,8 +121,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_constraints"
@@ -134,8 +130,8 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -160,8 +156,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_glucosestatus_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -171,8 +166,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_glucosestatus"
@@ -181,8 +175,8 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -207,8 +201,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_currenttemp_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -218,8 +211,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_currenttemp"
@@ -228,7 +220,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -254,8 +246,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_iobdata_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -265,8 +256,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_iobdata"
@@ -275,7 +265,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -301,8 +291,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_profile_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -312,8 +301,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_profile"
@@ -322,7 +310,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -348,8 +336,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_mealdata_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -359,8 +346,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_mealdata"
@@ -369,7 +355,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -395,8 +381,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_autosensdata_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -406,8 +391,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_autosensdata"
@@ -416,7 +400,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -442,7 +426,7 @@
                     android:gravity="center_horizontal"
                     android:paddingRight="5dp"
                     android:text="@string/result"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -468,8 +452,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_scriptdebugdata_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -479,8 +462,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_scriptdebugdata"
@@ -489,7 +471,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -515,8 +497,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/result"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -526,8 +507,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_result"
@@ -536,7 +516,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -562,8 +542,7 @@
                     android:gravity="end"
                     android:paddingRight="5dp"
                     android:text="@string/openapsma_request_label"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="5dp"
@@ -573,8 +552,7 @@
                     android:paddingEnd="2dp"
                     android:paddingStart="2dp"
                     android:text=":"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkgray"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/openapsma_request"
@@ -583,7 +561,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/darkgray"
+                    android:textColor="@android:color/white"
                     android:textSize="14sp" />
 
             </LinearLayout>
