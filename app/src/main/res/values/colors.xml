@@ -15,7 +15,6 @@
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
     <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="inrangebackgroundborder">#FFFFFF</color>
     <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
     <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="actionsConfirm">#FFFF00</color>
@@ -23,18 +22,18 @@
     <color name="tabBgColorSelected">#00a3e8</color>
     <color name="deviations">#FF0000</color>
     <color name="cobAlert">#7484E2</color>
-    <color name="inrangebackground">#40FFFFFF</color> <!-- Grafikbereich fuer die gewaehlten BG Werte hoch und tief im Graphen -->
+    <color name="inrangebackground">#10FFFFFF</color> <!-- Grafikbereich fuer die gewaehlten BG Werte hoch und tief im Graphen -->
     <color name="basebasal">#32a6b8</color>
     <color name="tempbasal">#32a6b8</color> <!-- Farbe TEMP Basal im Graphen -->
-    <color name="graphgrid">#60FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
+    <color name="graphgrid">#30FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
     <color name="colorLightGray">#d8d8d8</color>
     <color name="warning">#f0a30a</color>
     <color name="error_background">#66FC0000</color>
     <color name="ok_background">#323232</color>
 
     <color name="defaultbackground">#424242</color> <!-- Default 424242 -->
-    <color name="defaulttext">#BBBBBB</color> <!-- 'BBBBBB -->
-    <color name="defaulttextcolor">#BBBBBB</color>
+    <color name="defaulttext">#FFFFFF</color> <!-- 'BBBBBB -->
+    <color name="defaulttextcolor">#B3FFFFFF</color>
 
     <color name="tempTargetBackground">#FFFFFF</color> <!-- Farbe des TT im oberen Graphen -->
     <color name="tempTargetConfirmation">#FFFFFF</color>
@@ -93,7 +92,8 @@
     <color name="ribbonTextCritical">#FFFFFF</color>
 
     <color name="splashBackground">#2E2E2E</color>
-    <!-- Treatment Text   -->
+
+<!-- Treatment Text   -->
     <color name="treatment">#B2B2B2</color>
 
 <!-- Rig22 Colors -->
@@ -107,13 +107,9 @@
     <color name="teal">#50149baf</color>
     <color name="amber">#f0a30a</color>
     <color name="smb">#90FFFFFF</color>
-    <color name="treatments">#ffffff</color>
+    <color name="treatments">#90FFFFFF</color>
     <color name="color_white">#FFFFFF</color>
     <color name="transparent">#20FFFFFF</color>
-    <color name="plastic">#EBEBEA</color>
-    <color name="sienna3">#cd6839</color>
-    <color name="crimson">#911d10</color>
-    <color name="plastic_grey">#666666</color>
-    <color name="sphere_plastic_grey">#8c8c8c</color>
+    <color name="textgrey">#666666</color>
 
 </resources>
