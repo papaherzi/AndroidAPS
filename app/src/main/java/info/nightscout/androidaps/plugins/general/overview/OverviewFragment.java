@@ -1308,7 +1308,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 //                color = MainApp.gc(R.color.low);
             {
                 Drawable drawable = bgView.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
                 bgView.setTextColor(MainApp.gc(R.color.white));
             }
 
@@ -1317,7 +1317,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.white));
+                bgView.setTextColor(MainApp.gc(R.color.black));
             }
 
             else if (lastBG.valueToUnits(units) > highLine)
@@ -1325,7 +1325,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             {
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                bgView.setTextColor(MainApp.gc(R.color.white));
+                bgView.setTextColor(MainApp.gc(R.color.black));
             }
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
@@ -1348,6 +1348,22 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     deltaShortView.setText("---");
                 if (avgdeltaView != null)
                     avgdeltaView.setText("");
+            }
+
+            if (glucoseStatus != null && glucoseStatus.delta >+9) {
+                Drawable drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+            }
+            else if (glucoseStatus != null && glucoseStatus.delta <-9) {
+                Drawable drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+            }
+            else   {
+                Drawable drawable = deltaShortView.getBackground();
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_ATOP));
+                deltaShortView.setTextColor(MainApp.gc(R.color.white));
             }
         }
 
@@ -1380,7 +1396,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (iobView != null) {
             Drawable drawable = iobView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-            iobView.setTextColor(MainApp.gc(R.color.white));
+            iobView.setTextColor(MainApp.gc(R.color.black));
 //            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
         } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
@@ -1396,7 +1412,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 cobText = DecimalFormatter.to0Decimal(cobInfo.displayCob);
                 Drawable drawable = cobView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-                cobView.setTextColor(MainApp.gc(R.color.white));
+                cobView.setTextColor(MainApp.gc(R.color.black));
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
 //                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_dark);
@@ -1470,7 +1486,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (activeTemp != null) {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP));
-            baseBasalView.setTextColor(MainApp.gc(R.color.white));
+            baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xff666666, PorterDuff.Mode.SRC_IN));
