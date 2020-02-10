@@ -197,6 +197,9 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
                                         android:background="@drawable/delta_stroke"
                                         android:gravity="center"
                                         android:text="" />
@@ -210,6 +213,7 @@
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
                                         android:background="@drawable/delta_stroke"
                                         android:gravity="center"
                                         android:paddingTop="8dp"
@@ -224,6 +228,9 @@
                                         android:layout_marginStart="2dp"
                                         android:layout_marginTop="10dp"
                                         android:autoSizeMaxTextSize="16sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
                                         android:background="@drawable/delta_stroke"
                                         android:gravity="center"
                                         android:text="" />
@@ -598,8 +605,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/bloodclucose_bg">
+                android:orientation="horizontal">
 
                 <info.nightscout.androidaps.utils.SingleClickButton
                     android:id="@+id/overview_treatmentbutton"

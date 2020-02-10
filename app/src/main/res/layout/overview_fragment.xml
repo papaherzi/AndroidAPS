@@ -107,16 +107,13 @@
 
                 <!-- Blutzuckerwert, AVG -->
                 <LinearLayout
-                    android:baselineAligned="false"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="0"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="250dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
@@ -143,200 +140,173 @@
                             android:layout_marginTop="10dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:text="→"
-                            android:textSize="32sp"
+                            android:textSize="30sp"
                             android:textStyle="bold" />
-                    </LinearLayout>
-                    <!--  IOB, COB, AS, BAS und Pumpe -->
-                    <LinearLayout
-                        android:layout_width="380dp"
-                        android:layout_height="92dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingTop="10dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            android:layout_weight="0"
+                            android:layout_width="280dp"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
-                            <TextView
-                                android:id="@+id/overview_deltashort"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="5dp"
-                                android:background="@drawable/delta_stroke"
-                                android:gravity="center"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp"
-                                android:textColor="@android:color/white" />
-
-                            <TextView
-                                android:id="@+id/overview_timeago"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="3dp"
-                                android:background="@drawable/bloodclucose_2"
-                                android:gravity="center"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp"
-                                android:textColor="@android:color/white" />
-
-                            <TextView
-                                android:id="@+id/overview_iob"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="3dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="7sp"
-                                android:autoSizeStepGranularity="1sp"
-                                android:autoSizeTextType="uniform"
-                                android:background="@drawable/delta_stroke"
-                                android:gravity="center"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp"/>
-
-                            <TextView
-                                android:id="@+id/overview_cob"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="3dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="7sp"
-                                android:autoSizeStepGranularity="1sp"
-                                android:autoSizeTextType="uniform"
-                                android:background="@drawable/delta_stroke"
-                                android:gravity="center"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text="" />
-
-                            <TextView
-                                android:id="@+id/overview_basebasal"
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:layout_marginStart="3dp"
-                                android:background="@drawable/delta_stroke"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text=""
-                                android:textSize="18dp" />
-
-                            <!--                            <TextView
-                                android:id="@+id/overview_sensitivity"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="5dp"
-                                android:autoSizeMaxTextSize="18sp"
-                                android:autoSizeMinTextSize="12sp"
-                                android:autoSizeStepGranularity="2sp"
-                                android:autoSizeTextType="uniform"
-                                android:background="@drawable/ic_ball_grey"
-                                android:gravity="center"
-                                android:paddingLeft="2dp"
-                                android:paddingTop="8dp"
-                                android:paddingRight="2dp"
-                                android:paddingBottom="8dp"
-                                android:text=""
-                                android:textColor="@android:color/black" /> -->
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="28dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="0"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_gravity="start"
-                                android:layout_marginStart="11dp"
-                                android:background="@drawable/ic_delta_28_dark">
-                            </ImageView>
-
-                            <ImageView
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_gravity="start"
-                                android:layout_marginStart="19dp"
-                                android:background="@drawable/ic_clock_28_dark">
-                            </ImageView>
-
-                            <ImageView
-                                android:id="@+id/pumpsymbol"
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_gravity="start"
-                                android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_pumpe_28_dark">
-                            </ImageView>
-
-                            <ImageView
-                                android:id="@+id/carbsymbol"
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_carb_28_dark">
-                            </ImageView>
-
-                            <ImageView
-                                android:id="@+id/bassymbol"
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_gravity="end"
-                                android:layout_marginStart="19dp"
-                                app:srcCompat="@drawable/ic_bas_28_dark">
-                            </ImageView>
-
-                            <!--                            <ImageView
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:layout_gravity="end"
-                                android:layout_marginStart="18dp"
-                                android:background="@drawable/ic_as_28">
-                            </ImageView> -->
-
-                        </LinearLayout>
-                        <!-- Overview Pump
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="43dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/white_trans_bg"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:id="@+id/overview_pump"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:layout_marginStart="2dp"
-                                android:text=""
-                                android:textColor="#FFFFFF"
-                                android:textSize="17sp" />
-                        </LinearLayout> -->
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
 
 
+                                    <TextView
+                                        android:id="@+id/overview_deltashort"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="5dp"
+                                        android:background="@drawable/delta_stroke"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:id="@+id/overview_timeago"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginLeft="2dp"
+                                        android:background="@drawable/bloodclucose_2"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@android:color/white"
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:id="@+id/overview_iob"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:autoSizeMaxTextSize="18sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
+                                        android:layout_marginLeft="2dp"
+                                        android:background="@drawable/delta_stroke"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:paddingRight="2dp"
+                                        android:paddingLeft="2dp"/>
+
+                                    <TextView
+                                        android:id="@+id/overview_cob"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:autoSizeMaxTextSize="18sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
+                                        android:layout_marginLeft="2dp"
+                                        android:background="@drawable/delta_stroke"
+                                        android:gravity="center"
+                                        android:paddingTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:text=""
+                                        android:paddingRight="2dp"
+                                        android:paddingLeft="2dp"/>
+
+
+                                    <TextView
+                                        android:id="@+id/overview_basebasal"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:autoSizeMaxTextSize="18sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
+                                        android:layout_marginLeft="2dp"
+                                        android:background="@drawable/delta_stroke"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:paddingRight="2dp"
+                                        android:paddingLeft="2dp"/>
+
+                                    <TextView
+                                        android:id="@+id/overview_sensitivity"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginLeft="2dp"
+                                        android:background="@drawable/delta_stroke"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textSize="18dp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="start"
+                                        android:layout_marginStart="9dp"
+                                        android:background="@drawable/ic_delta_28_dark">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="start"
+                                        android:layout_marginStart="14dp"
+                                        android:background="@drawable/ic_clock_28_dark">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="start"
+                                        android:layout_marginStart="14dp"
+                                        android:background="@drawable/ic_pumpe_28_dark">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_marginStart="14dp"
+                                        android:background="@drawable/ic_carb_28_dark">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="end"
+                                        android:layout_marginStart="13dp"
+                                        android:background="@drawable/ic_bas_28_dark">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="end"
+                                        android:layout_marginStart="14dp"
+                                        android:background="@drawable/ic_as_28_dark">
+
+                                    </ImageView>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
