@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import info.nightscout.androidaps.MainApp
 import info.nightscout.androidaps.R
+import info.nightscout.androidaps.R.color.black
+import info.nightscout.androidaps.R.color.white
 import info.nightscout.androidaps.events.EventExtendedBolusChange
 import info.nightscout.androidaps.events.EventPumpStatusChanged
 import info.nightscout.androidaps.events.EventTempBasalChange
@@ -62,11 +64,11 @@ class MedtronicFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        medtronic_pumpstatus.setBackgroundColor(MainApp.gc(R.color.colorInitializingBorder))
+        medtronic_pumpstatus.setBackgroundColor(MainApp.gc(R.color.white))
 
         medtronic_rl_status.text = MainApp.gs(RileyLinkServiceState.NotStarted.getResourceId(RileyLinkTargetDevice.MedtronicPump))
 
-        medtronic_pump_status.setTextColor(Color.WHITE)
+        medtronic_pump_status.setTextColor(Color.BLACK)
         medtronic_pump_status.text = "{fa-bed}"
 
         medtronic_history.setOnClickListener {
@@ -172,7 +174,7 @@ class MedtronicFragment : Fragment() {
                     pumpStatus.rileyLinkServiceState.isError && rileyLinkError != null -> "{fa-bluetooth-b}   " + MainApp.gs(rileyLinkError.getResourceId(RileyLinkTargetDevice.MedtronicPump))
                     else -> "{fa-bluetooth-b}   " + MainApp.gs(resourceId)
                 }
-        medtronic_rl_status.setTextColor(if (rileyLinkError != null) Color.RED else Color.WHITE)
+        medtronic_rl_status.setTextColor(if (rileyLinkError != null) Color.RED else Color.BLACK)
 
         pumpStatus.rileyLinkError = checkStatusSet(pumpStatus.rileyLinkError, RileyLinkUtil.getError()) as RileyLinkError?
 
@@ -250,7 +252,7 @@ class MedtronicFragment : Fragment() {
             val min = (System.currentTimeMillis() - pumpStatus.lastConnection) / 1000 / 60
             if (pumpStatus.lastConnection + 60 * 1000 > System.currentTimeMillis()) {
                 medtronic_lastconnection.setText(R.string.combo_pump_connected_now)
-                medtronic_lastconnection.setTextColor(Color.WHITE)
+                medtronic_lastconnection.setTextColor(Color.BLACK)
             } else if (pumpStatus.lastConnection + 30 * 60 * 1000 < System.currentTimeMillis()) {
 
                 if (min < 60) {
@@ -299,6 +301,7 @@ class MedtronicFragment : Fragment() {
 
         medtronic_tempbasal.text = TreatmentsPlugin.getPlugin()
                 .getTempBasalFromHistory(System.currentTimeMillis())?.toStringFull() ?: ""
+        medtronic_tempbasal.setTextColor(MainApp.gc(white))
 
         // battery
         if (MedtronicUtil.getBatteryType() == BatteryType.None || pumpStatus.batteryVoltage == null) {
@@ -307,11 +310,9 @@ class MedtronicFragment : Fragment() {
             medtronic_pumpstate_battery.text = "{fa-battery-" + pumpStatus.batteryRemaining / 25 + "}  " + pumpStatus.batteryRemaining + "%" + String.format("  (%.2f V)", pumpStatus.batteryVoltage)
         }
         SetWarnColor.setColorInverse(medtronic_pumpstate_battery, pumpStatus.batteryRemaining.toDouble(), 25.0, 10.0)
-
         // reservoir
         medtronic_reservoir.text = MainApp.gs(R.string.reservoirvalue, pumpStatus.reservoirRemainingUnits, pumpStatus.reservoirFullUnits)
         SetWarnColor.setColorInverse(medtronic_reservoir, pumpStatus.reservoirRemainingUnits, 50.0, 20.0)
-
         medtronic_errors.text = pumpStatus.errorInfo
     }
 }
