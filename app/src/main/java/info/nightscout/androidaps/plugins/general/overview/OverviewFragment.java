@@ -1572,12 +1572,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData( "Overview" );
         sensitivityView.setText( String.format( Locale.ENGLISH, "%.0f", autosensData.autosensResult.ratio * 100 ) );
 
-        if ((sensitivityView != null) && autosensData.autosensResult.ratio > 1) {
+        if ((sensitivityView != null) && autosensData.autosensResult.ratio > 1.09) {
             Drawable drawable = sensitivityView.getBackground();
             drawable.setColorFilter( new PorterDuffColorFilter( 0x00000000, PorterDuff.Mode.SRC_ATOP ) );
             sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
         }
-        else if ((sensitivityView != null) && autosensData.autosensResult.ratio < 1) {
+        else if ((sensitivityView != null) && autosensData.autosensResult.ratio < 0.90) {
             Drawable drawable = sensitivityView.getBackground();
             drawable.setColorFilter( new PorterDuffColorFilter( 0x00000000, PorterDuff.Mode.SRC_ATOP ) );
             sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
