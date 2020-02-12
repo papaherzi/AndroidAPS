@@ -303,7 +303,7 @@
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
                                         android:layout_gravity="end"
-                                        android:layout_marginStart="14dp"
+                                        android:layout_marginStart="16dp"
                                         android:background="@drawable/ic_as_28_dark">
 
                                     </ImageView>
