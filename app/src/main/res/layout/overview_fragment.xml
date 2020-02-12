@@ -291,6 +291,7 @@
 
 
                             <ImageView
+                                android:id="@+id/overview_sphere"
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
                                 android:layout_marginStart="19dp"
