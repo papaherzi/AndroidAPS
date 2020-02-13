@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -193,6 +194,8 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
     SingleClickButton cgmButton;
     SingleClickButton quickWizardButton;
 
+    ImageView ic_carb_28_amber;
+
     boolean smallWidth;
     boolean smallHeight;
 
@@ -239,6 +242,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         } else {
             view = inflater.inflate(R.layout.overview_fragment, container, false);
         }
+
+        ic_carb_28_amber = view.findViewById(R.id.ic_carb_28_amber);
+
+
 
         timeView = (TextView) view.findViewById(R.id.overview_time);
         bgView = (TextView) view.findViewById(R.id.overview_bg);
@@ -1400,7 +1407,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
 
 
-
 //                cobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
 //                Drawable icon = AppCompatResources.getDrawable(getContext(), R.drawable.ic_carb_28_amber);
@@ -1736,5 +1742,3 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
 
 
 }
-
-
