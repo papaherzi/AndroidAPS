@@ -15,8 +15,8 @@
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
     <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
-    <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
+    <color name="low">#f7806a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
+    <color name="high">#f7806a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color>
     <color name="tabBgColorSelected">#00a3e8</color>
@@ -112,7 +112,6 @@
     <color name="transparent">#20FFFFFF</color>
     <color name="textgrey">#666666</color>
     <color name="loopgreen">#40b94f</color>
-
-
+    <color name="lila">#fa8a4b</color>
 
 </resources>

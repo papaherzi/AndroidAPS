@@ -34,12 +34,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="5dp">
 
-                    <ImageView
+ <!--                   <ImageView
                         android:id="@+id/ic_loop_white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/ic_loop_white">
-                    </ImageView>
+                    </ImageView> -->
 
 
                     <TextView
@@ -50,15 +50,17 @@
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
+                        android:background="@drawable/white_trans_bg"
+                        android:drawableLeft="@drawable/ic_loop_white"
                         android:text="Open Loop"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                    <ImageView
+<!--                    <ImageView
                         android:id="@+id/ic_user_white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/ic_user_white">
-                    </ImageView>
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_activeprofile"
@@ -68,15 +70,17 @@
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
+                        android:background="@drawable/white_trans_bg"
+                        android:drawableLeft="@drawable/ic_user_white"
                         android:text="Profile"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                    <ImageView
+<!--                    <ImageView
                         android:id="@+id/ic_zielkreuz_white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/ic_zielkreuz_white">
-                    </ImageView>
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_temptarget"
@@ -86,6 +90,8 @@
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
+                        android:background="@drawable/white_trans_bg"
+                        android:drawableLeft="@drawable/ic_zielkreuz_white"
                         android:text="TempTarget"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -177,7 +183,7 @@
                                         android:layout_height="40dp"
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="2dp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/sphere_rose_stroke"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@android:color/white"
@@ -204,7 +210,7 @@
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/sphere_cyan_stroke"
                                         android:gravity="center"
                                         android:paddingLeft="2dp"
                                         android:paddingTop="8dp"
@@ -221,7 +227,7 @@
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/sphere_amber_stroke"
                                         android:gravity="center"
                                         android:paddingLeft="2dp"
                                         android:paddingTop="8dp"
@@ -239,7 +245,7 @@
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/sphere_teal_stroke"
                                         android:gravity="center"
                                         android:paddingLeft="2dp"
                                         android:paddingRight="2dp"
@@ -251,7 +257,7 @@
                                         android:layout_height="40dp"
                                         android:layout_marginLeft="2dp"
                                         android:layout_marginTop="2dp"
-                                        android:background="@drawable/ic_ball_grey"
+                                        android:background="@drawable/sphere_stroke_lila"
                                         android:gravity="center"
                                         android:text=""
                                         android:textSize="18dp" />
@@ -362,7 +368,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
+                        android:background="@drawable/white_trans_bg"
                         android:drawableLeft="@drawable/ic_katheter_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
@@ -382,7 +388,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
+                        android:background="@drawable/white_trans_bg"
                         android:drawableLeft="@drawable/ic_cartridge_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
@@ -392,7 +398,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
+                        android:background="@drawable/white_trans_bg"
                         android:drawableLeft="@drawable/ic_libre_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
@@ -402,7 +408,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
+                        android:background="@drawable/white_trans_bg"
                         android:drawableLeft="@drawable/ic_battery_white"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
