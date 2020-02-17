@@ -36,7 +36,7 @@ class StatuslightHandler {
         double reservoirLevel = pump.isInitialized() ? pump.getReservoirLevel() : -1;
         applyStatuslightLevel(R.string.key_statuslights_res_critical, 20.0,
                 R.string.key_statuslights_res_warning, 50.0, reservoirView, "", reservoirLevel);
-        reservoirView.setText(extended ? (DecimalFormatter.to0Decimal(reservoirLevel) + "U  ") : "");
+        reservoirView.setText(extended ? (DecimalFormatter.to0Decimal(reservoirLevel) + "U") : "");
 
         applyStatuslight("sage", CareportalEvent.SENSORCHANGE, sageView, extended ? (MainApp.getDbHelper().getLastCareportalEvent(CareportalEvent.SENSORCHANGE).age(true) + " ") : "", 164, 166);
 
@@ -45,7 +45,7 @@ class StatuslightHandler {
             applyStatuslightLevel(R.string.key_statuslights_bat_critical, 26.0,
                     R.string.key_statuslights_bat_warning, 51.0,
                     batteryView, "", batteryLevel);
-            batteryView.setText(extended ? (DecimalFormatter.to0Decimal(batteryLevel) + "%  ") : "");
+            batteryView.setText(extended ? (DecimalFormatter.to0Decimal(batteryLevel) + "%") : "");
 
         } else {
             applyStatuslight("bage", CareportalEvent.PUMPBATTERYCHANGE, batteryView, extended ? (MainApp.getDbHelper().getLastCareportalEvent(CareportalEvent.PUMPBATTERYCHANGE).age(true) + " ") : "", 504, 240);
@@ -86,11 +86,11 @@ class StatuslightHandler {
             if (check.apply(urgentThreshold)) {
                 view.setTextColor(MainApp.gc(R.color.white));
                 Drawable drawable = view.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xffF7806A, PorterDuff.Mode.ADD));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff06b0a, PorterDuff.Mode.SRC_ATOP));
             } else if (check.apply(warnThreshold)) {
                 view.setTextColor(MainApp.gc(R.color.white));
                 Drawable drawable = view.getBackground();
-                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.ADD));
+                drawable.setColorFilter(new PorterDuffColorFilter(0xfff0a30a, PorterDuff.Mode.SRC_ATOP));
             } else {
                 view.setTextColor(MainApp.gc(R.color.white));
                 Drawable drawable = view.getBackground();

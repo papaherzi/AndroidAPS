@@ -14,9 +14,9 @@
     <color name="activity">#d3f166</color>
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
-    <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="low">#f7806a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
-    <color name="high">#f7806a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
+    <color name="inrange">#2495d7</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
+    <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
+    <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color>
     <color name="tabBgColorSelected">#00a3e8</color>
@@ -113,5 +113,16 @@
     <color name="textgrey">#666666</color>
     <color name="loopgreen">#40b94f</color>
     <color name="lila">#fa8a4b</color>
+    <color name="sphere_plastic_grey">#8c8c8c</color>
+    <color name="peach">#f06b0a</color>
+    <color name="conncinity_black">#050503</color>
+    <color name="conncinity_grey">#94938f</color>
+    <color name="conncinity_bright_grey">#bdbcb8</color>
+    <color name="conncinity_cyan">#2495d7</color>
+    <color name="conncinity_amber">#50faae00</color>
+
+
+
+
 
 </resources>
