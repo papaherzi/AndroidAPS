@@ -401,7 +401,7 @@
     <string name="MM640g">MM640g</string>
     <string name="ongoingnotificaction">Anhaltende Benachrichtigung</string>
     <string name="old_data">VERALTETE DATEN</string>
-    <string name="minago">%1$d</string>
+    <string name="minago">%1$d\' min her</string>
     <string name="sms_minago">%1$d\' her</string>
     <string name="localprofile">Lokales Profil</string>
     <string name="openapsama">OpenAPS AMA</string>

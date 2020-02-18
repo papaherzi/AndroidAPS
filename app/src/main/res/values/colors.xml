@@ -101,7 +101,7 @@
     <color name="black">#000000</color>
     <color name="gray">#BBBBBB</color>
     <color name="darkgray">#4e4e4e</color>
-    <color name="r22_bg">#222222</color>
+    <color name="r22_bg">#333333</color>
     <color name="cyan">#1ba1e2</color>
     <color name="rose">#f7806a</color>
     <color name="teal">#149baf</color>
@@ -120,6 +120,7 @@
     <color name="conncinity_bright_grey">#bdbcb8</color>
     <color name="conncinity_cyan">#2495d7</color>
     <color name="conncinity_amber">#50faae00</color>
+    <color name="light_white">#30ffffff</color>
 
 
 

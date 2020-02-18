@@ -68,7 +68,7 @@ class MedtronicFragment : Fragment() {
 
         medtronic_rl_status.text = MainApp.gs(RileyLinkServiceState.NotStarted.getResourceId(RileyLinkTargetDevice.MedtronicPump))
 
-        medtronic_pump_status.setTextColor(Color.BLACK)
+        medtronic_pump_status.setTextColor(Color.WHITE)
         medtronic_pump_status.text = "{fa-bed}"
 
         medtronic_history.setOnClickListener {
@@ -174,7 +174,7 @@ class MedtronicFragment : Fragment() {
                     pumpStatus.rileyLinkServiceState.isError && rileyLinkError != null -> "{fa-bluetooth-b}   " + MainApp.gs(rileyLinkError.getResourceId(RileyLinkTargetDevice.MedtronicPump))
                     else -> "{fa-bluetooth-b}   " + MainApp.gs(resourceId)
                 }
-        medtronic_rl_status.setTextColor(if (rileyLinkError != null) Color.RED else Color.BLACK)
+        medtronic_rl_status.setTextColor(if (rileyLinkError != null) Color.RED else Color.WHITE)
 
         pumpStatus.rileyLinkError = checkStatusSet(pumpStatus.rileyLinkError, RileyLinkUtil.getError()) as RileyLinkError?
 
@@ -252,7 +252,7 @@ class MedtronicFragment : Fragment() {
             val min = (System.currentTimeMillis() - pumpStatus.lastConnection) / 1000 / 60
             if (pumpStatus.lastConnection + 60 * 1000 > System.currentTimeMillis()) {
                 medtronic_lastconnection.setText(R.string.combo_pump_connected_now)
-                medtronic_lastconnection.setTextColor(Color.BLACK)
+                medtronic_lastconnection.setTextColor(Color.WHITE)
             } else if (pumpStatus.lastConnection + 30 * 60 * 1000 < System.currentTimeMillis()) {
 
                 if (min < 60) {
