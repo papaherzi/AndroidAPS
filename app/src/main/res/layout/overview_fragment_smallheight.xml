@@ -570,14 +570,6 @@
                     android:textColor="@color/colorAcceptTempButton" />
             </LinearLayout>
 
-
-            <!-- Gestrichelte Linie
-                            <ImageView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="5dp"
-                                 android:src="@drawable/dotted"
-                                 android:layerType="software" /> -->
-
             <!-- Untere Funktionsbutton Reihe -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -594,7 +586,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_zahnrad_48"
+                    android:drawableTop="@drawable/zahnrad_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
@@ -611,7 +603,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_pumpe_48"
+                    android:drawableTop="@drawable/pumpe_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
@@ -628,7 +620,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_carb_48"
+                    android:drawableTop="@drawable/carb_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
@@ -645,7 +637,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calculator_48"
+                    android:drawableTop="@drawable/calculator_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
@@ -662,7 +654,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calibration_48"
+                    android:drawableTop="@drawable/calibration_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
@@ -679,7 +671,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_blooddrop_48"
+                    android:drawableTop="@drawable/blooddrop_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
@@ -696,7 +688,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_wizard_48"
+                    android:drawableTop="@drawable/wizard_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="Quick wizard"

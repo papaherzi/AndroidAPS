@@ -1640,13 +1640,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         }
 
         // Sensitivity
-        if (sensitivityView != null) {
-            AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
-            if (autosensData != null)
-                sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
-            else
-                sensitivityView.setText("");
-        }
+ //       if (sensitivityView != null) {
+ //           AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
+ //           if (autosensData != null)
+ //               sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
+ //           else
+ //               sensitivityView.setText("");
+ //       }
 
         // Sensitivity
         AutosensData autosensData;
@@ -1669,7 +1669,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
         }
-        else {
+        else if (sensitivityView != null){
             Drawable drawable = sensitivityView.getBackground();
             drawable.setColorFilter( new PorterDuffColorFilter( 0x50ffffff, PorterDuff.Mode.SRC_IN ) );
             Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
