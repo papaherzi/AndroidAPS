@@ -14,16 +14,16 @@
     <color name="activity">#d3f166</color>
     <color name="devslopepos">#FFFFFF00</color>
     <color name="devslopeneg">#FFFF00FF</color>
-    <color name="inrange">#FFFFFF</color> <!-- Farbe des angezeigten Wertes im normalen Bereich des Graphen -->
-    <color name="inrangebackgroundborder">#FFFFFF</color>
-    <color name="low">#f0a30a</color> <!-- Farbe des angezeigten Wertes im hohen Bereich. Auch die Punktefarbe im Graphen -->
-    <color name="high">#f0a30a</color> <!-- Farbe des angezeigten Wertes im tiefen Bereich. Auch die Punktefarbe im Graphen. Farbe im CarePortal als erster Hinweis-->
+    <color name="inrange">#2495d7</color>
+    <color name="inrangebackground">#20000000</color>
+    <color name="inrangebackgroundborder">#00000000</color>
+    <color name="low">#f0a30a</color>
+    <color name="high">#f0a30a</color>
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color>
     <color name="tabBgColorSelected">#00a3e8</color>
     <color name="deviations">#FF0000</color>
     <color name="cobAlert">#7484E2</color>
-    <color name="inrangebackground">#40FFFFFF</color> <!-- Grafikbereich fuer die gewaehlten BG Werte hoch und tief im Graphen -->
     <color name="basebasal">#32a6b8</color>
     <color name="tempbasal">#32a6b8</color> <!-- Farbe TEMP Basal im Graphen -->
     <color name="graphgrid">#60FFFFFF</color> <!-- Farbe der Graphen Raster Linien -->
@@ -115,5 +115,14 @@
     <color name="crimson">#911d10</color>
     <color name="plastic_grey">#666666</color>
     <color name="sphere_plastic_grey">#8c8c8c</color>
+    <color name="loopgreen">#40b94f</color>
+    <color name="lila">#fa8a4b</color>
+    <color name="peach">#f06b0a</color>
+    <color name="concinnity_black">#050503</color>
+    <color name="concinnity_bright_grey">#bdbcb8</color>
+    <color name="concinnity_cyan">#2495d7</color>
+    <color name="concinnity_amber">#90faae00</color>
+    <color name="concinnity_grey">#999999</color>
+    <color name="light_white">#50ffffff</color>
 
 </resources>

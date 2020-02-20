@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/overview_buttons"
+            android:layout_marginBottom="-1dp"
             android:fillViewport="true">
 
             <LinearLayout
@@ -25,6 +26,7 @@
                     android:id="@+id/overview_notifications"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                 </androidx.recyclerview.widget.RecyclerView>
                 <!-- Loop Layout -->
                 <LinearLayout
@@ -34,6 +36,13 @@
                     android:orientation="horizontal"
                     android:paddingTop="5dp">
 
+                    <!--                 <ImageView
+                        android:id="@+id/ic_loop_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_loop_white">
+                    </ImageView> -->
+
                     <TextView
                         android:id="@+id/overview_apsmode"
                         android:layout_width="wrap_content"
@@ -41,14 +50,19 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_loop_white_20"
+                        android:background="@drawable/ic_concinnity_pille"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
-                        android:paddingEnd="2dp"
                         android:paddingBottom="3dp"
                         android:text="Open Loop"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <!--                   <ImageView
+                        android:id="@+id/ic_user_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_user_white">
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_activeprofile"
@@ -57,13 +71,19 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_user_white_25"
+                        android:background="@drawable/ic_concinnity_pille"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
                         android:text="Profile"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <!--                   <ImageView
+                        android:id="@+id/ic_zielkreuz_white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_zielkreuz_white">
+                   </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_temptarget"
@@ -72,8 +92,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_zielkreuz_white_25"
+                        android:background="@drawable/ic_concinnity_pille"
                         android:gravity="center_vertical|center_horizontal"
                         android:paddingTop="3dp"
                         android:paddingBottom="3dp"
@@ -97,9 +116,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingBottom="3dp"
-                        android:paddingTop="3dp"
                         android:gravity="center_vertical|center_horizontal"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
                         android:text="@string/initializing"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -109,43 +128,58 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="5dp">
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="90dp"
-                        android:layout_weight="1"
                         android:orientation="horizontal">
 
 
                         <TextView
                             android:id="@+id/overview_bg"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_gravity="top|center"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="14dp"
-                            android:background="@drawable/delta_stroke"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/ic_bg_value"
                             android:gravity="center_vertical|center_horizontal"
+                            android:paddingTop="10dp"
                             android:text="00.0"
                             android:textSize="25sp"
                             android:textStyle="normal" />
 
-                        <TextView
-                            android:id="@+id/overview_arrow"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="top|center"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical|center_horizontal"
-                            android:text="→"
-                            android:textSize="30sp"
-                            android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/overview_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|center"
+                                android:layout_marginTop="3dp"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="→"
+                                android:textSize="30sp" />
+
+                            <TextView
+                                android:id="@+id/overview_timeago"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="1 min ago"
+                                android:textColor="@color/black"
+                                android:textSize="11dp" />
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="280dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
                             android:orientation="horizontal">
 
                             <LinearLayout
@@ -165,86 +199,78 @@
                                         android:id="@+id/overview_deltashort"
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
-                                        android:layout_marginStart="5dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginRight="2dp"
                                         android:layout_marginTop="2dp"
-                                        android:background="@drawable/delta_stroke"
+                                        android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textColor="@android:color/white"
-                                        android:textSize="18dp" />
-
-                                    <TextView
-                                        android:id="@+id/overview_timeago"
-                                        android:layout_width="40dp"
-                                        android:layout_height="40dp"
-                                        android:layout_marginLeft="2dp"
-                                        android:layout_marginTop="2dp"
-                                        android:background="@drawable/bloodclucose_2"
-                                        android:gravity="center"
-                                        android:text=""
-                                        android:textColor="@android:color/white"
                                         android:textSize="18dp" />
 
                                     <TextView
                                         android:id="@+id/overview_iob"
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:layout_marginLeft="2dp"
-                                        android:background="@drawable/delta_stroke"
+                                        android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
+                                        android:paddingLeft="2dp"
                                         android:paddingTop="8dp"
-                                        android:paddingBottom="8dp"
-                                        android:text=""
                                         android:paddingRight="2dp"
-                                        android:paddingLeft="2dp"/>
+                                        android:paddingBottom="8dp"
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_cob"
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:layout_marginLeft="2dp"
-                                        android:background="@drawable/delta_stroke"
+                                        android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
+                                        android:paddingLeft="2dp"
                                         android:paddingTop="8dp"
-                                        android:paddingBottom="8dp"
-                                        android:text=""
                                         android:paddingRight="2dp"
-                                        android:paddingLeft="2dp"/>
+                                        android:paddingBottom="8dp"
+                                        android:text="" />
 
 
                                     <TextView
                                         android:id="@+id/overview_basebasal"
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
+                                        android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
                                         android:autoSizeTextType="uniform"
-                                        android:layout_marginLeft="2dp"
-                                        android:background="@drawable/delta_stroke"
+                                        android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
-                                        android:text=""
+                                        android:paddingLeft="2dp"
                                         android:paddingRight="2dp"
-                                        android:paddingLeft="2dp"/>
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_sensitivity"
                                         android:layout_width="40dp"
                                         android:layout_height="40dp"
                                         android:layout_marginLeft="2dp"
+                                        android:layout_marginRight="2dp"
                                         android:layout_marginTop="2dp"
-                                        android:background="@drawable/delta_stroke"
+                                        android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textSize="18dp" />
+                                        android:textSize="16dp" />
 
                                 </LinearLayout>
 
@@ -256,141 +282,146 @@
                                     android:orientation="horizontal">
 
                                     <ImageView
+                                        android:id="@+id/ic_delta_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
                                         android:layout_gravity="start"
                                         android:layout_marginStart="9dp"
-                                        android:background="@drawable/ic_delta_28_dark">
+                                        app:srcCompat="@drawable/ic_delta_28">
 
                                     </ImageView>
 
                                     <ImageView
+                                        android:id="@+id/ic_pumpe_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
                                         android:layout_gravity="start"
-                                        android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_clock_28_dark">
+                                        android:layout_marginStart="16dp"
+                                        app:srcCompat="@drawable/ic_pumpe_28">
 
                                     </ImageView>
 
                                     <ImageView
+                                        android:id="@+id/ic_carb_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_gravity="start"
-                                        android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_pumpe_28_dark">
+                                        android:layout_marginStart="16dp"
+                                        app:srcCompat="@drawable/ic_carb_28">
 
                                     </ImageView>
 
                                     <ImageView
-                                        android:layout_width="28dp"
-                                        android:layout_height="28dp"
-                                        android:layout_marginStart="14dp"
-                                        android:background="@drawable/ic_carb_28_dark">
-
-                                    </ImageView>
-
-                                    <ImageView
-                                        android:layout_width="28dp"
-                                        android:layout_height="28dp"
-                                        android:layout_gravity="end"
-                                        android:layout_marginStart="13dp"
-                                        android:background="@drawable/ic_bas_28_dark">
-
-                                    </ImageView>
-
-                                    <ImageView
+                                        android:id="@+id/ic_bas_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
                                         android:layout_gravity="end"
                                         android:layout_marginStart="16dp"
-                                        android:background="@drawable/ic_as_28_dark">
+                                        app:srcCompat="@drawable/ic_bas_28">
+
+                                    </ImageView>
+
+                                    <ImageView
+                                        android:id="@+id/ic_as_28"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="end"
+                                        android:layout_marginStart="16dp"
+                                        app:srcCompat="@drawable/ic_as_28">
 
                                     </ImageView>
 
                                 </LinearLayout>
-
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-
                 </LinearLayout>
-
-                <!-- Eine gestrichelte Linie
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="5dp"
-                                    android:src="@drawable/dotted"
-                                    android:layerType="software" -->
-                <!-- Careportal
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="horizontal">
-                                    <include
-                                        android:id="@+id/careportal_stats"
-                                        layout="@layout/careportal_stats_fragment_on"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content" />
-                                </LinearLayout> -->
 
                 <!--  STATUSLIGHTS -->
                 <LinearLayout
                     android:id="@+id/overview_statuslights"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     android:layout_marginBottom="5dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
+
+<!--                    <ImageView
+                        android:id="@+id/ic_katheter_white"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        app:srcCompat="@drawable/ic_katheter_35_dark">
+
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_canulaage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_katheter_35"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/ic_statuslight_bg"
+                        android:drawableLeft="@drawable/ic_katheter_20"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
-                    <!--                    <TextView
-                                            android:id="@+id/overview_insulinage"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginHorizontal="1dp"
-                                            android:background="@drawable/bloodclucose_bg"
-                                            android:drawableLeft="@drawable/ic_statuslight_insulin"
-                                            android:gravity="center_vertical|center_horizontal"
-                                            android:text="" />  -->
+ <!--                   <ImageView
+                        android:id="@+id/ic_cartridge_white"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        app:srcCompat="@drawable/ic_cartridge_35_dark">
+
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_reservoirlevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_cartridge_35"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/ic_statuslight_bg"
+                        android:drawableLeft="@drawable/ic_cartridge_20"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
+
+<!--                    <ImageView
+                        android:id="@+id/ic_libre_white"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        app:srcCompat="@drawable/ic_libre_35_dark">
+
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_sensorage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_libre_35"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/ic_statuslight_bg"
+                        android:drawableLeft="@drawable/ic_libre_20"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
+
+<!--                    <ImageView
+                        android:id="@+id/ic_battery_white"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="end"
+                        app:srcCompat="@drawable/ic_battery_35_dark">
+
+                    </ImageView> -->
 
                     <TextView
                         android:id="@+id/overview_batterylevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:background="@drawable/bloodclucose_2"
-                        android:drawableLeft="@drawable/ic_battery_35"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/ic_statuslight_bg"
+                        android:drawableLeft="@drawable/ic_battery_20"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="" />
 
@@ -414,8 +445,8 @@
                         android:id="@+id/overview_chartMenuButton"
                         android:layout_width="30dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
                         android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
                         android:paddingTop="5dp"
                         app:srcCompat="@drawable/ic_arrow_drop_down_white_24dp" />
 
@@ -428,94 +459,32 @@
 
                 </RelativeLayout>
 
-
-                <!--               <LinearLayout
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content"
-                                   android:orientation="horizontal">
-                                   <TextView
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginStart="8dp"
-                                       android:layout_marginEnd="1dp"
-                                       android:text="@string/iob"
-                                       android:textSize="16sp" />
-                                   <TextView
-                                       android:layout_width="5dp"
-                                       android:layout_height="wrap_content"
-                                       android:text=":"
-                                       android:textSize="16sp" />
-                                   <TextView
-                                       android:id="@+id/overview_iob"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginStart="14dp"
-                                       android:text=""
-                                       android:textSize="16sp"
-                                       android:textStyle="bold"/>
-                               </LinearLayout> -->
-
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
+                    android:background="@color/plastic_grey"
                     android:layout_width="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
                     android:visibility="gone" />
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_cobgraph"
+                    android:background="@color/plastic_grey"
                     android:layout_width="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
                     android:visibility="gone" />
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_devgraph"
+                    android:background="@color/plastic_grey"
                     android:layout_width="wrap_content"
+                    android:layout_height="90dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_height="90dp"
-                    android:background="@color/plastic_grey"
                     android:visibility="gone" />
-
-                <!--               <LinearLayout
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content"
-                                   android:orientation="horizontal">
-                                   <TextView
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginStart="8dp"
-                                       android:layout_marginEnd="1dp"
-                                       android:text="@string/cob"
-                                       android:textSize="16sp" />
-                                   <TextView
-                                       android:layout_width="5dp"
-                                       android:layout_height="wrap_content"
-                                       android:text=":"
-                                       android:textSize="16sp" />
-                                   <TextView
-                                       android:id="@+id/overview_cob"
-                                       android:layout_width="wrap_content"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginStart="8dp"
-                                       android:text=""
-                                       android:textSize="16sp"
-                                       android:textStyle="bold"/>
-                               </LinearLayout> -->
-                <!--               <com.jjoe64.graphview.GraphView
-                                   android:id="@+id/overview_cobgraph"
-                                   android:layout_width="wrap_content"
-                                   android:layout_marginStart="0dp"
-                                   android:layout_marginEnd="0dp"
-                                   android:layout_height="90dp"
-                                   android:background="@color/plastic_grey"
-                                   android:visibility="gone" /> -->
-
             </LinearLayout>
 
         </ScrollView>
@@ -546,15 +515,6 @@
                     android:textColor="@color/colorAcceptTempButton" />
             </LinearLayout>
 
-
-            <!-- Gestrichelte Linie
-                            <ImageView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="5dp"
-                                 android:src="@drawable/dotted"
-                                 android:layerType="software" /> -->
-
-            <!-- Untere Funktionsbutton Reihe -->
             <!-- Untere Funktionsbutton Reihe -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -570,7 +530,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_zahnrad_48_dark"
+                    android:drawableTop="@drawable/zahnrad_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
@@ -587,7 +547,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_pumpe_48_dark"
+                    android:drawableTop="@drawable/pumpe_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
@@ -604,7 +564,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_carb_48_dark"
+                    android:drawableTop="@drawable/carb_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
@@ -621,7 +581,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calculator_48_dark"
+                    android:drawableTop="@drawable/calculator_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
@@ -638,7 +598,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_calibration_48_dark"
+                    android:drawableTop="@drawable/calibration_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
@@ -655,7 +615,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_blooddrop_48_dark"
+                    android:drawableTop="@drawable/blooddrop_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
@@ -672,7 +632,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/ic_wizard_48_dark"
+                    android:drawableTop="@drawable/wizard_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="Quick wizard"
