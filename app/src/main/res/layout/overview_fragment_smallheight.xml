@@ -250,15 +250,12 @@
                                         android:layout_marginTop="2dp"
                                         android:layout_marginLeft="1dp"
                                         android:layout_marginRight="1dp"
-                                        android:autoSizeMaxTextSize="14sp"
-                                        android:autoSizeMinTextSize="7sp"
-                                        android:autoSizeStepGranularity="1sp"
-                                        android:autoSizeTextType="uniform"
                                         android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
                                         android:paddingLeft="2dp"
                                         android:paddingRight="2dp"
-                                        android:text="" />
+                                        android:text=""
+                                        android:textSize="14dp" />
 
                                     <TextView
                                         android:id="@+id/overview_sensitivity"
@@ -618,7 +615,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/blooddrop_white_shadow"
+                    android:drawableTop="@drawable/xdrip_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"

@@ -142,7 +142,7 @@
                             android:layout_height="70dp"
                             android:layout_gravity="top|center"
                             android:layout_marginStart="15dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="9dp"
                             android:background="@drawable/ic_bg_value"
                             android:gravity="center_vertical|center_horizontal"
                             android:paddingTop="10dp"
@@ -205,7 +205,7 @@
                                         android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
                                         android:text=""
-                                        android:textSize="18dp" />
+                                        android:textSize="16dp" />
 
                                     <TextView
                                         android:id="@+id/overview_iob"
@@ -213,6 +213,7 @@
                                         android:layout_height="40dp"
                                         android:layout_marginLeft="2dp"
                                         android:layout_marginRight="2dp"
+                                        android:layout_marginTop="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
@@ -231,6 +232,7 @@
                                         android:layout_height="40dp"
                                         android:layout_marginLeft="2dp"
                                         android:layout_marginRight="2dp"
+                                        android:layout_marginTop="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
@@ -250,6 +252,7 @@
                                         android:layout_height="40dp"
                                         android:layout_marginLeft="2dp"
                                         android:layout_marginRight="2dp"
+                                        android:layout_marginTop="2dp"
                                         android:autoSizeMaxTextSize="16sp"
                                         android:autoSizeMinTextSize="7sp"
                                         android:autoSizeStepGranularity="1sp"
@@ -615,7 +618,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/blooddrop_white_shadow"
+                    android:drawableTop="@drawable/xdrip_white_shadow"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"

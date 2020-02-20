@@ -14,7 +14,8 @@
             android:endColor="#2495d7"
             android:angle="90"/> -->
 
-    <solid
+
+   <solid
         android:color="#FF2495d7">
     </solid>
 

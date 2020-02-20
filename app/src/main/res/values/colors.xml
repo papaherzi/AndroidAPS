@@ -17,8 +17,8 @@
     <color name="inrange">#2495d7</color>
     <color name="inrangebackground">#20000000</color>
     <color name="inrangebackgroundborder">#00000000</color>
-    <color name="low">#f0a30a</color>
-    <color name="high">#f0a30a</color>
+    <color name="low">#90faae00</color>
+    <color name="high">#90faae00</color>
     <color name="actionsConfirm">#FFFF00</color>
     <color name="listdelimiter">#505050</color>
     <color name="tabBgColorSelected">#00a3e8</color>
