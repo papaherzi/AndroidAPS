@@ -1460,7 +1460,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = iobView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
             Drawable wrapDrawable = DrawableCompat.wrap(ic_pumpe_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             iobView.setTextColor(MainApp.gc(R.color.black));
 //            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
@@ -1483,7 +1483,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = cobView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_carb_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 cobView.setTextColor(MainApp.gc(R.color.black));
 
@@ -1542,7 +1542,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
             Drawable wrapDrawable = DrawableCompat.wrap(ic_bas_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
         } else {
@@ -1613,7 +1613,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = sensitivityView.getBackground();
             drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
             Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
         }
@@ -1621,7 +1621,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = sensitivityView.getBackground();
             drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
             Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
         }
