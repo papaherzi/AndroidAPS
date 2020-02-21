@@ -172,7 +172,7 @@
                                 android:gravity="center"
                                 android:text="1 min ago"
                                 android:textColor="@color/black"
-                                android:textSize="11dp" />
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 
@@ -343,7 +343,7 @@
                 <LinearLayout
                     android:id="@+id/overview_statuslights"
                     android:layout_width="match_parent"
-                    android:layout_height="25dp"
+                    android:layout_height="30dp"
                     android:layout_marginBottom="5dp"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal">
