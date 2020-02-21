@@ -199,10 +199,13 @@
                                         android:layout_marginLeft="1dp"
                                         android:layout_marginRight="1dp"
                                         android:layout_marginTop="2dp"
+                                        android:autoSizeMaxTextSize="14sp"
+                                        android:autoSizeMinTextSize="7sp"
+                                        android:autoSizeStepGranularity="1sp"
+                                        android:autoSizeTextType="uniform"
                                         android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textSize="14dp" />
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_iob"
@@ -258,8 +261,7 @@
                                         android:gravity="center"
                                         android:paddingLeft="2dp"
                                         android:paddingRight="2dp"
-                                        android:text=""
-                                        android:textSize="14dp" />
+                                        android:text="" />
 
                                     <TextView
                                         android:id="@+id/overview_sensitivity"
@@ -274,8 +276,7 @@
                                         android:autoSizeTextType="uniform"
                                         android:background="@drawable/ic_ball_white"
                                         android:gravity="center"
-                                        android:text=""
-                                        android:textSize="14dp" />
+                                        android:text="" />
 
                                 </LinearLayout>
 

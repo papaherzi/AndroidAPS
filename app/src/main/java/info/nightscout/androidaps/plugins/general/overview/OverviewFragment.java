@@ -1408,7 +1408,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_delta_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 deltaShortView.setTextColor(MainApp.gc(R.color.darkgray));
             }
@@ -1416,7 +1416,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_delta_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_amber));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 deltaShortView.setTextColor(MainApp.gc(R.color.darkgray));
             }
