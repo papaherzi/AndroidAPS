@@ -125,5 +125,6 @@
     <color name="concinnity_grey">#999999</color>
     <color name="light_white">#50ffffff</color>
     <color name="statuslightsymbol">#595555</color>
+    <color name="transparent100">#00000000</color>
 
 </resources>

@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -1325,6 +1327,10 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 }
             }
         }
+
+
+
+
         //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG != null) {
@@ -1365,6 +1371,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0xFF2495d7, PorterDuff.Mode.MULTIPLY));
                 bgView.setTextColor(MainApp.gc(R.color.white));
+                //icon drehen
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_bg_value);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 90, 50, 50);
+//                imageView.setImageMatrix(matrix);
+
             }
 
             if (lastBG.valueToUnits(units) < lowLine)
@@ -1373,6 +1386,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_IN));
                 bgView.setTextColor(MainApp.gc(R.color.black));
+                //icon drehen
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_bg_value);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 180, 50, 50);
+//                imageView.setImageMatrix(matrix);
+
             }
 
             else if (lastBG.valueToUnits(units) > highLine)
@@ -1381,6 +1401,13 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = bgView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_IN));
                 bgView.setTextColor(MainApp.gc(R.color.black));
+                //icon drehen
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_bg_value);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 0, 50, 50);
+//                imageView.setImageMatrix(matrix);
+
             }
             bgView.setText(lastBG.valueToUnitsToString(units));
             arrowView.setText(lastBG.directionToSymbol());
@@ -1408,17 +1435,28 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_delta_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
-                deltaShortView.setTextColor(MainApp.gc(R.color.darkgray));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                Matrix matrix = new Matrix();
+                ImageView imageView = (ic_delta_28);
+                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+                matrix.postRotate((float) 0, 28, 28);
+                imageView.setImageMatrix(matrix);
             }
             else if (glucoseStatus != null && glucoseStatus.delta <-9) {
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_delta_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
-                deltaShortView.setTextColor(MainApp.gc(R.color.darkgray));
+                deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                //icon drehen
+                Matrix matrix = new Matrix();
+                ImageView imageView = (ic_delta_28);
+                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+                matrix.postRotate((float) 180, 28, 28);
+                imageView.setImageMatrix(matrix);
             }
             else   {
                 Drawable drawable = deltaShortView.getBackground();
@@ -1427,6 +1465,12 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
                 deltaShortView.setTextColor(MainApp.gc(R.color.white));
+                //icon drehen
+                Matrix matrix = new Matrix();
+                ImageView imageView = (ic_delta_28);
+                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+                matrix.postRotate((float) 90, 28, 28);
+                imageView.setImageMatrix(matrix);
             }
         }
 

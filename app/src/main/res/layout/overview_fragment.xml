@@ -135,6 +135,16 @@
                         android:layout_height="90dp"
                         android:orientation="horizontal">
 
+ <!--                       <ImageView
+                            android:id="@+id/ic_bg_value"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="9dp"
+                            app:srcCompat="@drawable/ic_bg_value">
+
+                        </ImageView> -->
+
 
                         <TextView
                             android:id="@+id/overview_bg"
@@ -288,8 +298,8 @@
                                         android:id="@+id/ic_delta_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_gravity="start"
-                                        android:layout_marginStart="9dp"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="3dp"
                                         app:srcCompat="@drawable/ic_delta_28">
 
                                     </ImageView>
@@ -298,8 +308,7 @@
                                         android:id="@+id/ic_pumpe_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_gravity="start"
-                                        android:layout_marginStart="16dp"
+                                        android:layout_marginStart="9dp"
                                         app:srcCompat="@drawable/ic_pumpe_28">
 
                                     </ImageView>
