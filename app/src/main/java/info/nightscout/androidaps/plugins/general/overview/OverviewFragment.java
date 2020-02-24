@@ -1505,7 +1505,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = iobView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
             Drawable wrapDrawable = DrawableCompat.wrap(ic_pumpe_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             iobView.setTextColor(MainApp.gc(R.color.black));
             //icon drehen
@@ -1539,7 +1539,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Drawable drawable = cobView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_carb_28.getDrawable());
-                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
+                DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 cobView.setTextColor(MainApp.gc(R.color.black));
                 Matrix matrix = new Matrix();
@@ -1560,11 +1560,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
                 cobView.setTextColor(MainApp.gc(R.color.white));
-                Matrix matrix = new Matrix();
-                ImageView imageView = (ic_carb_28);
-                imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 180, 40, 40);
-                imageView.setImageMatrix(matrix);
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_carb_28);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 180, 40, 40);
+//                imageView.setImageMatrix(matrix);
             }
             cobView.setText(cobText);
         }
@@ -1608,7 +1608,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
             Drawable wrapDrawable = DrawableCompat.wrap(ic_bas_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
             Matrix matrix = new Matrix();
@@ -1623,11 +1623,50 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
             baseBasalView.setTextColor(MainApp.gc(R.color.white));
-            Matrix matrix = new Matrix();
-            ImageView imageView = (ic_bas_28);
-            imageView.setScaleType(ImageView.ScaleType.MATRIX);
-            matrix.postRotate((float) 180, 38, 38);
-            imageView.setImageMatrix(matrix);
+//            Matrix matrix = new Matrix();
+//            ImageView imageView = (ic_bas_28);
+//            imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//            matrix.postRotate((float) 180, 38, 38);
+//            imageView.setImageMatrix(matrix);
+        }
+
+        // Sensitivity
+        //       if (sensitivityView != null) {
+        //           AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
+        //           if (autosensData != null)
+        //               sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
+        //           else
+        //               sensitivityView.setText("");
+        //       }
+
+        // Sensitivity
+        AutosensData autosensData;
+        autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData( "Overview" );
+        sensitivityView.setText( String.format( Locale.ENGLISH, "%.0f", autosensData.autosensResult.ratio * 100 ) );
+
+        if ((sensitivityView != null) && autosensData.autosensResult.ratio > 1.09) {
+            Drawable drawable = sensitivityView.getBackground();
+            drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
+            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
+            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
+            sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
+        }
+        else if ((sensitivityView != null) && autosensData.autosensResult.ratio < 0.90) {
+            Drawable drawable = sensitivityView.getBackground();
+            drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
+            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
+            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
+            sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
+        }
+        else if (sensitivityView != null){
+            Drawable drawable = sensitivityView.getBackground();
+            drawable.setColorFilter( new PorterDuffColorFilter( 0xff999999, PorterDuff.Mode.SRC_IN ) );
+            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
+            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
+            sensitivityView.setTextColor( MainApp.gc( R.color.white ) );
         }
 
         if (statuslightsLayout != null)
@@ -1669,45 +1708,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (uploaderDeviceStatusView != null) {
             uploaderDeviceStatusView.setText(NSDeviceStatus.getInstance().getUploaderStatusSpanned());
             uploaderDeviceStatusView.setOnClickListener(v -> OKDialog.show(getActivity(), MainApp.gs(R.string.uploader), NSDeviceStatus.getInstance().getExtendedUploaderStatus()));
-        }
-
-        // Sensitivity
-        //       if (sensitivityView != null) {
-        //           AutosensData autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData("Overview");
-        //           if (autosensData != null)
-        //               sensitivityView.setText(String.format(Locale.ENGLISH, "%.0f%%", autosensData.autosensResult.ratio * 100));
-        //           else
-        //               sensitivityView.setText("");
-        //       }
-
-        // Sensitivity
-        AutosensData autosensData;
-        autosensData = IobCobCalculatorPlugin.getPlugin().getLastAutosensData( "Overview" );
-        sensitivityView.setText( String.format( Locale.ENGLISH, "%.0f", autosensData.autosensResult.ratio * 100 ) );
-
-        if ((sensitivityView != null) && autosensData.autosensResult.ratio > 1.09) {
-            Drawable drawable = sensitivityView.getBackground();
-            drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
-            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
-            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
-            sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
-        }
-        else if ((sensitivityView != null) && autosensData.autosensResult.ratio < 0.90) {
-            Drawable drawable = sensitivityView.getBackground();
-            drawable.setColorFilter( new PorterDuffColorFilter( 0x90faae00, PorterDuff.Mode.SRC_ATOP ) );
-            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.statuslightsymbol));
-            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
-            sensitivityView.setTextColor( MainApp.gc( R.color.black ) );
-        }
-        else if (sensitivityView != null){
-            Drawable drawable = sensitivityView.getBackground();
-            drawable.setColorFilter( new PorterDuffColorFilter( 0xff999999, PorterDuff.Mode.SRC_IN ) );
-            Drawable wrapDrawable = DrawableCompat.wrap(ic_as_28.getDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
-            DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
-            sensitivityView.setTextColor( MainApp.gc( R.color.white ) );
         }
 
         // ****** GRAPH *******

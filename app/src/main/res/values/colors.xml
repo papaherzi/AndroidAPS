@@ -122,6 +122,7 @@
     <color name="concinnity_bright_grey">#bdbcb8</color>
     <color name="concinnity_cyan">#2495d7</color>
     <color name="concinnity_amber">#90faae00</color>
+    <color name="concinnity_amber_icon">#FCC851</color>
     <color name="concinnity_grey">#999999</color>
     <color name="light_white">#50ffffff</color>
     <color name="statuslightsymbol">#595555</color>
