@@ -1431,13 +1431,14 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                     avgdeltaView.setText("");
             }
 
-            if (glucoseStatus != null && glucoseStatus.delta >+5) {
+            if (glucoseStatus != null && glucoseStatus.delta >+9) {
                 Drawable drawable = deltaShortView.getBackground();
                 drawable.setColorFilter(new PorterDuffColorFilter(0x90faae00, PorterDuff.Mode.SRC_ATOP));
                 Drawable wrapDrawable = DrawableCompat.wrap(ic_delta_28.getDrawable());
                 DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
+                //icon drehen
                 Matrix matrix = new Matrix();
                 ImageView imageView = (ic_delta_28);
                 imageView.setScaleType(ImageView.ScaleType.MATRIX);
@@ -1455,7 +1456,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Matrix matrix = new Matrix();
                 ImageView imageView = (ic_delta_28);
                 imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 180, 32, 38);
+                matrix.postRotate((float) 180, 36, 38);
                 imageView.setImageMatrix(matrix);
             }
             else   {
@@ -1469,7 +1470,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Matrix matrix = new Matrix();
                 ImageView imageView = (ic_delta_28);
                 imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 90, 34, 34);
+                matrix.postRotate((float) 90, 36, 38);
                 imageView.setImageMatrix(matrix);
             }
         }
