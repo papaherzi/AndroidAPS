@@ -298,8 +298,7 @@
                                         android:id="@+id/ic_delta_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_marginStart="16dp"
-                                        android:layout_marginTop="3dp"
+                                        android:layout_marginStart="12dp"
                                         app:srcCompat="@drawable/ic_delta_28">
 
                                     </ImageView>
@@ -308,7 +307,7 @@
                                         android:id="@+id/ic_pumpe_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_marginStart="9dp"
+                                        android:layout_marginStart="12dp"
                                         app:srcCompat="@drawable/ic_pumpe_28">
 
                                     </ImageView>
