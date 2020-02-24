@@ -307,7 +307,7 @@
                                         android:id="@+id/ic_pumpe_28"
                                         android:layout_width="28dp"
                                         android:layout_height="28dp"
-                                        android:layout_marginStart="12dp"
+                                        android:layout_marginStart="14dp"
                                         app:srcCompat="@drawable/ic_pumpe_28">
 
                                     </ImageView>

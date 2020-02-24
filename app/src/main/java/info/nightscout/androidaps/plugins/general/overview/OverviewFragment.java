@@ -1544,7 +1544,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Matrix matrix = new Matrix();
                 ImageView imageView = (ic_carb_28);
                 imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 0, 38, 38);
+                matrix.postRotate((float) 0, 40, 40);
                 imageView.setImageMatrix(matrix);
 
                 if (cobInfo.futureCarbs > 0)
