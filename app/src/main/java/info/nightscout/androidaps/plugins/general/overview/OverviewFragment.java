@@ -1509,11 +1509,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             iobView.setTextColor(MainApp.gc(R.color.black));
             //icon drehen
-            Matrix matrix = new Matrix();
-            ImageView imageView = (ic_pumpe_28);
-            imageView.setScaleType(ImageView.ScaleType.MATRIX);
-            matrix.postRotate((float) 0, 38, 38);
-            imageView.setImageMatrix(matrix);
+//            Matrix matrix = new Matrix();
+//            ImageView imageView = (ic_pumpe_28);
+//            imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//            matrix.postRotate((float) 0, 38, 38);
+//            imageView.setImageMatrix(matrix);
 //            iobView.setTypeface(Typeface.DEFAULT_BOLD, Typeface.BOLD);
 
         } if ((bolusIob.iob + basalIob.basaliob) <= 0.00){
@@ -1523,11 +1523,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.concinnity_grey));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
             iobView.setTextColor(MainApp.gc(R.color.white));
-            Matrix matrix = new Matrix();
-            ImageView imageView = (ic_pumpe_28);
-            imageView.setScaleType(ImageView.ScaleType.MATRIX);
-            matrix.postRotate((float) 180, 38, 38);
-            imageView.setImageMatrix(matrix);
+//            Matrix matrix = new Matrix();
+//            ImageView imageView = (ic_pumpe_28);
+//            imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//            matrix.postRotate((float) 180, 38, 38);
+//            imageView.setImageMatrix(matrix);
         }
 
         // cob
@@ -1542,11 +1542,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 cobView.setTextColor(MainApp.gc(R.color.black));
-                Matrix matrix = new Matrix();
-                ImageView imageView = (ic_carb_28);
-                imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 0, 40, 40);
-                imageView.setImageMatrix(matrix);
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_carb_28);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 0, 40, 40);
+//                imageView.setImageMatrix(matrix);
 
                 if (cobInfo.futureCarbs > 0)
                     cobText += "/" + DecimalFormatter.to0Decimal(cobInfo.futureCarbs) ;
@@ -1611,11 +1611,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(getContext(), R.color.transparent100));
             DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
             baseBasalView.setTextColor(MainApp.gc(R.color.black));
-            Matrix matrix = new Matrix();
-            ImageView imageView = (ic_bas_28);
-            imageView.setScaleType(ImageView.ScaleType.MATRIX);
-            matrix.postRotate((float) 0, 38, 38);
-            imageView.setImageMatrix(matrix);
+//            Matrix matrix = new Matrix();
+//            ImageView imageView = (ic_bas_28);
+//            imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//            matrix.postRotate((float) 0, 38, 38);
+//            imageView.setImageMatrix(matrix);
         } else {
             Drawable drawable = baseBasalView.getBackground();
             drawable.setColorFilter(new PorterDuffColorFilter(0xff999999, PorterDuff.Mode.SRC_IN));
