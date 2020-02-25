@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plastic"
+    android:background="@drawable/ic_overview_bg_gradient"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <RelativeLayout
@@ -443,7 +443,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/plastic_grey">
+                    android:background="@color/statuslightsymbol">
 
                     <com.jjoe64.graphview.GraphView
                         android:id="@+id/overview_bggraph"
@@ -472,7 +472,7 @@
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_iobgraph"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/statuslightsymbol"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_marginStart="0dp"
@@ -481,7 +481,7 @@
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_cobgraph"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/statuslightsymbol"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_marginStart="0dp"
@@ -490,7 +490,7 @@
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/overview_devgraph"
-                    android:background="@color/plastic_grey"
+                    android:background="@color/statuslightsymbol"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_marginStart="0dp"
@@ -541,7 +541,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/zahnrad_white_shadow"
+                    android:drawableTop="@drawable/ic_zahnrad_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
@@ -558,7 +558,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/pumpe_white_shadow"
+                    android:drawableTop="@drawable/ic_pumpe_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
@@ -575,7 +575,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/carb_white_shadow"
+                    android:drawableTop="@drawable/ic_carb_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
@@ -592,7 +592,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/calculator_white_shadow"
+                    android:drawableTop="@drawable/ic_calculator_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
@@ -609,7 +609,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/calibration_white_shadow"
+                    android:drawableTop="@drawable/ic_calibration_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
@@ -626,7 +626,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/xdrip_white_shadow"
+                    android:drawableTop="@drawable/ic_blooddrop_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
@@ -643,7 +643,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginBottom="2dp"
                     android:layout_weight="0.5"
-                    android:drawableTop="@drawable/wizard_white_shadow"
+                    android:drawableTop="@drawable/ic_wizard_48_dark"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="Quick wizard"
