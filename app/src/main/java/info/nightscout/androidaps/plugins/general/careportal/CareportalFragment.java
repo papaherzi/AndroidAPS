@@ -243,9 +243,9 @@ public class CareportalFragment extends Fragment implements View.OnClickListener
 
     public static int determineTextColor(CareportalEvent careportalEvent, double warnThreshold, double urgentThreshold) {
         if (careportalEvent.isOlderThan(urgentThreshold)) {
-            return MainApp.gc(R.color.low);
+            return MainApp.gc(R.color.careportal_low);
         } else if (careportalEvent.isOlderThan(warnThreshold)) {
-            return MainApp.gc(R.color.high);
+            return MainApp.gc(R.color.careportal_high);
         } else {
             return Color.BLACK;
         }

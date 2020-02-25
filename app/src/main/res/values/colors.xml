@@ -127,5 +127,7 @@
     <color name="light_white">#50ffffff</color>
     <color name="statuslightsymbol">#595555</color>
     <color name="transparent100">#00000000</color>
+    <color name="careportal_low">#fa8a4b</color>
+    <color name="careportal_high">#f06b0a</color>
 
 </resources>

@@ -1470,7 +1470,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 Matrix matrix = new Matrix();
                 ImageView imageView = (ic_delta_28);
                 imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 90, 36, 38);
+                matrix.postRotate((float) 90, 38, 38);
                 imageView.setImageMatrix(matrix);
             }
         }
