@@ -545,8 +545,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_treatment_label"
-                    android:textColor="@color/colorTreatmentButton_2"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -562,8 +562,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_insulin_label"
-                    android:textColor="@color/colorInsulinButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -579,8 +579,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_carbs_label"
-                    android:textColor="@color/colorCarbsButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -596,8 +596,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calculator_label"
-                    android:textColor="@color/colorCalculatorButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -613,8 +613,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_calibration"
-                    android:textColor="@color/colorCalibrationButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -630,8 +630,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="@string/overview_cgm"
-                    android:textColor="@color/colorCalibrationButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
 
                 <info.nightscout.androidaps.utils.SingleClickButton
@@ -647,8 +647,8 @@
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp"
                     android:text="Quick wizard"
-                    android:textColor="@color/colorQuickWizardButton"
-                    android:textSize="0sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:visibility="gone" />
             </LinearLayout>
 
