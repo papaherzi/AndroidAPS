@@ -352,6 +352,37 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (cgmButton != null)
             cgmButton.setOnClickListener(this);
 
+        if (SP.getBoolean(R.string.key_colored_icons, false)) {
+            if (wizardButton != null) {
+                Drawable drawable = wizardButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (insulinButton != null) {
+                Drawable drawable = insulinButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (carbsButton != null) {
+                Drawable drawable = carbsButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (calibrationButton != null) {
+                Drawable drawable = calibrationButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (cgmButton != null) {
+                Drawable drawable = cgmButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (treatmentButton != null) {
+                Drawable drawable = treatmentButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+            if (quickWizardButton != null) {
+                Drawable drawable = quickWizardButton.getCompoundDrawables()[1];
+                drawable.setColorFilter(new PorterDuffColorFilter(0xff2495d7, PorterDuff.Mode.SRC_ATOP));
+            }
+        }
+
         acceptTempLayout = (LinearLayout) view.findViewById(R.id.overview_accepttemplayout);
 
         notificationsView = (RecyclerView) view.findViewById(R.id.overview_notifications);
@@ -1328,9 +1359,6 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
             }
         }
 
-
-
-
         //Start with updating the BG as it is unaffected by loop.
         // **** BG value ****
         if (lastBG != null) {
@@ -1365,7 +1393,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (lastBG != null) {
             bgView.setTextColor(MainApp.gc(R.color.black));
 //            int color = MainApp.gc(R.color.inrange);
-            if (lastBG.valueToUnits(units) > lowLine )
+            if (lastBG.valueToUnits(units) >= lowLine )
 //                color = MainApp.gc(R.color.low);
             {
                 Drawable drawable = bgView.getBackground();
@@ -1439,11 +1467,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_ATOP);
                 deltaShortView.setTextColor(MainApp.gc(R.color.black));
                 //icon drehen
-                Matrix matrix = new Matrix();
-                ImageView imageView = (ic_delta_28);
-                imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 0, 0, 0);
-                imageView.setImageMatrix(matrix);
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_delta_28);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 0, 0, 0);
+//                imageView.setImageMatrix(matrix);
             }
             else if (glucoseStatus != null && glucoseStatus.delta <-9) {
                 Drawable drawable = deltaShortView.getBackground();
@@ -1467,11 +1495,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 DrawableCompat.setTintMode(wrapDrawable, PorterDuff.Mode.SRC_IN);
                 deltaShortView.setTextColor(MainApp.gc(R.color.white));
                 //icon drehen
-                Matrix matrix = new Matrix();
-                ImageView imageView = (ic_delta_28);
-                imageView.setScaleType(ImageView.ScaleType.MATRIX);
-                matrix.postRotate((float) 90, 38, 38);
-                imageView.setImageMatrix(matrix);
+//                Matrix matrix = new Matrix();
+//                ImageView imageView = (ic_delta_28);
+//                imageView.setScaleType(ImageView.ScaleType.MATRIX);
+//                matrix.postRotate((float) 90, 38, 38);
+//                imageView.setImageMatrix(matrix);
             }
         }
 

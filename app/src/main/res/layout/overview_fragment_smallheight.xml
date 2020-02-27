@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_overview_bg_gradient"
+    android:background="@color/plastic"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <RelativeLayout
