@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plastic"
+    android:background="@drawable/ic_overview_smallheight_bg_gradient"
     tools:context=".plugins.general.overview.OverviewFragment">
 
     <RelativeLayout
@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="5dp">
+                    android:paddingTop="6dp">
 
                     <!--                 <ImageView
                                            android:id="@+id/ic_loop_white"
@@ -377,7 +377,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:layout_marginTop="3dp"
                         android:background="@drawable/ic_statuslight_bg"
                         android:drawableLeft="@drawable/ic_katheter_20"
                         android:gravity="center_vertical|center_horizontal"
@@ -397,7 +396,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:layout_marginTop="3dp"
                         android:background="@drawable/ic_statuslight_bg"
                         android:drawableLeft="@drawable/ic_cartridge_20"
                         android:gravity="center_vertical|center_horizontal"
@@ -417,7 +415,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:layout_marginTop="3dp"
                         android:background="@drawable/ic_statuslight_bg"
                         android:drawableLeft="@drawable/ic_libre_20"
                         android:gravity="center_vertical|center_horizontal"
@@ -437,7 +434,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="1dp"
-                        android:layout_marginTop="3dp"
                         android:background="@drawable/ic_statuslight_bg"
                         android:drawableLeft="@drawable/ic_battery_20"
                         android:gravity="center_vertical|center_horizontal"
